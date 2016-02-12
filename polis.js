@@ -1,6 +1,8 @@
 var app = require('http').createServer(handler);
 var LISTENING_PORT = process.env.PORT || 9000;
 var STATUS_CODE = 200;
+var sleep = require('sleep');
+var SECONDS_TO_SLEEP = 0;
 
 app.listen(LISTENING_PORT);
 
@@ -11,6 +13,7 @@ function handler (req, res) {
 
   handler.handle(req, res);
 
+  sleep.sleep(SECONDS_TO_SLEEP);
   res.end();
 }
 
