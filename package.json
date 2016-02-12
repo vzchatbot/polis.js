@@ -1,9 +1,7 @@
 {
   "name": "polis.js",
   "version": "0.0.2",
-  "dependencies": {
-    "sleep": "1.1.x"
-  },
+  "dependencies": {},
   "engines": {
     "node": "0.12.x",
     "npm": "2.10.x"
