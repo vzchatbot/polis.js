@@ -65,8 +65,6 @@ Development
 - [npm](https://npmjs.org/)
 - Node.js (0.12.4)
   - `brew install node`
-- Sleep   (1.1.1)
-  - Installed with NPM next.
 
 ### Installing
 
@@ -131,13 +129,6 @@ though.
 The server currently returns a `200` HTTP status code by default. To make the
 server return another status code, simply change `STATUS_CODE` in the code.
 
-### Timeout
-
-The server currently does not wait before responding. To make the server sleep
-before it gives a response, change `SECONDS_TO_SLEEP` in the code.  This can be
-useful if testing that the calling code times out after so many seconds.
-
 # LICENSE
 
 MIT
-
