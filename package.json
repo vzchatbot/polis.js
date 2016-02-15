@@ -2,7 +2,8 @@
   "name": "polis.js",
   "version": "0.0.2",
   "dependencies": {
-    "sleep": "3.0.1"
+    "connect-fulcrum-webhook": "^1.0.1",
+    "express": "^4.13.4"
   },
   "engines": {
     "node": "0.12.x",

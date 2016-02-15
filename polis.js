@@ -1,63 +1,35 @@
-var app = require('http').createServer(handler);
-var LISTENING_PORT = process.env.PORT || 9000;
-var STATUS_CODE = 200;
-var sleep = require('sleep');
-var SECONDS_TO_SLEEP = 0;
+var express = require('express');
+var fulcrumMiddleware = require('connect-fulcrum-webhook');
 
-app.listen(LISTENING_PORT);
+var PORT = process.env.PORT || 9000;
 
-handlers = {"POST": PostHandler, "GET": GetHandler};
+var app = express();
 
-function handler (req, res) {
-  console.log('req.method: ', req.method)
-  var handler = new handlers[req.method];
-  console.log('handler: ', handler)
+function payloadProcessor (payload, done) {
+  // Do stuff with payload like update records in a database,
+  // send text messages to field staff, email supervisors when
+  // task marked complete, etc.
 
-  handler.handle(req, res);
-
-  sleep.sleep(SECONDS_TO_SLEEP);
-  res.end();
+  // After you've processed the payload call done() with no arguments to signal
+  // that the webhook has been processed. Call done(), passing an error to return
+  // a 500 response to the webhook request, signaling that the request should be
+  // tried again later.
+  console.log('Payload:');
+  console.log(payload);
+  done()
 }
 
-function PostHandler() { }
+var fulcrumMiddlewareConfig = {
+  actions: ['record.create', 'record.update'],
+  processor: payloadProcessor
+};
 
-PostHandler.prototype.handle = function(req, res) {
-  console.log('handling POST');
-  res.writeHead(STATUS_CODE, {'Content-Type': 'application/json'});
+app.use('/', fulcrumMiddleware(fulcrumMiddlewareConfig));
 
-  var data = '';
-  req.on('data', function(chunk) {
-    data += chunk;
-  });
+app.get('/', function (req, res) {
+  res.send('<html><head><title>Polis.js</title></head><body><h2>polis.js</h2><p>Up and Running!</p></body></html>');
+})
 
-  req.on('end', function() {
-    console.log('Logging POST request:');
-
-    console.log('Headers:');
-    console.log(req.headers);
-
-    console.log('Body:');
-    console.log(data.toString());
-    console.log();
-  });
-}
-
-function GetHandler() { }
-
-GetHandler.prototype.handle = function(req, res) {
-  res.writeHead(STATUS_CODE, {'Content-Type': 'text/html'});
-
-  res.write("<html><head><title>Polis.js</title></head><body><h2>polis.js</h2><p>Up and Running!</p></body></html>");
-
-  req.on('end', function() {
-    console.log('Logging GET request:');
-
-    console.log('Headers:');
-    console.log(req.headers);
-    console.log();
-  });
-}
-
-console.log("Listening to port " + LISTENING_PORT);
-console.log("Returning status code " + STATUS_CODE);
-console.log();
+app.listen(PORT, function () {
+  console.log('Listening on port ' + PORT);
+});
