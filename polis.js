@@ -9,7 +9,9 @@ app.listen(LISTENING_PORT);
 handlers = {"POST": PostHandler, "GET": GetHandler};
 
 function handler (req, res) {
+  console.log('req.method: ', req.method)
   var handler = new handlers[req.method];
+  console.log('handler: ', handler)
 
   handler.handle(req, res);
 
@@ -20,6 +22,7 @@ function handler (req, res) {
 function PostHandler() { }
 
 PostHandler.prototype.handle = function(req, res) {
+  console.log('handling POST');
   res.writeHead(STATUS_CODE, {'Content-Type': 'application/json'});
 
   var data = '';
