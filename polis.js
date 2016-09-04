@@ -17,7 +17,7 @@ router.post('/webhook', function (req, res) {
   
     switch (intent) {
         case "welcome":
-            res.json(performRequest('http://ip.jsontest.com/','dfasd','asdfas','dfa'));
+            res.json(performRequest('fsdfsd','dfasd','asdfas','dfa'));
             break;
         case "Billing":
             res.json(billInquiry());
@@ -38,10 +38,10 @@ function performRequest(endpoint, method, data, success) {
   var querystring = require('querystring');
 var https = require('https');
 
-var host = 'www.thegamecrafter.com';
-var username = 'JonBob';
-var password = '*****';
-var apiKey = '*****';
+var host = 'http://ip.jsontest.com/';
+var username = '';
+var password = '';
+var apiKey = '';
 var sessionId = null;
 var deckId = '68DC5A20-EE4F-11E2-A00C-0858C0D5C2ED';
 
@@ -87,7 +87,7 @@ var deckId = '68DC5A20-EE4F-11E2-A00C-0858C0D5C2ED';
   
   return{
     
-     speech: dataString,
+     speech: responseObject,
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
