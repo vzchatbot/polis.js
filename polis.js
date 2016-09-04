@@ -26,7 +26,7 @@ var fulcrumMiddlewareConfig = {
 
 app.use('/', fulcrumMiddleware(fulcrumMiddlewareConfig));
 
-app.get('/', function (req, res) {
+app.post('/', function (req, res) {
   //res.send('<html><head><title>Polis.js</title></head><body><h2>polis.js</h2><p>Up and Running!</p></body></html>');
  // res.send('test message');
   res.send({
