@@ -88,7 +88,7 @@ var responseObject='';
   
   return{
     
-     speech: responseObject,
+     speech: data.result,
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
