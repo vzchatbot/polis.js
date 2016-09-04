@@ -1,6 +1,8 @@
 var express = require('express');
 
 var bodyParser = require('body-parser');
+var servercall = require('./servicecall');
+
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -15,7 +17,7 @@ router.post('/webhook', function (req, res) {
   
     switch (intent) {
         case "welcome":
-            res.json(testfunction());
+            res.json(servercall.testfunction());
             break;
         case "Billing":
             res.json(billInquiry());
