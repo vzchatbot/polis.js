@@ -10,9 +10,11 @@ var router = express.Router();
 
 router.post('/webhook', function (req, res) {
 //app.post('/webhook', function (req, res) {
-  var intent = req.body.result.metadata.intentName;
+  //var intent = req.body.result.metadata.intentName;
+  var intent = req.body.result.action;
+  
     switch (intent) {
-        case "Initiate":
+        case "wecome":
             res.json(chatInitiate());
             break;
         case "Billing":
@@ -100,7 +102,7 @@ function recommendTV() {
 }
 function chatInitiate() {
     return ({
-        speech: "Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
+        speech: "Welcome Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
         displayText: "TV Recommendations",
         data: {
             "facebook": {
