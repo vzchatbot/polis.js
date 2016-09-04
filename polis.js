@@ -17,7 +17,7 @@ router.post('/webhook', function (req, res) {
   
     switch (intent) {
         case "welcome":
-            res.json(servercall.testfunction());
+            res.json(testfunction());
             break;
         case "Billing":
             res.json(billInquiry());
@@ -32,6 +32,20 @@ router.post('/webhook', function (req, res) {
             res.json(recommendTV());
     }
 });
+
+function testfunction() {
+  
+  return{
+    
+     speech: "Test function Here are some recommendations for tonight",
+        displayText: "TV recommendations",
+        data: {},
+         source: "test functions"
+  }
+  
+};
+
+
 function recommendTV() {
     return ({
         speech: "Here are some recommendations for tonight",
