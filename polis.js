@@ -6,13 +6,30 @@ var PORT = process.env.PORT || 9000;
 var app = express();
 
 app.post('/webhook', function (req, res) {
-  //res.send('<html><head><title>Polis.js</title></head><body><h2>polis.js</h2><p>Up and Running!</p></body></html>');
- // res.send('test message');
-  return({
- "speech": "Today in Boston: Fair, the temperature is 37 F",
-  "source": "apiai-weather-webhook-sample",
-  "displayText": "Today in Boston: Fair, the temperature is 37 F"});
- 
+var intent = req.body.result.metadata.intentName;
+    switch (intent) {
+        case "Initiate":
+            res.send( {
+                   {
+        speech: "Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
+        displayText: "TV Recommendations",
+        data: {     },
+        source: "Zero Service - app_zero.js"    }
+                
+            };);
+            break;
+        case "Billing":
+            res.json(billInquiry());
+            break;
+        case "yes-initiate":
+            res.json(recommendTV());
+            break;
+        case "Recommendation":
+            res.json(recommendTV());
+            break;
+        default:
+            res.json(recommendTV());
+    }
  
 })
 
