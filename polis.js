@@ -17,7 +17,7 @@ router.post('/webhook', function (req, res) {
   
     switch (intent) {
         case "welcome":
-            res.json(performRequest('test','dfasd','asdfas','dfa'));
+            res.json(performRequest('http://ip.jsontest.com/','dfasd','asdfas','dfa'));
             break;
         case "Billing":
             res.json(billInquiry());
