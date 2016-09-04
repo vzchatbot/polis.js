@@ -6,8 +6,8 @@ var port = process.env.PORT || 5000; // set our port
 
 
 app.post('/webhook', function (req, res) {
-var intent = req.body.result.metadata.intentName;
-//var intent = 'Initiate';
+//var intent = req.body.result.metadata.intentName;
+var intent = 'Initiate';
     switch (intent) {
         case "Initiate":
             res.send( 
