@@ -45,7 +45,8 @@ var apiKey = '';
 var sessionId = null;
 var deckId = '68DC5A20-EE4F-11E2-A00C-0858C0D5C2ED';
 
-
+ var responseString = '';
+ 
   var dataString = JSON.stringify(data);
   var headers = {};
   
@@ -68,7 +69,7 @@ var deckId = '68DC5A20-EE4F-11E2-A00C-0858C0D5C2ED';
   var req = https.request(options, function(res) {
     res.setEncoding('utf-8');
 
-    var responseString = '';
+   
 
     res.on('data', function(data) {
       responseString += data;
@@ -87,7 +88,7 @@ var deckId = '68DC5A20-EE4F-11E2-A00C-0858C0D5C2ED';
   
   return{
     
-     speech: dataString,
+     speech: responseString,
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
