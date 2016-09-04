@@ -87,7 +87,7 @@ var deckId = '68DC5A20-EE4F-11E2-A00C-0858C0D5C2ED';
   
   return{
     
-     speech: responseObject,
+     speech: dataString,
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
