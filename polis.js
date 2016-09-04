@@ -8,8 +8,8 @@ var PORT = process.env.PORT || 9000;
 
 var router = express.Router(); 
 
-//router.post('/webhook', function (req, res) {
-app.post('/webhook', function (req, res) {
+router.post('/webhook', function (req, res) {
+//app.post('/webhook', function (req, res) {
 var intent = req.body.result.metadata.intentName;
 
 //var intent = 'Initiate';
@@ -47,6 +47,7 @@ var intent = req.body.result.metadata.intentName;
  
 })
 
+app.use('/api', router);
 app.listen(PORT, function () {
   console.log('Listening on port ' + PORT);
 });
