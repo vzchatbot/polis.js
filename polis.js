@@ -33,6 +33,27 @@ router.post('/webhook', function (req, res) {
     }
 });
 
+
+function performcall(){
+
+var request = require('request');
+request('http://www.google.com', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        console.log(body) // Print the google web page.
+     }
+})
+return{
+    
+     speech: body,
+        displayText: "TV recommendations",
+        data: {},
+         source: "test functions"
+  }
+
+
+}
+
+
 function performRequest(endpoint, method, data, success) {
   
   var querystring = require('querystring');
