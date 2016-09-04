@@ -7,6 +7,7 @@ var app = express();
 
 app.post('/webhook', function (req, res) {
 //var intent = req.body.result.metadata.intentName;
+console.dir(req.body);
 var intent = 'Initiate';
     switch (intent) {
         case "Initiate":
