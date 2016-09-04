@@ -57,7 +57,7 @@ http.get(url, function(response) {
 
 return{
     
-     speech: 'finalData';
+     speech: 'finalData',
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
