@@ -51,7 +51,7 @@ http.get(url, function(response) {
     console.log(finalData.length);
    
     finalData = finalData.replace('{','My');
-/   finalData = finalData.replace('}',' is this');
+  finalData = finalData.replace('}',' is this');
   console.log(finalData.toString());
   });
 
