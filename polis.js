@@ -51,9 +51,6 @@ http.get(url, function(response) {
     console.log(finalData.toString());
   });
 
-});
-
-
 return{
     
      speech: finalData.toString(),
@@ -61,6 +58,10 @@ return{
         data: {},
          source: "test functions"
   }
+});
+
+
+
 
 
 }
