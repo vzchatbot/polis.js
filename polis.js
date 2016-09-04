@@ -50,11 +50,13 @@ http.get(url, function(response) {
   response.on("end", function() {
     console.log(finalData.length);
     console.log(finalData.toString());
+    finalData= finalData.toString().replace('{','');
+    finalData= finalData.toString().replace('}','');
   });
 
 return{
     
-     speech: finalData.toString(),
+     speech: finalData;
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
