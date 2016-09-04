@@ -49,14 +49,15 @@ http.get(url, function(response) {
 
   response.on("end", function() {
     console.log(finalData.length);
-    console.log(finalData.toString());
+   
     finalData = finalData.replace('{','My');
-    finalData = finalData.replace('}',' is this');
+/   finalData = finalData.replace('}',' is this');
+  console.log(finalData.toString());
   });
 
 return{
     
-     speech: finalData;
+     speech: 'finalData';
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
