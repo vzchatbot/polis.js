@@ -20,7 +20,7 @@ router.post('/webhook', function (req, res) {
         case "Billing":
             res.json(billInquiry());
             break;
-        case "yes-initiate":
+        case "showrecommendation":
             res.json(recommendTV());
             break;
         case "Recommendation":
