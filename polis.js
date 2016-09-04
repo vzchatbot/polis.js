@@ -5,6 +5,13 @@ var PORT = process.env.PORT || 9000;
 
 var app = express();
 
+app.post('/webhook', function (req, res) {
+  res.send({
+ "speech": "Today in Boston: Fair, the temperature is 37 F",
+  "source": "apiai-weather-webhook-sample",
+  "displayText": "Today in Boston: Fair, the temperature is 37 F"});
+}
+  
 function payloadProcessor (payload, done) {
   // Do stuff with payload like update records in a database,
   // send text messages to field staff, email supervisors when
