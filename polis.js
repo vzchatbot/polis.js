@@ -1,6 +1,6 @@
 var express = require('express'); // call express
 var app = express(); // define our app using express
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
 
 var port = process.env.PORT || 5000; // set our port
 
