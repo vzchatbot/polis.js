@@ -65,7 +65,7 @@ return{
 
 
 
-}
+
 
 
 function performRequest(endpoint, method, data, success) {
