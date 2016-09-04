@@ -1,9 +1,9 @@
-var express = require('express'); // call express
-var app = express(); // define our app using express
-//var bodyParser = require('body-parser');
+var express = require('express');
 
-var port = process.env.PORT || 5000; // set our port
 
+var PORT = process.env.PORT || 9000;
+
+var app = express();
 
 app.post('/webhook', function (req, res) {
 //var intent = req.body.result.metadata.intentName;
@@ -16,8 +16,7 @@ var intent = 'Initiate';
         displayText: "TV Recommendations",
         data: {     },
         source: "Zero Service - app_zero.js"    }
-        
-      
+                
             );
             break;
         case "Billing":
