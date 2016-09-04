@@ -14,7 +14,7 @@ router.post('/webhook', function (req, res) {
   var intent = req.body.result.action;
   
     switch (intent) {
-        case "wecome":
+        case "welcome":
             res.json(chatInitiate());
             break;
         case "Billing":
