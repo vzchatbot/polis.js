@@ -38,10 +38,11 @@ function performcall(){
 
 var http = require('http');
 var url = 'http://ip.jsontest.com/';
+ var finalData = "";
+
 
 http.get(url, function(response) {
-  var finalData = "";
-
+ 
   response.on("data", function (data) {
     finalData += data.toString();
   });
