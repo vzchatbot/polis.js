@@ -19,7 +19,8 @@ router.get('/', function (req, res) {
     res.json({ message: 'GET request works' });
 });
 router.post('/webhook', function (req, res) {
-    var intent = req.body.result.metadata.intentName;
+  //  var intent = req.body.result.metadata.intentName;
+    var intent = 'Initiate';
     switch (intent) {
         case "Initiate":
             res.json(chatInitiate());
