@@ -1,11 +1,11 @@
 var express = require('express');
-var fulcrumMiddleware = require('connect-fulcrum-webhook');
+
 
 var PORT = process.env.PORT || 9000;
 
 var app = express();
 
-app.post('/', function (req, res) {
+app.post('/webhook', function (req, res) {
   //res.send('<html><head><title>Polis.js</title></head><body><h2>polis.js</h2><p>Up and Running!</p></body></html>');
  // res.send('test message');
   res.send({
