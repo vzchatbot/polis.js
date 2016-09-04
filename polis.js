@@ -1,5 +1,10 @@
 var express = require('express');
-
+var bodyParser = require('body-parser');
+// configure app to use bodyParser()
+// this will let us get the data from a POST
+console.log('my message server started...');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 var PORT = process.env.PORT || 9000;
 
