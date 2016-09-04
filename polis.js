@@ -16,6 +16,12 @@ var intent = 'Initiate';
         displayText: "TV Recommendations",
         data: {     },
         source: "Zero Service - app_zero.js"    }
+        
+         {
+        speech: "second message. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
+        displayText: "TV Recommendations",
+        data: {     },
+        source: "Zero Service - app_zero.js"    }
                 
             );
             break;
