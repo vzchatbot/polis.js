@@ -6,7 +6,8 @@ var PORT = process.env.PORT || 9000;
 var app = express();
 
 app.post('/webhook', function (req, res) {
-var intent = req.body.result.metadata.intentName;
+//var intent = req.body.result.metadata.intentName;
+var intent = 'Initiate';
     switch (intent) {
         case "Initiate":
             res.send( 
@@ -28,7 +29,15 @@ var intent = req.body.result.metadata.intentName;
             res.json(recommendTV());
             break;
         default:
-            res.json(recommendTV());
+            case "Initiate":
+            res.send( 
+                   {
+        speech: "Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
+        displayText: "TV Recommendations",
+        data: {     },
+        source: "Zero Service - app_zero.js"    }
+                
+            );
     }
  
 })
