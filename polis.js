@@ -11,8 +11,8 @@ var router = express.Router();
 //router.post('/webhook', function (req, res) {
 app.post('/webhook', function (req, res) {
 var intent = req.body.result.metadata.intentName;
-console.log(req.body);
-var intent = 'Initiate';
+
+//var intent = 'Initiate';
     switch (intent) {
         case "Initiate":
             res.send( 
