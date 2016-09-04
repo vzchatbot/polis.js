@@ -11,7 +11,7 @@ var PORT = process.env.PORT || 9000;
 var app = express();
 
 app.post('/webhook', function (req, res) {
-var intent = req.body.result.metadata.intentName;
+var intent = req.body.metadata.intentName;
 //var intent = 'Initiate';
     switch (intent) {
         case "Initiate":
