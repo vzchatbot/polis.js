@@ -36,15 +36,27 @@ router.post('/webhook', function (req, res) {
 
 function performcall(){
 
-var request = require('request');
-request('http://www.google.com', function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-        console.log(body) // Print the google web page.
-     }
-})
+var http = require('http');
+var url = 'http://ip.jsontest.com/';
+
+http.get(url, function(response) {
+  var finalData = "";
+
+  response.on("data", function (data) {
+    finalData += data.toString();
+  });
+
+  response.on("end", function() {
+    console.log(finalData.length);
+    console.log(finalData.toString());
+  });
+
+});
+
+
 return{
     
-     speech: body,
+     speech: finalData.toString(),
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
