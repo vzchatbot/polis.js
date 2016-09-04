@@ -47,7 +47,7 @@ function performRequest(endpoint, method, data, success) {
   req.write(dataString);
   req.end();
 }
-function testfunction (req,res)
+function testfunction ()
 {
   
   return ({
