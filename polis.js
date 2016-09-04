@@ -9,14 +9,14 @@ app.post('/webhook', function (req, res) {
 var intent = req.body.result.metadata.intentName;
     switch (intent) {
         case "Initiate":
-            res.send( {
+            res.send( 
                    {
         speech: "Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
         displayText: "TV Recommendations",
         data: {     },
         source: "Zero Service - app_zero.js"    }
                 
-            };);
+            );
             break;
         case "Billing":
             res.json(billInquiry());
