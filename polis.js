@@ -50,8 +50,8 @@ http.get(url, function(response) {
   response.on("end", function() {
     console.log(finalData.length);
     console.log(finalData.toString());
-    finalData= finalData.toString().replace('{','');
-    finalData= finalData.toString().replace('}','');
+    finalData = finalData.replace('{','My');
+    finalData = finalData.replace('}',' is this');
   });
 
 return{
