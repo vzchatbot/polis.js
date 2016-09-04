@@ -37,7 +37,7 @@ var intent = req.body.result.metadata.intentName;
             case "Initiate":
             res.send( 
                    {
-        speech: "Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
+        speech: "From Default Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
         displayText: "TV Recommendations",
         data: {     },
         source: "Zero Service - app_zero.js"    }
