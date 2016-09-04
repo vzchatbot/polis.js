@@ -149,9 +149,9 @@ function billInquiry() {
                         "text": "Unfortunately, I'm unable to help with that query.  Would you like to talk to an expert?",
                         "buttons": [
                             {
-                                "type": "postback",
+                                "type": "phone_number",
                                 "title": "Talk to an agent",
-                                "payload": "Talk to an agent"
+                                "payload": "+919962560884"
                             },
                             {
                                 "type": "postback",
