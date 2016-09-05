@@ -36,6 +36,7 @@ router.post('/webhook', function (req, res) {
 function callback(body)
 {
 	console.log("inside callback ");
+console.log(body);
 	return body;
 }
 
@@ -54,7 +55,7 @@ console.log("starting performcall");
     			//console.log(body); // Print the google web page.
     			callback(body);
 			myresp = body;
-				console.log("myresp");
+				
 			console.log(myresp);
     			}
     			 else
