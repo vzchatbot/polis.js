@@ -44,12 +44,12 @@ function performcall(){
     if (!error && response.statusCode == 200) {
         //var myresp =JSON.parse(body)
         console.log(body); // Print the google web page.
-        return{
+        return({
               speech: "response from external call",
               displayText: "response",
               data: { },
               source: "perform call fn"
-               }
+               });
      
 	});
 }}
