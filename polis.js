@@ -121,7 +121,7 @@ var responseObject='';
     });
   });
 
-  req.write(responseString);
+  req.write(dataString);
   req.end();
 
   
