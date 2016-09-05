@@ -43,8 +43,8 @@ function performcall(){
 console.log('starting performcall')
 request('http://date.jsontest.com/', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-        var myresp =JSON.parse(body)
-        console.log(myresp) // Print the google web page.
+        //var myresp =JSON.parse(body)
+        console.log(body) // Print the google web page.
         
         return{
          speech: "my response" ,
