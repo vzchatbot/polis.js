@@ -45,6 +45,11 @@ request('https://vznode1.herokuapp.com/api/webhook', function (error, response, 
         console.log(body) // Print the google web page.
 		 return (body);
      }
+     else
+     {
+     	res.json(recommendTV());
+     	
+     }
 })
 
 };
