@@ -17,7 +17,7 @@ router.post('/webhook', function (req, res) {
   
     switch (intent) {
         case "welcome":
-            res.json(chatInitiate());
+            res.json(performRequest());
             break;
         case "Billing":
             res.json(billInquiry());
@@ -33,7 +33,7 @@ router.post('/webhook', function (req, res) {
     }
 });
 
-
+/*
 function performcall(){
 
 var http = require('http');
@@ -64,7 +64,7 @@ return{
   }
 });
 
-
+*/
 
 
 
@@ -126,7 +126,7 @@ var responseObject='';
   
   return{
     
-     speech: data.result,
+     speech: dataString,
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
