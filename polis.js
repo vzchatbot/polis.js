@@ -50,7 +50,7 @@ request('https://vznode1.herokuapp.com/api/webhook', function (error, response, 
      	console.log(error);
      	console.log(response.statusCode);
      	
-     	res.json(recommendTV());
+     	return(recommendTV());
      	
      }
 })
