@@ -43,11 +43,11 @@ function performcall(){
 console.log('starting performcall');
 request('http://date.jsontest.com/', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-        console.log(body) // Print the google web page.
+        console.log(body) 
         //var myresp =JSON.parse(body);
-        return{
-         speech: "my response" ,
-        displayText:"myresp" ,
+        return ({
+        speech: "From perform call Welcome Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
+        displayText: "TV Recommendations",
         data: {
             "facebook": {
                 "attachment": {
@@ -55,7 +55,7 @@ request('http://date.jsontest.com/', function (error, response, body) {
                     "payload": {
                         "template_type": "button",
                         "text": "Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
-                         "buttons": [
+                        "buttons": [
                             {
                                 "type": "postback",
                                 "title": "Yes",
@@ -71,13 +71,10 @@ request('http://date.jsontest.com/', function (error, response, body) {
                 }
             }
         },
-         source: "test functions"
-  }
-     }
-})
-
-
-};
+        source: "Zero Service - app_zero.js"
+    });
+});
+}};
 
 
 
