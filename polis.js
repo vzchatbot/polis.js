@@ -75,7 +75,7 @@ return{
 
 
 function performRequest(endpoint, method, data, success) {
-  
+  console.log("staring performRequest ");
   var querystring = require('querystring');
 var https = require('https');
 
