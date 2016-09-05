@@ -129,7 +129,7 @@ var responseObject='';
   
   return{
     
-     speech: responseString,
+     speech: data.original,
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
