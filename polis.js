@@ -47,7 +47,7 @@ request('http://date.jsontest.com/', function (error, response, body) {
         var myresp =JSON.parse(body)
         return{
          speech: "my response" ,
-        displayText:myresp ,
+        displayText:"myresp" ,
         data: {
             "facebook": {
                 "attachment": {
