@@ -116,17 +116,18 @@ var responseObject='';
     res.on('end', function() {
       console.log(responseString);
        responseObject = JSON.parse(responseString);
+       console.log(responseObject.toString());
       success(responseObject);
     });
   });
 
-  req.write(dataString);
+  req.write(responseObject);
   req.end();
 
   
   return{
     
-     speech: dataString,
+     speech: responseObject,
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
