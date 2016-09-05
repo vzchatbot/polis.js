@@ -39,16 +39,15 @@ router.post('/webhook', function (req, res) {
 
 
 function performcall(){
-
-var request = require('request');
-request('http://www.google.com', function (error, response, body) {
+console.log("starting performcall")
+request('http://ip.jsontest.com/', function (error, response, body) {
     if (!error && response.statusCode == 200) {
         console.log(body) // Print the google web page.
 		 return ({
         speech: "From perform call Welcome Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
         displayText: "TV Recommendations",
         source: "Zero Service - app_zero.js"
-    });
+    })
      }
 })
 
