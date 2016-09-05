@@ -33,7 +33,7 @@ router.post('/webhook', function (req, res) {
     }
 });
 
-/*
+
 function performcall(){
 
 var http = require('http');
@@ -57,7 +57,7 @@ http.get(url, function(response) {
 
 return{
     
-     speech: finalData.toString(),
+     speech: data.toString(),
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
@@ -65,7 +65,7 @@ return{
 });
 
 
-*/
+
 
 
 
