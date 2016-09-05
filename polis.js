@@ -39,20 +39,23 @@ router.post('/webhook', function (req, res) {
 
 
 function performcall(){
-  console.log('starting performcall');
-  request('http://date.jsontest.com/', function (error, response, body) {
+
+console.log('starting performcall')
+request('http://date.jsontest.com/', function (error, response, body) {
     if (!error && response.statusCode == 200) {
+        console.log(body) // Print the google web page.
         //var myresp =JSON.parse(body)
-        console.log(body); // Print the google web page.
-        return({
-              speech: "response from external call",
-              displayText: "response",
-              data: { },
-              source: "perform call fn"
-               });
-     
-	});
-}}
+        return{
+         speech: "my response" ,
+        displayText:"myresp" ,
+        data: {},
+         source: "test functions"
+  }
+     }
+})
+
+
+};
 
 
 
