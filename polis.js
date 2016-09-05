@@ -114,6 +114,7 @@ var responseObject='';
 
     res.on('data', function(data) {
       responseString += data;
+         console.log('responseString in data:'+responseString);
     });
 
     res.on('end', function() {
@@ -125,7 +126,7 @@ var responseObject='';
       success(responseObject);
     });
   });
-
+ console.log('endpoint:'+ endpoint);
   req.write(dataString);
   req.end();
 
