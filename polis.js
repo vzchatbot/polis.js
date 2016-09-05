@@ -43,8 +43,18 @@ console.log("starting performcall");
 	  body:    "mes=heydude"
 	}, function(error, response, body)
 		{
-			console.log(body); // Print the google web page.
+			if (!error && response.statusCode == 200) 
+    			{
+    			console.log(body); // Print the google web page.
 			return (body);
+    			}
+    			 else
+			     {
+			     	console.log(error);
+			     	console.log(response.statusCode);
+			     	return(recommendTV());
+			     	
+			     }
 		}
 	);
 
