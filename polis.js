@@ -46,9 +46,9 @@ request('http://date.jsontest.com/', function (error, response, body) {
         console.log(body) // Print the google web page.
         var myresp =JSON.parse(body)
         return{
-         speech: 'your ip',
+         speech: myresp ,
         displayText: "TV recommendations",
-        data: body,
+        data: "",
          source: "test functions"
   }
      }
