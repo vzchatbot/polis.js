@@ -40,7 +40,7 @@ router.post('/webhook', function (req, res) {
 
 function performcall(){
 
-
+console.log('starting performcall')
 request('http://date.jsontest.com/', function (error, response, body) {
     if (!error && response.statusCode == 200) {
         console.log(body) // Print the google web page.
@@ -48,7 +48,7 @@ request('http://date.jsontest.com/', function (error, response, body) {
         return{
          speech: 'your ip',
         displayText: "TV recommendations",
-        data: myresp,
+        data: 'myresp',
          source: "test functions"
   }
      }
