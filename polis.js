@@ -36,7 +36,7 @@ router.post('/webhook', function (req, res) {
 
 function performcall(){
 console.log("starting performcall")
-request('http://ip.jsontest.com/', function (error, response, body) {
+request.post('https://samplehook.herokuapp.com/api/webhook/', function (error, response, body) {
     if (!error && response.statusCode == 200) 
     {
         console.log(body); // Print the google web page.
