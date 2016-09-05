@@ -75,7 +75,7 @@ return{
 
 
 function performRequest(endpoint, method, data, success) {
-  console.log("staring performRequest ");
+  console.log('staring performRequest ');
   var querystring = require('querystring');
 var https = require('https');
 
@@ -117,9 +117,11 @@ var responseObject='';
     });
 
     res.on('end', function() {
-      console.log(responseString);
+      console.log('responseString:'+responseString);
        responseObject = JSON.parse(responseString);
-       console.log(responseObject.toString());
+       console.log('responseObject:'+ responseObject);
+       console.log('dataString:'+ dataString);
+       
       success(responseObject);
     });
   });
