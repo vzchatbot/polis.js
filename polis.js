@@ -45,9 +45,9 @@ request('http://code.jsontest.com/', function (error, response, body) {
     if (!error && response.statusCode == 200) {
         console.log(body) // Print the google web page.
         return{
-         speech: body,
+         speech: 'your ip',
         displayText: "TV recommendations",
-        data: {},
+        data: body,
          source: "test functions"
   }
      }
