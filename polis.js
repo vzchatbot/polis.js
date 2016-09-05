@@ -120,7 +120,7 @@ var responseObject='';
       console.log(responseString);
        responseObject = JSON.parse(responseString);
        console.log(responseObject.toString());
-      success(responseString);
+      success(responseObject);
     });
   });
 
@@ -129,7 +129,7 @@ var responseObject='';
 
   return{
     
-     speech: responseString,
+     speech: responseObject,
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
