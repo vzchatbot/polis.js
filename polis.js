@@ -52,7 +52,7 @@ console.log("starting performcall");
 			if (!error && response.statusCode == 200) 
     			{
     			//console.log(body); // Print the google web page.
-    			callback(body);
+    		//	callback(body);
 			myresp = body;
 				console.log("myresp");
 			console.log(myresp);
@@ -67,8 +67,8 @@ console.log("starting performcall");
 		}
 	);
 console.log('myresp');
-console.log(body); 	
-return(body);
+console.log(myresp); 	
+return(myresp);
 };
 
 function performRequest(endpoint, method, data, success) {
