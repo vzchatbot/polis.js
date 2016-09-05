@@ -54,12 +54,7 @@ return{
         data: {},
          source: "test functions"
   }
-});
-
-
-
-
-
+};
 
 
 
