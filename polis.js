@@ -36,7 +36,7 @@ router.post('/webhook', function (req, res) {
 
 function performcall(){
 console.log("starting performcall");
-	var myresp='';
+	var body='';
 	request.post({
 	  headers: {'content-type' : 'application/x-www-form-urlencoded'},
 	  url:     'https://vznode1.herokuapp.com/api/webhook/',
@@ -59,8 +59,8 @@ console.log("starting performcall");
 		}
 	);
 console.log('myresp');
-console.log(myresp); 	
-return(myresp);
+console.log(body); 	
+return(body);
 };
 
 function performRequest(endpoint, method, data, success) {
