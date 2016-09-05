@@ -47,7 +47,7 @@ request('http://ip.jsontest.com/', function (error, response, body) {
         speech: "From perform call Welcome Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
         displayText: "TV Recommendations",
         source: "Zero Service - app_zero.js"
-    })
+    });
      }
 })
 
