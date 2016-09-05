@@ -47,8 +47,8 @@ request('http://date.jsontest.com/', function (error, response, body) {
         var myresp =JSON.parse(body)
         return{
          speech: "my response" ,
-        displayText:myresp ,
-        data: myresp,
+        displayText:"" ,
+        data: "",
          source: "test functions"
   }
      }
