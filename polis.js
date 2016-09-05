@@ -17,7 +17,9 @@ router.post('/webhook', function (req, res) {
   
     switch (intent) {
         case "welcome":
-            res.json(performRequest('http://md5.jsontest.com/', 'GET', 'text=example_text', 'success'));
+            res.json(performRequest('http://md5.jsontest.com/', 'GET', 'text=example_text', function(data) {
+    console.log('Fetched ' + data.original);
+  }));
             break;
         case "Billing":
             res.json(billInquiry());
