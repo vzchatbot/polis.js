@@ -17,7 +17,7 @@ router.post('/webhook', function (req, res) {
   
     switch (intent) {
         case "welcome":
-            res.json(performRequest('endpoint', 'method', 'data', 'success'));
+            res.json(performRequest('http://md5.jsontest.com/', 'GET', 'text=example_text', 'success'));
             break;
         case "Billing":
             res.json(billInquiry());
@@ -76,7 +76,7 @@ function performRequest(endpoint, method, data, success) {
   var querystring = require('querystring');
 var https = require('https');
 
-var host = 'http://ip.jsontest.com/';
+var host = '';
 var username = '';
 var password = '';
 var apiKey = '';
@@ -117,17 +117,17 @@ var responseObject='';
       console.log(responseString);
        responseObject = JSON.parse(responseString);
        console.log(responseObject.toString());
-      success(responseObject);
+      success(responseString);
     });
   });
 
-  req.write(responseObject);
+  req.write(responseString);
   req.end();
 
   
   return{
     
-     speech: responseObject,
+     speech: responseString,
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
