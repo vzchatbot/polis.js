@@ -19,6 +19,13 @@ router.post('/webhook', function (req, res) {
         case "welcome":
             res.json(performRequest('http://md5.jsontest.com/', 'GET', 'text=example_text', function(data) {
     console.log('Fetched ' + data.original);
+     return{
+    
+     speech: data.original,
+        displayText: "TV recommendations",
+        data: {},
+         source: "test functions"
+  }
   }));
             break;
         case "Billing":
@@ -127,15 +134,7 @@ var responseObject='';
   req.end();
 
   
-  return{
-    
-     speech: data.original,
-        displayText: "TV recommendations",
-        data: {},
-         source: "test functions"
-  }
-  
-};
+ };
 
 
 function recommendTV() {
