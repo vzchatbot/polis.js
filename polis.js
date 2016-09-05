@@ -46,8 +46,8 @@ console.log("starting performcall");
 			console.log("inside fn call");
 			if (!error && response.statusCode == 200) 
     			{
-    			//console.log(body); // Print the google web page.
-			myresp=body;
+    			console.log(body); // Print the google web page.
+		
     			}
     			 else
 			     {
