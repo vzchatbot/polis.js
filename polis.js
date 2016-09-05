@@ -46,12 +46,6 @@ console.log("starting performcall");
 			console.log(body); // Print the google web page.
 			return (body);
 		}
-	else
-	     	{
-	     	console.log(error);
-	     	console.log(response.statusCode);
-	     	return(recommendTV());
-		 }
 	);
 
 /*request.post('https://samplehook.herokuapp.com/api/webhook/', function (error, response, body) {
