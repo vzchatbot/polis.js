@@ -114,27 +114,27 @@ var responseObject='';
 
     res.on('data', function(data) {
       responseString += data;
-         console.log('responseString in data:'+responseString);
+   
     });
 
     res.on('end', function() {
       console.log('responseString:'+responseString);
        responseObject = JSON.parse(responseString);
-       console.log('responseObject:'+ responseObject);
-       console.log('dataString:'+ dataString);
+       //console.log('responseObject:'+ responseObject);
+       //console.log('dataString:'+ dataString);
        
       success(responseObject);
     });
   });
- console.log('endpoint:'+ endpoint);
+//console.log('endpoint:'+ endpoint);
   req.write(dataString);
   req.end();
 
   return{
     
-     speech: responseObject,
+     speech:'response from call' ,
         displayText: "TV recommendations",
-        data: {},
+        data: responseObject,
          source: "test functions"
   }
  };
