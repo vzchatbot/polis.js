@@ -17,10 +17,11 @@ router.post('/webhook', function (req, res) {
   
     switch (intent) {
         case "welcome":
-            res.json(performRequest('http://code.jsontest.com/', 'GET', 'mytestdata', function(data) {
+           /* res.json(performRequest('http://code.jsontest.com/', 'GET', 'mytestdata', function(data) {
     console.log('Fetched ' + data);
      
-  }));
+  }));*/
+          res.json(performcall());
             break;
         case "Billing":
             res.json(billInquiry());
@@ -36,38 +37,26 @@ router.post('/webhook', function (req, res) {
     }
 });
 
-/*
+
 function performcall(){
 
-var http = require('http');
-var url = 'http://ip.jsontest.com/';
- var finalData = "";
-
-
-http.get(url, function(response) {
- 
-  response.on("data", function (data) {
-    finalData += data.toString();
-  });
-
-  response.on("end", function() {
-    console.log(finalData.length);
-   
-    //finalData = finalData.replace('{','My');
-  //finalData = finalData.replace('}',' is this');
-  console.log(finalData.toString());
-  });
+var request = require('request');
+request('http://code.jsontest.com/', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        console.log(body) // Print the google web page.
+     }
+})
 
 return{
     
-     speech: data.toString(),
+     speech: body,
         displayText: "TV recommendations",
         data: {},
          source: "test functions"
   }
 });
 
-*/
+
 
 
 
