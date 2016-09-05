@@ -44,11 +44,11 @@ console.log('starting performcall')
 request('http://date.jsontest.com/', function (error, response, body) {
     if (!error && response.statusCode == 200) {
         console.log(body) // Print the google web page.
-        var myresp =JSON.parse(responseString)
+        var myresp =JSON.parse(body)
         return{
          speech: 'your ip',
         displayText: "TV recommendations",
-        data: 'myresp',
+        data: body,
          source: "test functions"
   }
      }
