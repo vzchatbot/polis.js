@@ -44,11 +44,33 @@ console.log('starting performcall')
 request('http://date.jsontest.com/', function (error, response, body) {
     if (!error && response.statusCode == 200) {
         console.log(body) // Print the google web page.
-        //var myresp =JSON.parse(body)
+        var myresp =JSON.parse(body)
         return{
          speech: "my response" ,
-        displayText:"myresp" ,
-        data: {},
+        displayText:myresp ,
+        data: {
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": "Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
+                         "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Yes",
+                                "payload": "Yes"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "No",
+                                "payload": "No"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
          source: "test functions"
   }
      }
