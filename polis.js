@@ -36,7 +36,7 @@ router.post('/webhook', function (req, res) {
 
 function performcall(){
 console.log("starting performcall");
-	
+	var myresp='';
 	request.post({
 	  headers: {'content-type' : 'application/x-www-form-urlencoded'},
 	  url:     'https://vznode1.herokuapp.com/api/webhook/',
@@ -47,18 +47,18 @@ console.log("starting performcall");
 			if (!error && response.statusCode == 200) 
     			{
     			console.log(body); // Print the google web page.
-			return (body);
+			myresp=body;
     			}
     			 else
 			     {
 			     	console.log(error);
 			     	console.log(response.statusCode);
-			     	return(recommendTV());
+			     	myresp=recommendTV();
 			     	
 			     }
 		}
 	);
-
+return(myresp);
 };
 
 function performRequest(endpoint, method, data, success) {
