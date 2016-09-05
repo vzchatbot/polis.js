@@ -74,7 +74,7 @@ request('http://date.jsontest.com/', function (error, response, body) {
         source: "Zero Service - app_zero.js"
     });
 }
-});
+})
 };
 
 
