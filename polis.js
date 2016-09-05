@@ -42,11 +42,14 @@ function performcall(){
 console.log("starting performcall")
 request('https://vznode1.herokuapp.com/api/webhook', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-        console.log(body) // Print the google web page.
+        console.log(body); // Print the google web page.
 		 return (body);
      }
      else
      {
+     	console.log(error);
+     	console.log(response.statusCode);
+     	
      	res.json(recommendTV());
      	
      }
