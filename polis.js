@@ -36,6 +36,7 @@ router.post('/webhook', function (req, res) {
 function callback(body)
 {
 	console.log("inside callback ");
+res.json(body);
 console.log(body);
 	return body;
 }
