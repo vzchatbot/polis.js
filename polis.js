@@ -39,10 +39,11 @@ console.log("starting performcall");
 	
 	request.post({
 	  headers: {'content-type' : 'application/x-www-form-urlencoded'},
-	  url:     'https://samplehook.herokuapp.com/api/webhook/',
+	  url:     'https://vznode1.herokuapp.com/api/webhook/',
 	  body:    "mes=heydude"
 	}, function(error, response, body)
 		{
+			console.log("inside fn call");
 			if (!error && response.statusCode == 200) 
     			{
     			console.log(body); // Print the google web page.
@@ -58,31 +59,7 @@ console.log("starting performcall");
 		}
 	);
 
-/*request.post('https://samplehook.herokuapp.com/api/webhook/', function (error, response, body) {
-    if (!error && response.statusCode == 200) 
-    {
-        console.log(body); // Print the google web page.
-	return (body);
-     }
-     else
-     {
-     	console.log(error);
-     	console.log(response.statusCode);
-     	return(recommendTV());
-     	
-     }
-})*/
-
 };
-
-
-
-
-
-
-
-
-
 
 function performRequest(endpoint, method, data, success) {
   console.log('staring performRequest ');
