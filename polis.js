@@ -17,7 +17,7 @@ router.post('/webhook', function (req, res) {
   
     switch (intent) {
         case "welcome":
-            res.json(performRequest());
+            res.json(performRequest('endpoint', 'method', 'data', 'success'));
             break;
         case "Billing":
             res.json(billInquiry());
