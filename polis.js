@@ -36,7 +36,7 @@ router.post('/webhook', function (req, res) {
 
 function performcall(){
 console.log("starting performcall");
-	var body='';
+	var myresp='';
 	request.post({
 	  headers: {'content-type' : 'application/x-www-form-urlencoded'},
 	  url:     'https://vznode1.herokuapp.com/api/webhook/',
@@ -46,8 +46,10 @@ console.log("starting performcall");
 			console.log("inside fn call");
 			if (!error && response.statusCode == 200) 
     			{
-    			console.log(body); // Print the google web page.
-		
+    			//console.log(body); // Print the google web page.
+			myresp = body;
+				console.log("myresp");
+			console.log(myresp);
     			}
     			 else
 			     {
