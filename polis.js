@@ -337,7 +337,7 @@ function pgmDetails() {
 }
 function chatInitiate() {
     return ({
-        speech: "Hi, I am Verizon Entertainment bot.  Would you like to see some TV Recommendations for tonight?",
+        speech: "Hi, I am Verizon Entertainment bot.  I can help you with  TV Recommendations or Recording a program. What you like to do?",
         displayText: "TV Recommendations",
         data: {
             "facebook": {
@@ -345,23 +345,17 @@ function chatInitiate() {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": "Hi, I am Verizon Entertainment bot.  Would you like to see some TV Recommendations for tonight?",
-                        //"template_type":"generic",
-                        //"elements":[
-                        //	{
-                        //		"title":"Hi,there. I am Ent, an entertainment bot.",
-                        //		"image_url":"https://petersfancybrownhats.com/company_image.png",
-                        //		"subtitle":"Would you like to see some recommendations for tonight?",
+                        "text": "Hi, I am Verizon Entertainment bot.  I can help you with  TV Recommendations or Recording a program. What you like to do?",
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Yes",
+                                "title": "TV Recommendations",
                                 "payload": "Yes"
                             },
                             {
                                 "type": "postback",
-                                "title": "No, Let me tell",
-                                "payload": "No"
+                                "title": "Record",
+                                "payload": "I want to record"
                             }
                         ]
                     }
