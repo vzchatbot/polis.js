@@ -44,8 +44,17 @@ console.log(body);
 	return body;
 }
 
+function performcall1(req,res){
+	
+	res.end('welcome');
+}
+
+
 function performcall(req,res){
 console.log("starting performcall");
+
+console.log(performcall1());
+
 	var myresp='';
 	myresp=request.post({
 	  headers: {'content-type' : 'application/x-www-form-urlencoded'},
