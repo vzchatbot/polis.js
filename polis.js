@@ -290,7 +290,7 @@ function chatInitiate() {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": "Hi,there. I am Ent, an entertainment bot.  Would you like to see some recommendations for tonight?",
+                        "text": "Hi, I am Verizon Entertainment bot.  Would you like to see some TV Recommendations for tonight?",
                         //"template_type":"generic",
                         //"elements":[
                         //	{
