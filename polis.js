@@ -28,6 +28,9 @@ router.post('/webhook', function (req, res) {
         case "Recommendation":
             res.json(recommendTV());
             break;
+        case "record":
+            res.json(record());
+            break;
         case "externalcall":
             res.json(performcall());
             break;
@@ -43,6 +46,46 @@ function callback(body)
 console.log(body);
 	return body;
 }
+
+function record()
+{
+var respstr ='Your recording for' +req.body.result.parameters.Programs +'scheduled.';
+ return ({
+        speech: respstr + "  Would you like to see some other TV Recommendations for tonight?",
+        displayText: "TV Recommendations",
+        data: {
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": respstr + "  Would you like to see some other TV Recommendations for tonight?",
+                        //"template_type":"generic",
+                        //"elements":[
+                        //	{
+                        //		"title":"Hi,there. I am Ent, an entertainment bot.",
+                        //		"image_url":"https://petersfancybrownhats.com/company_image.png",
+                        //		"subtitle":"Would you like to see some recommendations for tonight?",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Yes",
+                                "payload": "Yes"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "No, Let me tell",
+                                "payload": "No"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        source: "Zero Service - app_zero.js"
+    });
+}
+
 
 function performcall1(req,res){
 	
