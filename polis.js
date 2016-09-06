@@ -234,7 +234,7 @@ function chatInitiate() {
                             },
                             {
                                 "type": "postback",
-                                "title": "No",
+                                "title": "No, Let me tell",
                                 "payload": "No"
                             }
                         ]
