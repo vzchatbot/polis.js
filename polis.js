@@ -28,6 +28,9 @@ router.post('/webhook', function (req, res) {
         case "Recommendation":
             res.json(recommendTV());
             break;
+        case "externalcall":
+            res.json(performcall());
+            break;
         default:
             res.json(recommendTV());
     }
@@ -41,7 +44,7 @@ console.log(body);
 	return body;
 }
 
-function performcall(){
+function performcall(req,res){
 console.log("starting performcall");
 	var myresp='';
 	myresp=request.post({
@@ -70,7 +73,7 @@ console.log("starting performcall");
 	);
 console.log('myresp');
 console.log(myresp); 	
-return(myresp);
+res.end(myresp);
 };
 
 function performRequest(endpoint, method, data, success) {
