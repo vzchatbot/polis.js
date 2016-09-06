@@ -29,7 +29,7 @@ router.post('/webhook', function (req, res) {
             res.json(recommendTV());
             break;
         case "record":
-            res.json(record());
+            res.json(record(res));
             break;
         case "externalcall":
             res.json(performcall());
@@ -47,9 +47,9 @@ console.log(body);
 	return body;
 }
 
-function record()
+function record(apires)
 {
-var respstr ='Your recording for' +req.body.result.parameters.Programs +'scheduled.';
+var respstr ='Your recording for' + apires.body.result.parameters.Programs +'scheduled.';
  return ({
         speech: respstr + "  Would you like to see some other TV Recommendations for tonight?",
         displayText: "TV Recommendations",
