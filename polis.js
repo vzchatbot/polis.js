@@ -49,7 +49,7 @@ console.log(body);
 
 function record(apireq)
 {
-var respstr ='Your recording for' + apireq.body.result.parameters.Programs +'scheduled.';
+var respstr ='Your recording for ' + apireq.body.result.parameters.Programs +' scheduled at '+ apireq.body.result.parameters.TimeofPgm ;
  return ({
         speech: respstr + "  Would you like to see some other TV Recommendations for tonight?",
         displayText: "TV Recommendations",
