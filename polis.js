@@ -206,7 +206,7 @@ console.log(performcall1());
 
 function callapi(callback){
 	request.post( 
-        'http://vzbotapi.azurewebsites.net/api/values' (http://vzbotapi.azurewebsites.net/api/values%27) , 
+        'http://vzbotapi.azurewebsites.net/api/values', 
         function (error, response, body) { 
             if (!error && response.statusCode == 200) { 
                 callback(body); 
