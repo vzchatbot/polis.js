@@ -31,6 +31,9 @@ router.post('/webhook', function (req, res) {
         case "record":
             res.json(record(req));
             break;
+        case "record":
+            res.json(upsell(req));
+            break;
         case "externalcall":
             res.json(performcall());
             break;
