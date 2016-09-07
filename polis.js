@@ -229,9 +229,10 @@ console.log(performcall1());
 };
 
 function callapi(callback){
+//http://vzbotapi.azurewebsites.net/api/values
 	request.post( 
-        'http://vzbotapi.azurewebsites.net/api/values', 
-        function (error, response, body) { 
+        'https://vznode1.herokuapp.com/api/webhook/', 
+         function (error, response, body) { 
             if (!error && response.statusCode == 200) { 
                 callback(body); 
             } 
