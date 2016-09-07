@@ -35,7 +35,11 @@ router.post('/webhook', function (req, res) {
             res.json(upsell(req));
             break;
         case "externalcall":
-            res.json(performcall());
+           res.json(  recommendTVNew(function (str) { 
+               console.log("inside showrecommendation ");
+               var newstr = JSON.stringify(str);
+               res.json(newstr);                    }); 
+                   );
             break;
         default:
             res.json(recommendTV());
@@ -199,6 +203,19 @@ console.log(performcall1());
 		}
 	);
 
+};
+
+function callapi(callback){
+	request.post( 
+        'http://vzbotapi.azurewebsites.net/api/values' (http://vzbotapi.azurewebsites.net/api/values%27) , 
+        function (error, response, body) { 
+            if (!error && response.statusCode == 200) { 
+                callback(body); 
+            } 
+        } 
+    );
+	
+	
 };
 
 function performRequest(endpoint, method, data, success) {
