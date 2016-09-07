@@ -174,7 +174,7 @@ console.log("starting performcall");
 console.log(performcall1());
 
 	var myresp='';
-	myresp=request.post({
+	return request.post({
 	  headers: {'content-type' : 'application/x-www-form-urlencoded'},
 	  url:     'https://vznode1.herokuapp.com/api/webhook/',
 	  body:    "mes=heydude"
