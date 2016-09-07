@@ -35,15 +35,39 @@ router.post('/webhook', function (req, res) {
             res.json(upsell(req));
             break;
         case "externalcall":
-            callapi(function (str) { 
-               console.log("inside showrecommendation ");
-               var newstr = JSON.stringify(str);
-               res.json(str);                    });
+            recommendTVNew(function (str) { 
+                console.log("inside showrecommendation "); 
+                res.json(recommendTVNew1(str)); 
+            }); 
+
             break;
         default:
             res.json(recommendTV());
     }
 });
+
+
+function recommendTVNew(callback) { 
+     request.post( 
+         'http://vzbotapi.azurewebsites.net/api/values', 
+         function (error, response, body) { 
+             if (!error && response.statusCode == 200) { 
+                 callback(body); 
+             } 
+         } 
+     ); 
+  } 
+ function recommendTVNew1(apiresp) { 
+     return ({ 
+         speech: "Here are some recommendations for tonight", 
+         displayText: "TV recommendations", 
+         data: "{"+apiresp+"}", 
+         source: "Zero Service - app_zero.js" 
+     }); 
+ } 
+
+
+
 
 function callback(body)
 {
