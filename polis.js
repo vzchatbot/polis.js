@@ -49,6 +49,43 @@ console.log(body);
 
 function record(apireq)
 {
+	
+var channel = apireq.body.result.parameters.Channel;
+
+if (channel == 'HBO')
+{
+return ({
+        speech: " Sorry you are not subscribed to " + channel +". Would you like to subscribe " + channel + "?",
+        displayText: "Subscribe",
+        data: {
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": " Sorry you are not subscribed to " + channel +". Would you like to subscribe " + channel + "?",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Subscribe",
+                                "payload": "Subscribe"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "No, I'll do it later ",
+                                "payload": "No Subscribe"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        source: "Zero Service - app_zero.js"
+    });	
+	
+}
+else	
+{	
 var respstr ='Your recording for ' + apireq.body.result.parameters.Programs +' scheduled at '+ apireq.body.result.parameters.TimeofPgm ;
  return ({
         speech: respstr + "  Would you like to see some other TV Recommendations for tonight?",
@@ -84,6 +121,7 @@ var respstr ='Your recording for ' + apireq.body.result.parameters.Programs +' s
         },
         source: "Zero Service - app_zero.js"
     });
+}
 }
 
 
