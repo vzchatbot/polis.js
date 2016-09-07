@@ -35,11 +35,10 @@ router.post('/webhook', function (req, res) {
             res.json(upsell(req));
             break;
         case "externalcall":
-           res.json(  recommendTVNew(function (str) { 
+            recommendTVNew(function (str) { 
                console.log("inside showrecommendation ");
                var newstr = JSON.stringify(str);
                res.json(newstr);                    }); 
-                   );
             break;
         default:
             res.json(recommendTV());
