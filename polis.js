@@ -198,9 +198,7 @@ console.log(performcall1());
 			     }
 		}
 	);
-console.log('myresp');
-console.log(myresp); 	
-res.end(myresp);
+
 };
 
 function performRequest(endpoint, method, data, success) {
