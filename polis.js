@@ -64,7 +64,7 @@ function recommendTVNew(callback) {
      return ({ 
 	         speech: "Here are some recommendations for tonight", 
          displayText: "TV recommendations", 
-         data:  jsonresp.facebook, 
+         data:  jsonresp.facebook[0], 
          source: "Zero Service - app_zero.js" 
      }); 
  } 
