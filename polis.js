@@ -63,7 +63,7 @@ function recommendTVNew(callback) {
      return ({ 
          speech: "Here are some recommendations for tonight", 
          displayText: "TV recommendations", 
-         data: "{"+apiresp+"}", 
+         data: apiresp, 
          source: "Zero Service - app_zero.js" 
      }); 
  } 
