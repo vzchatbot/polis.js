@@ -39,7 +39,7 @@ router.post('/webhook', function (req, res) {
                 console.log("inside showrecommendation "); 
                 res.json(recommendTVNew1(str)); 
             }); 
-
+https://github.com/hramprasath
             break;
         default:
             res.json(recommendTV());
@@ -64,7 +64,7 @@ function recommendTVNew(callback) {
      return ({ 
 	         speech: "Here are some recommendations for tonight", 
          displayText: "TV recommendations", 
-         data:  jsonresp.facebook[0], 
+         data:  jsonresp, 
          source: "Zero Service - app_zero.js" 
      }); 
  } 
