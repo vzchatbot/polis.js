@@ -60,10 +60,11 @@ function recommendTVNew(callback) {
      ); 
   } 
  function recommendTVNew1(apiresp) { 
+ 	   var jsonresp = JSON.parse(apiresp);
      return ({ 
          speech: "Here are some recommendations for tonight", 
          displayText: "TV recommendations", 
-         data: apiresp, 
+         data: jsonresp, 
          source: "Zero Service - app_zero.js" 
      }); 
  } 
