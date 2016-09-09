@@ -58,7 +58,7 @@ function recommendTVNew(callback) {
              	console.log(body);
                  callback(body); 
              } 
-             else 	console.log('error: ' + error);
+             else 	console.log('error: ' + error + 'response:' + response + 'body:' + body);
          } 
      ); 
   } 
