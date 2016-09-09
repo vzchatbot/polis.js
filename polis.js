@@ -53,8 +53,10 @@ function recommendTVNew(callback) {
      request.post( 
          ' http://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx', 
          '{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}',
-         function (error, response, body) { 
+         function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
+             	console.log('inside external call success');
+             	console.log(body);
                  callback(body); 
              } 
          } 
