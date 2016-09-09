@@ -49,9 +49,10 @@ https://github.com/hramprasath
 
 function recommendTVNew(callback) { 
      
-     //http://vzbotapi.azurewebsites.net/api/values
+     //http://vzbotapi.azurewebsites.net/api/values  https://vznode1.herokuapp.com/api/webhook/
      request.post( 
-         'https://vznode1.herokuapp.com/api/webhook/', 
+         ' http://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx', 
+         '{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}',
          function (error, response, body) { 
              if (!error && response.statusCode == 200) { 
                  callback(body); 
