@@ -39,7 +39,6 @@ router.post('/webhook', function (req, res) {
                 console.log("inside showrecommendation "); 
                 res.json(recommendTVNew1(str)); 
             }); 
-https://github.com/hramprasath
             break;
         default:
             res.json(recommendTV());
@@ -59,6 +58,7 @@ function recommendTVNew(callback) {
              	console.log(body);
                  callback(body); 
              } 
+             else 	console.log('error: ' + error);
          } 
      ); 
   } 
