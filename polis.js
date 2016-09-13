@@ -54,14 +54,14 @@ function recommendTVNew(callback) {
      //{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}
      request.post( 
          'https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx', 
-         '',
+         '{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}',
          function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
              	console.log('inside external call success');
              	console.log(body);
                  callback(body); 
              } 
-             else 	console.log('error: ' + error + 'response:' + response + 'body:' + body);
+             else 	console.log('error: ' + error + 'response:' + response.statusCode + 'body:' + body);
          } 
      ); 
   } 
