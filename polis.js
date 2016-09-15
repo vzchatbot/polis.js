@@ -54,7 +54,7 @@ function welcomeMsg()
     
     return (
         { speech: " Hey Tabi, Welcome to Verizon!",
-          displayText: " Hey Tabi, Welcome to Verizon!"
+          displayText: " Hey Tabi, Welcome to Verizon!",
         data: {
             "facebook": {
                 "attachment": {
