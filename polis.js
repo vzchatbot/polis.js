@@ -20,11 +20,14 @@ router.post('/webhook', function (req, res) {
         case "welcome":
              res.json(chatInitiate());
             break;
-        case "LinkOptions":
-             res.json(LinkOptions());
-            break;
         case "getStarted":
             res.json(welcomeMsg());
+            break;
+    	case "LinkOptions":
+             res.json(LinkOptions());
+            break;
+        case "MoreOptions":
+             res.json(MoreOptions());
             break;
         case "Billing":
             res.json(billInquiry());
@@ -141,6 +144,30 @@ function welcomeMsg()
                             }
                         ]
                     }
+                }
+            }
+        },
+        source: "Verizon.js"
+      }
+      );	
+	
+}
+    
+function MoreOptions()
+{
+    
+    return (
+        {
+        speech: "You can also ask 'What Channel is ESPN', ' what channel is Game of Thornes is on', 'any romantic comedies on tonight' or type 'support' to get account help from a Verizon representative. ",
+        displayText: "Link Account",
+        data: {
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "text",
+                        "text": "You can also ask 'What Channel is ESPN', ' what channel is Game of Thornes is on', 'any romantic comedies on tonight' or type 'support' to get account help from a Verizon representative. ",
+                   }
                 }
             }
         },
