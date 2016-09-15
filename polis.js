@@ -20,6 +20,9 @@ router.post('/webhook', function (req, res) {
         case "welcome":
              res.json(chatInitiate());
             break;
+        case "LinkOptions":
+             res.json(LinkOptions());
+            break;
         case "getStarted":
             res.json(welcomeMsg());
             break;
@@ -71,6 +74,49 @@ function welcomeInit()
         }
      );	
 }
+
+function LinkOptions()
+{
+    
+    return (
+        {
+        speech: "Are you looking for something to watch, or do you want to see more options? Type or tap below.",
+        displayText: "Link Account",
+        data: {
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": "Are you looking for something to watch, or do you want to see more options? Type or tap below.",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "On Now",
+                                "payload": "On Now"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "On Later",
+                                "payload": "On Later"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "More Options",
+                                "payload": "More Options"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        source: "Verizon.js"
+      }
+      );	
+	
+}
+
+
 
 
 function welcomeMsg()
