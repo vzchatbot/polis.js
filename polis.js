@@ -21,10 +21,8 @@ router.post('/webhook', function (req, res) {
              res.json(chatInitiate());
             break;
         case "getStarted":
-            { 
-            	res.json(welcomeInit());
-            	res.json(welcomeMsg());
-            break;}
+            res.json(welcomeInit());
+            break;
         case "Billing":
             res.json(billInquiry());
             break;
@@ -57,27 +55,21 @@ function welcomeInit()
     return (
       { speech: " Hey Tabi, Welcome to Verizon!",
           displayText: " Hey Tabi, Welcome to Verizon!",
-        data: {
-            "facebook": {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "button",
-                        "text": "Want to know whats on tonight? When your favourite sports team is playing? What time your favourite show is coming on? I can answer almost anything, so try me!                 Link me to your Verizon account and I can send you alerts and important status changes through Messenger ",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Link Account",
-                                "payload": "Link Account"
-                            }
-                        ]
-                    }
-                }
-            }
-        }
+      "data": {
+		"facebook": [
+			{"text": "Here is a video to watch:"},
+			{"sender_action": "typing_on"},
+			{
+			"attachment": {
+			"type": "video",
+			"payload": {"url": "http://path.to/video.mp4"}
+				      }
+			}
+		]
+	   }
+      
         }
      );	
-	
 }
 
 
