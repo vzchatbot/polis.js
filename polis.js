@@ -184,7 +184,7 @@ function MoreOptions()
                 "attachment": {
                     "type": "template",
                     "payload": {
-                        "template_type": "text",
+                        "template_type": "button",
                         "text": "You can also ask 'What Channel is ESPN', ' what channel is Game of Thornes is on', 'any romantic comedies on tonight' or type 'support' to get account help from a Verizon representative. ",
                    }
                 }
