@@ -13,10 +13,10 @@ var router = express.Router();
 router.post('/webhook', function (req, res) {
 //app.post('/webhook', function (req, res) {
   //var intent = req.body.result.metadata.intentName;
-  var intent = req.body.result.action;
+  var action = req.body.result.action;
   var mysource = req.body.result.source;
- console.log('Calling from :' + mysource) ;
-    switch (intent) {
+
+    switch (action) {
         case "welcome":
              res.json(chatInitiate());
             break;
@@ -77,7 +77,7 @@ function welcomeInit()
 
 function LinkOptions()
 {
-    
+     console.log('Calling from  link options:') ;
     return (
         {
         speech: "Are you looking for something to watch, or do you want to see more options? Type or tap below.",
