@@ -88,8 +88,6 @@ function welcomeMsg()
     
 
 
-
-
 function recommendTVNew(callback) { 
      
      //http://vzbotapi.azurewebsites.net/api/values  https://vznode1.herokuapp.com/api/webhook/
