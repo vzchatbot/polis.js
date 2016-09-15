@@ -21,7 +21,7 @@ router.post('/webhook', function (req, res) {
              res.json(chatInitiate());
             break;
         case "getStarted":
-            res.json(welcomeInit());
+            res.json(welcomeMsg());
             break;
         case "Billing":
             res.json(billInquiry());
@@ -55,7 +55,7 @@ function welcomeInit()
     return (
       { speech: " Hey Tabi, Welcome to Verizon!",
           displayText: " Hey Tabi, Welcome to Verizon!",
-      "data": {
+        data: {
 		"facebook": [
 			{"text": "Here is a video to watch:"},
 			{"sender_action": "typing_on"},
