@@ -59,10 +59,7 @@ function welcomeMsg()
         },
         
         {
-        speech: "Want to know what's on tonight? When your favourite sports team is playing? What time your favourite show is coming on? I can answer almost anything, so try me! 
-        
-        Link me to your Verizon account and I can send you alerts and important status changes through Messenger
-        ",
+        speech: "Want to know whats on tonight? When your favourite sports team is playing? What time your favourite show is coming on? I can answer almost anything, so try me!  Link me to your Verizon account and I can send you alerts and important status changes through Messenger",
         displayText: "Subscribe",
         data: {
             "facebook": {
@@ -70,10 +67,7 @@ function welcomeMsg()
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": " "Want to know what's on tonight? When your favourite sports team is playing? What time your favourite show is coming on? I can answer almost anything, so try me! 
-        
-        Link me to your Verizon account and I can send you alerts and important status changes through Messenger
-        ",
+                        "text": " "Want to know whats on tonight? When your favourite sports team is playing? What time your favourite show is coming on? I can answer almost anything, so try me!                 Link me to your Verizon account and I can send you alerts and important status changes through Messenger ",
                         "buttons": [
                             {
                                 "type": "postback",
