@@ -53,7 +53,7 @@ function welcomeMsg()
 {
     
     return (
-        { speech: " Hey Tabi, Welcome to Verizon!",
+      {  { speech: " Hey Tabi, Welcome to Verizon!",
           displayText: " Hey Tabi, Welcome to Verizon!",
         data: {
             "facebook": {
@@ -98,7 +98,7 @@ function welcomeMsg()
         },
         source: "Verizon.js"
       }
-    
+      }    
     );	
 	
 }
