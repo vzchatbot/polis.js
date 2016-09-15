@@ -53,8 +53,8 @@ function welcomeMsg()
 {
     
     return (
-        { speech: " Hey Tabi, Welcome to Verizon!"
-          displayText: "Welcome"
+        { speech: " Hey Tabi, Welcome to Verizon!",
+          displayText: " Hey Tabi, Welcome to Verizon!"
         },
      
         {
