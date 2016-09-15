@@ -21,8 +21,10 @@ router.post('/webhook', function (req, res) {
              res.json(chatInitiate());
             break;
         case "getStarted":
-             res.json(welcomeMsg());
-            break;
+            { 
+            	res.json(welcomeInit());
+            	res.json(welcomeMsg());
+            break;}
         case "Billing":
             res.json(billInquiry());
             break;
@@ -49,11 +51,11 @@ router.post('/webhook', function (req, res) {
     }
 });
 
-function welcomeMsg()
+function welcomeInit()
 {
     
     return (
-      {  { speech: " Hey Tabi, Welcome to Verizon!",
+      { speech: " Hey Tabi, Welcome to Verizon!",
           displayText: " Hey Tabi, Welcome to Verizon!",
         data: {
             "facebook": {
@@ -73,8 +75,16 @@ function welcomeMsg()
                 }
             }
         }
-        },
-     
+        }
+     );	
+	
+}
+
+
+function welcomeMsg()
+{
+    
+    return (
         {
         speech: "Want to know whats on tonight? When your favourite sports team is playing? What time your favourite show is coming on? I can answer almost anything, so try me!  Link me to your Verizon account and I can send you alerts and important status changes through Messenger",
         displayText: "Link Account",
@@ -98,8 +108,7 @@ function welcomeMsg()
         },
         source: "Verizon.js"
       }
-      }    
-    );	
+      );	
 	
 }
     
