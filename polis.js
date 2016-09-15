@@ -14,7 +14,7 @@ router.post('/webhook', function (req, res) {
 //app.post('/webhook', function (req, res) {
   //var intent = req.body.result.metadata.intentName;
   
-  //postback
+  /*postback
  var messaging_events = req.body.entry[0].messaging;
   for (i = 0; i < messaging_events.length; i++) {
     event = req.body.entry[0].messaging[i];
@@ -28,7 +28,7 @@ router.post('/webhook', function (req, res) {
     }
   }
   res.sendStatus(200);
-  
+  */
   
   
   
