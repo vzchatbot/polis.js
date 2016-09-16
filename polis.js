@@ -216,10 +216,31 @@ function MoreOptions()
 
 function recommendTVNew(callback) { 
      
+     var req = request.get("https://www98.verizon.com/foryourhome/vzrepair/flowengine/vzwhatshot.ashx",  function (data, response) {
+		try {			
+			// parsed response body as js object 
+			var parsedData = "";
+			if (null != data) {
+				parsedData = JSON.parse(data);
+				//Get the relevant fields from the parsedData and send them 
+				//during subsequent request.
+
+				//var inputsJSON = parsedData[0]["Inputs"]["newTemp"]["Section"]["Inputs"];
+				var inputsJSON = parsedData[0];
+
+				headersInfo = response.headers;
+
+				console.log(inputsJSON);
+
+			}
+		}
+     
+     
+     
      //http://vzbotapi.azurewebsites.net/api/values  https://vznode1.herokuapp.com/api/webhook/
      //https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
      //{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}
-     request( 
+  /*   request( 
          'https://www98.verizon.com/foryourhome/vzrepair/flowengine/vzwhatshot.ashx', 
          function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
@@ -229,7 +250,13 @@ function recommendTVNew(callback) {
              } 
              else 	console.log('error: ' + error + 'response:' + response.statusCode + 'body:' + body);
          } 
-     ); 
+     ); */
+     
+     
+     
+     
+     
+     
   } 
  function recommendTVNew1(apiresp) { 
  	   var jsonresp = JSON.parse(apiresp);
