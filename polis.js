@@ -234,8 +234,7 @@ function recommendTVNew(callback) {
 
 			}
 		}
-     
-     
+     }
      
      //http://vzbotapi.azurewebsites.net/api/values  https://vznode1.herokuapp.com/api/webhook/
      //https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
@@ -252,12 +251,9 @@ function recommendTVNew(callback) {
          } 
      ); */
      
-     
-     
-     
-     
-     
-  } 
+       } 
+       
+       
  function recommendTVNew1(apiresp) { 
  	   var jsonresp = JSON.parse(apiresp);
      return ({ 
