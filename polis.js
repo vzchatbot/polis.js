@@ -216,7 +216,7 @@ function MoreOptions()
 
 function recommendTVNew(callback) { 
        	console.log('inside external call ');
-     var req = request.get("https://www98.verizon.com/foryourhome/vzrepair/flowengine/vzwhatshot.ashx",  function (data, response) {
+  /*   var req = request.get("https://www98.verizon.com/foryourhome/vzrepair/flowengine/vzwhatshot.ashx",  function (data, response) {
 		  	console.log(data);
 		  	console.log(response);
 			// parsed response body as js object 
@@ -235,13 +235,13 @@ function recommendTVNew(callback) {
 
 			
 		}
-     });
+     });*/
      
      //http://vzbotapi.azurewebsites.net/api/values  https://vznode1.herokuapp.com/api/webhook/
      //https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
      //{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}
-  /*   request( 
-         'https://www98.verizon.com/foryourhome/vzrepair/flowengine/vzwhatshot.ashx', 
+   request( 
+         'https://www98.verizon.com/Ondemand/VzWhatsHot.ashx', 
          function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
              	console.log('inside external call success');
@@ -250,7 +250,7 @@ function recommendTVNew(callback) {
              } 
              else 	console.log('error: ' + error + 'response:' + response.statusCode + 'body:' + body);
          } 
-     ); */
+     ); 
      
        } 
        
