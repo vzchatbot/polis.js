@@ -1,0 +1,6 @@
+{
+  "setting_type":"greeting",
+  "greeting":{
+    "text":"Welcome to vBot, I can help you with entertainment and channels!"
+  }
+}
