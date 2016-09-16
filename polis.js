@@ -217,7 +217,7 @@ function MoreOptions()
 function recommendTVNew(callback) { 
      
      var req = request.get("https://www98.verizon.com/foryourhome/vzrepair/flowengine/vzwhatshot.ashx",  function (data, response) {
-		try {			
+				
 			// parsed response body as js object 
 			var parsedData = "";
 			if (null != data) {
@@ -232,7 +232,7 @@ function recommendTVNew(callback) {
 
 				console.log(inputsJSON);
 
-			}
+			
 		}
      }
      
