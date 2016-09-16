@@ -76,6 +76,22 @@ router.post('/webhook', function (req, res) {
 
 function welcomeInit()
 {
+  
+  /*
+  
+  curl -X POST -H "Content-Type: application/json" -d '{
+  "setting_type":"call_to_actions",
+  "thread_state":"new_thread",
+  "call_to_actions":[
+    {
+      "message":{
+        "text":"Hey! Looking for something to watch? Let Verizon tell you what's on tonight! Click Get Started to find personazlied recommendations for you. When you tap Get Started, Verizon will see your public information "
+       }
+     }
+   ]
+ }' "https://graph.facebook.com/v2.6/apiaivzentpage/thread_settings?access_token=EAAZArBv48H88BAFGDLy0vltTEuqYDupSvx6ADaEZCeLq6GsiSe4vKmubESXMF3pRyme7dvb7jgTZA4dzbn1DpZAfGLyBr9geSqGKsiqr84xZBOr8blJnZCs6RnAz7tELkYzb1CK3vqOIPMpX7IPMDDB9dcmILSfLFStsSl7HKZBNRAIsoRDlGDb"
+  
+  */
     
     return (
       { speech: " Hey Tabi, Welcome to Verizon!",
