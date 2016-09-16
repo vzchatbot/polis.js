@@ -228,7 +228,7 @@ function recommendTVNew(callback) {
 				//var inputsJSON = parsedData[0]["Inputs"]["newTemp"]["Section"]["Inputs"];
 				var inputsJSON = parsedData[0];
 
-				headersInfo = response.headers;
+			//	headersInfo = response.headers;
 
 				console.log(inputsJSON);
 
