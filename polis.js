@@ -240,8 +240,9 @@ function recommendTVNew(callback) {
      //http://vzbotapi.azurewebsites.net/api/values  https://vznode1.herokuapp.com/api/webhook/
      //https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
      //{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}
+     //https://www98.verizon.com/Ondemand/VzWhatsHot.ashx
    request( 
-         'https://www98.verizon.com/Ondemand/VzWhatsHot.ashx', 
+         'http://vzbotapi.azurewebsites.net/api/values', 
          function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
              	console.log('inside external call success');
