@@ -217,7 +217,8 @@ function MoreOptions()
 function recommendTVNew(callback) { 
        	console.log('inside external call ');
      var req = request.get("https://www98.verizon.com/foryourhome/vzrepair/flowengine/vzwhatshot.ashx",  function (data, response) {
-		  	console.log('inside external call success');		
+		  	console.log(data);
+		  	console.log(response);
 			// parsed response body as js object 
 			var parsedData = "";
 			if (null != data) {
