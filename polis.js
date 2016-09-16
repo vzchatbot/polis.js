@@ -11,6 +11,10 @@ var PORT = process.env.PORT || 9000;
 var router = express.Router(); 
 
 router.post('/webhook', function (req, res) {
+
+res.header("Access-Control-Allow-Origin", "*");
+res.header("Access-Control-Allow-Headers", "X-Requested-With");  
+
 //app.post('/webhook', function (req, res) {
   //var intent = req.body.result.metadata.intentName;
   
@@ -242,7 +246,7 @@ function recommendTVNew(callback) {
      //{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}
      //https://www98.verizon.com/Ondemand/VzWhatsHot.ashx
    request( 
-         'https://vznode1.herokuapp.com/api/webhook/', 
+         'https://www98.verizon.com/Ondemand/VzWhatsHot.ashx', 
          function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
              	console.log('inside external call success');
