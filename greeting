@@ -4,3 +4,7 @@
     "text":"Welcome to vBot, I can help you with entertainment and channels!"
   }
 }
+
+
+
+ curl -X POST -H "Content-Type: application/json" -d @<greeting.json> https://graph.facebook.com/v2.6/apiaivzentpage/thread_settings?access_token=EAAZArBv48H88BAFGDLy0vltTEuqYDupSvx6ADaEZCeLq6GsiSe4vKmubESXMF3pRyme7dvb7jgTZA4dzbn1DpZAfGLyBr9geSqGKsiqr84xZBOr8blJnZCs6RnAz7tELkYzb1CK3vqOIPMpX7IPMDDB9dcmILSfLFStsSl7HKZBNRAIsoRDlGDb
