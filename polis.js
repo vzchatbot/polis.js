@@ -220,7 +220,7 @@ function recommendTVNew(callback) {
      //https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
      //{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}
      request( 
-         'http://www.verizon.com/msvsearch/whatshot/tv?op=now&region=91812&lrg=1', 
+         'https://www98.verizon.com/foryourhome/vzrepair/flowengine/vzwhatshot.ashx', 
          function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
              	console.log('inside external call success');
