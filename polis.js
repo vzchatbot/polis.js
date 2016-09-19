@@ -123,7 +123,7 @@ function welcomeInit()
 function upgradeDVR()
 {
     
-    var respstr ='Congrats, Your DVR is upgraded.  Now  I can help you with  TV Recommendations or Recording a program. What would you like to do?" ;
+    var respstr ="Congrats, Your DVR is upgraded.  Now  I can help you with  TV Recommendations or Recording a program. What would you like to do?" ;
 
     return ({
         speech: respstr ,
