@@ -166,7 +166,7 @@ function welcomeMsg()
     
     return (
         {
-        speech: "Want to know whats on tonight? When your favourite sports team is playing? What time your favourite show is coming on? I can answer almost anything, so try me!  Link me to your Verizon account and I can send you alerts and important status changes through Messenger",
+        speech: "Hey Tabi, welcome to Verizon! Want to know what’s on tonight?  I can answer almost anything, so try me! Also, if you want personalized alerts through Messenger link me to your Verizon account! ",
         displayText: "Link Account",
         data: {
             "facebook": {
@@ -174,7 +174,7 @@ function welcomeMsg()
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": "Want to know whats on tonight? When your favourite sports team is playing? What time your favourite show is coming on? I can answer almost anything, so try me!                 Link me to your Verizon account and I can send you alerts and important status changes through Messenger ",
+                        "text": "Hey Tabi, welcome to Verizon! Want to know what’s on tonight?  I can answer almost anything, so try me! Also, if you want personalized alerts through Messenger link me to your Verizon account! ",
                         "buttons": [
                             {
                                 "type": "postback",
