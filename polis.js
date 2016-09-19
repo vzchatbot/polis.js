@@ -123,7 +123,7 @@ function welcomeInit()
 function upgradeDVR(apireq)
 {
    var confirm =  apireq.body.result.parameters.Confirm.toUpperCase();
-   if confirm =="YES"
+   if (confirm =="YES")
     	var respstr ="Congrats, Your DVR is upgraded.  Now  I can help you with  TV Recommendations or Recording a program. What would you like to do?" ;
    else
     	var respstr ="Ok, we are not upgratding the DVR now.  Now  I can help you with  TV Recommendations or Recording a program. What would you like to do?" ;
