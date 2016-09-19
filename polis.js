@@ -380,8 +380,8 @@ var respstr ='Your recording for ' + apireq.body.result.parameters.Programs +' s
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Yes",
-                                "payload": "Yes"
+                                "title": "Show Recommendations",
+                                "payload": "Show Recommendations"
                             },
                             {
                                 "type": "postback",
