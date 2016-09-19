@@ -67,6 +67,9 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
         case "upsell":
             res.json(upsell(req));
             break;
+        case "upgradeDVR":
+            res.json(upgradeDVR(req));
+            break;
         case "externalcall":
             recommendTVNew(function (str) { 
                 console.log("inside showrecommendation "); 
@@ -117,6 +120,43 @@ function welcomeInit()
      );	
 }
 
+function upgradeDVR()
+{
+    
+    var respstr ='Congrats, Your DVR is upgraded.  Now  I can help you with  TV Recommendations or Recording a program. What would you like to do?" ;
+
+    return ({
+        speech: respstr ,
+        displayText: "TV Recommendations",
+        data: {
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": respstr,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "TV Recommendations",
+                                "payload": "Yes"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Record",
+                                "payload": "I want to record"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        source: "Zero Service - app_zero.js"
+    });
+    
+  }
+
+
 function LinkOptions()
 {
      console.log('Calling from  link options:') ;
@@ -157,9 +197,6 @@ function LinkOptions()
       );	
 	
 }
-
-
-
 
 function welcomeMsg()
 {
