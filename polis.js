@@ -438,6 +438,38 @@ return ({
     });	
 	
 }
+else if (channel == 'CBS')
+{
+return ({
+        speech: " Sorry your DVR storage is full.  Would you like to upgrade your DVR ?",
+        displayText: "Subscribe",
+        data: {
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": " Sorry you are not subscribed to " + channel +". Would you like to subscribe " + channel + "?",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Upgrade my DVR",
+                                "payload": "Upgrade my DVR"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "No, I'll do it later ",
+                                "payload": "No Upgrade"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        source: "Zero Service - app_zero.js"
+    });	
+	
+}
 else	
 {	
 var respstr ='Your recording for ' + apireq.body.result.parameters.Programs +' scheduled at '+ apireq.body.result.parameters.TimeofPgm ;
