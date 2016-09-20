@@ -62,7 +62,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             break;
         case "Billing":
            // res.json(billInquiry());
-           res.json(myfunction());
+           res.json(myfunction(str));
             break;
         case "showrecommendation":
             res.json(recommendTV());
@@ -90,7 +90,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
     }
 });
 
-function myfunction() 
+function myfunction(fnCallback) 
  {
 	console.log("inside fn call");
 	var reqData = { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } };
