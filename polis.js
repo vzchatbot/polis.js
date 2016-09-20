@@ -61,8 +61,8 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
              res.json(MoreOptions());
             break;
         case "Billing":
-           // res.json(billInquiry());
-           res.json(myfunction());
+            res.json(billInquiry());
+           //res.json(myfunction());
             break;
         case "showrecommendation":
             res.json(recommendTV());
@@ -143,74 +143,8 @@ function myfunction()
 };
 
 
-function myextcall()
-{
-console.log("Inside myextcall");
-var headersInfo = { "Content-Type": "application/json" };
-var lookupQuestion = function (responseText, prevRequest, fnCallback) {
-	console.log("inside fn call");
-	var reqData = { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } };
-	if (null != prevRequest && null != prevRequest["Request"]) {
-		reqData = prevRequest;
-	}
-	else {
-		headersInfo = { "Content-Type": "application/json" };	
-	}
-	
-	var Client = require('node-rest-client').Client;
-	var client = new Client();
-	var args = {
-		"headers": headersInfo,
-		"data": JSON.stringify(reqData)
-	};
-	console.log("before call");
-	var req = client.post("https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args, function (data, response) {
-		try {	
-				console.log("inside success");
-			var parsedData = "";
-			if (null != data) {
-				parsedData = JSON.parse(data);
-				var inputsJSON = parsedData[0];
-				headersInfo = response.headers;
 
-				if (null != fnCallback && typeof fnCallback == "function") {
-					console.log(inputsJSON);
-				}
-			}
-			else {
-				var err = {
-					"description" : "Response data is empty!",
-					"data" : data
-				};
-				if (null != fnCallback && typeof fnCallback == "function") {
-					console.log(err, null);
-				}
-			}
-		}
-        catch (ex) {
-			var err = {
-				"description" : "Exception occurred:" + ex,
-				"data" : data
-			};
-			if (null != fnCallback && typeof fnCallback == "function") {
-				console.log(err, null);
-			}
-		}
-	});
-	req.on("error", function (errInfo) {
-		var err = {
-			"description" : "Exception occurred:" + errInfo.message,
-			"data" : ""
-		};
-		if (null != fnCallback && typeof fnCallback == "function") {
-			console.log(err, null);
-		}
-	});
-};
-
-}
-
-
+ /*
   function recommendTVNew(callback) {
 //https://www98.verizon.com/Ondemand/api/utilWebAPI/GetWhatsHot
 //    var req = client.post(" http://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"1\"}}", function (data, response) {
@@ -252,8 +186,7 @@ function recommendTVNew1(apiresp) {
     });
 
 }
-
-
+*/
 
 function welcomeInit()
 {
@@ -430,29 +363,10 @@ function MoreOptions()
 	
 }
   
-/*
+
 function recommendTVNew(callback) { 
        	console.log('inside external call ');
-  /*   var req = request.get("https://www98.verizon.com/foryourhome/vzrepair/flowengine/vzwhatshot.ashx",  function (data, response) {
-		  	console.log(data);
-		  	console.log(response);
-			// parsed response body as js object 
-			var parsedData = "";
-			if (null != data) {
-				parsedData = JSON.parse(data);
-				//Get the relevant fields from the parsedData and send them 
-				//during subsequent request.
 
-				//var inputsJSON = parsedData[0]["Inputs"]["newTemp"]["Section"]["Inputs"];
-				var inputsJSON = parsedData[0];
-
-			//	headersInfo = response.headers;
-
-				console.log(inputsJSON);
-
-			
-		}
-     });
      
      //http://vzbotapi.azurewebsites.net/api/values  https://vznode1.herokuapp.com/api/webhook/
      //https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
@@ -483,16 +397,9 @@ function recommendTVNew(callback) {
      }); 
  } 
 
-*/
 
 
-/*function callback(body)
-{
-	console.log("inside callback ");
 
-console.log(body);
-	return body;
-}*/
 
 function record(apireq)
 {
