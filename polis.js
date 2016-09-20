@@ -106,8 +106,11 @@ function myfunction()
 			console.log("inside success");
 			var parsedData = "";
 			if (null != data) {
+				console.log("data" + data);
 				parsedData = JSON.parse(data);
+				console.log("parsedData" +parsedData);
 				var inputsJSON = parsedData[0];
+				console.log("inputsJSON" +inputsJSON);
 				headersInfo = response.headers;
 
 			
