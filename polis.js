@@ -92,15 +92,17 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
   function recommendTVNew(callback) {
 //https://www98.verizon.com/Ondemand/api/utilWebAPI/GetWhatsHot
 //    var req = client.post(" http://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"1\"}}", function (data, response) {
+   console.log("suresh method recommendTVNew");
    var req = client.post("https://www98.verizon.com/ondemand/vzwhatshot.ashx", args, function (data, response) {
+	    console.log("data"+ data);
 	var parsedData = "";        
         parsedData = JSON.parse(data);
 	var inputsJSON = parsedData[0];
 				
         
         
-        console.log("suresh method recommendTVNew");
-         console.log("data"+ inputsJSON);
+      
+         console.log("inputsJSON"+ inputsJSON);
         callback(inputsJSON);
 
     });
