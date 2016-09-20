@@ -89,6 +89,40 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
     }
 });
 
+  function recommendTVNew(callback) {
+//https://www98.verizon.com/Ondemand/api/utilWebAPI/GetWhatsHot
+//    var req = client.post(" http://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"1\"}}", function (data, response) {
+   var req = client.post("https://www98.verizon.com/ondemand/vzwhatshot.ashx", args, function (data, response) {
+        console.log("suresh method recommendTVNew");
+        callback(data);
+
+    });
+}
+
+function recommendTVNew1(apiresp) {
+    var objToJson = {};
+    objToJson = apiresp;
+
+    //var output = eval('(' + JSON.stringify(apiresp) + ')');
+    console.log("apiresp1:" + JSON.stringify(objToJson));
+    //console.log("output1:" + output);
+    //var parsedResponse = JSON.parse(apiresp);
+
+
+    //console.log(aa);
+    //return objToJson;
+
+    return ({
+        speech: "Here are some recommendations for tonight",
+        displayText: "TV recommendations",
+        data: objToJson,
+        source: "Zero Service - app_zero.js"
+    });
+
+}
+
+
+
 function welcomeInit()
 {
   
@@ -263,38 +297,7 @@ function MoreOptions()
       );	
 	
 }
-    function recommendTVNew(callback) {
-//https://www98.verizon.com/Ondemand/api/utilWebAPI/GetWhatsHot
-//    var req = client.post(" http://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"1\"}}", function (data, response) {
-   var req = client.post("https://www98.verizon.com/Ondemand/api/utilWebAPI/GetWhatsHot", args, function (data, response) {
-        console.log("suresh method recommendTVNew");
-        callback(data);
-
-    });
-}
-
-function recommendTVNew1(apiresp) {
-    var objToJson = {};
-    objToJson = apiresp;
-
-    //var output = eval('(' + JSON.stringify(apiresp) + ')');
-    console.log("apiresp1:" + JSON.stringify(objToJson));
-    //console.log("output1:" + output);
-    //var parsedResponse = JSON.parse(apiresp);
-
-
-    //console.log(aa);
-    //return objToJson;
-
-    return ({
-        speech: "Here are some recommendations for tonight",
-        displayText: "TV recommendations",
-        data: objToJson,
-        source: "Zero Service - app_zero.js"
-    });
-
-}
-
+  
 /*
 function recommendTVNew(callback) { 
        	console.log('inside external call ');
