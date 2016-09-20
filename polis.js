@@ -101,7 +101,7 @@ function myfunction()
 		"data": JSON.stringify(reqData)
 	};
 	console.log("before call");
-	var req = client.post("https://www98.verizon.com/Ondemand/api/utilWebAPI/GetWhatsHot", args, function (data, response) {
+	var req = client.post("https://vznode1.herokuapp.com/api/webhook/", args, function (data, response) {
 		try {	
 			console.log("inside success");
 			var parsedData = "";
