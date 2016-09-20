@@ -373,7 +373,7 @@ function recommendTVNew(callback) {
      //{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}
      //https://www98.verizon.com/Ondemand/VzWhatsHot.ashx
    request( 
-         'https://www98.verizon.com/Ondemand/api/utilWebAPI/GetWhatsHot', 
+         'https://vznode1.herokuapp.com/api/webhook/', 
          function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
              	console.log('inside external call success');
