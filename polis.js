@@ -94,6 +94,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 //    var req = client.post(" http://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"1\"}}", function (data, response) {
    var req = client.post("https://www98.verizon.com/ondemand/vzwhatshot.ashx", args, function (data, response) {
         console.log("suresh method recommendTVNew");
+         console.log("data"+ data);
         callback(data);
 
     });
@@ -102,7 +103,8 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 function recommendTVNew1(apiresp) {
     var objToJson = {};
     objToJson = apiresp;
-
+   console.log("objToJson"+ objToJson);
+   
     //var output = eval('(' + JSON.stringify(apiresp) + ')');
     console.log("apiresp1:" + JSON.stringify(objToJson));
     //console.log("output1:" + output);
