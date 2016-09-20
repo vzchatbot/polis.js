@@ -215,7 +215,7 @@ var lookupQuestion = function (responseText, prevRequest, fnCallback) {
 //https://www98.verizon.com/Ondemand/api/utilWebAPI/GetWhatsHot
 //    var req = client.post(" http://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"1\"}}", function (data, response) {
    console.log("suresh method recommendTVNew");
-   var req = client.post("https://www98.verizon.com/ondemand/vzwhatshot.ashx", args, function (data, response) {
+   var req = client.post("https://vznode1.herokuapp.com/api/webhook/", args, function (data, response) {
 	    console.log("data"+ data);
 	var parsedData = "";        
         parsedData = JSON.parse(data);
