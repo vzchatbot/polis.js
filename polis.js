@@ -23,27 +23,6 @@ router.post('/webhook', function (req, res) {
 res.header("Access-Control-Allow-Origin", "*");
 res.header("Access-Control-Allow-Headers", "X-Requested-With");  
 
-//app.post('/webhook', function (req, res) {
-  //var intent = req.body.result.metadata.intentName;
-  
-  /*postback
- var messaging_events = req.body.entry[0].messaging;
-  for (i = 0; i < messaging_events.length; i++) {
-    event = req.body.entry[0].messaging[i];
-    sender = event.sender.id;
-    if (event.message && event.message.text) {
-      text = event.message.text;
-      // Handle a text message from this sender
-    } else if (event.postback && event.postback.payload) {
-      payload = event.postback.payload;
-      // Handle a payload from this sender
-    }
-  }
-  res.sendStatus(200);
-  */
-  
-  
-  
   var action = req.body.result.action;
   var mysource = req.body.result.source;
 
@@ -162,7 +141,7 @@ function recommendTVNew(callback) {
              	console.log(body);
                  callback(body); 
              } 
-             else 	console.log('error: ' + error + 'response:' + response.statusCode + 'body:' + body);
+             else 	console.log('error: ' + error + ' body: ' + body);
          } 
      ); 
      
