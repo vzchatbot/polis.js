@@ -110,8 +110,10 @@ var lookupQuestion = function (responseText, prevRequest, fnCallback) {
 		"headers": headersInfo,
 		"data": JSON.stringify(reqData)
 	};
+	console.log("before call");
 	var req = client.post("https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args, function (data, response) {
-		try {			
+		try {	
+				console.log("inside success");
 			var parsedData = "";
 			if (null != data) {
 				parsedData = JSON.parse(data);
