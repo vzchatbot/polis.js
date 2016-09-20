@@ -5,7 +5,9 @@
     "ejs": "2.4.1",
     "express": "4.13.3",
     "body-parser": "1.9.2",
-    "request": "^2.34.0"
+     "node-rest-client": "^2.0.1",
+    "request": "^2.75.0",
+    "xml2js": "^0.4.17"
   },
   "engines": {
     "node": "0.12.x",
