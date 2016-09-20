@@ -430,7 +430,7 @@ return ({
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": " Sorry you are not subscribed to " + channel +". Would you like to subscribe " + channel + "?",
+                        "text": " Sorry your DVR storage is full.  Would you like to upgrade your DVR ?",
                         "buttons": [
                             {
                                 "type": "postback",
