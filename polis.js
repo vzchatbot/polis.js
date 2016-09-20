@@ -62,7 +62,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             break;
         case "Billing":
            // res.json(billInquiry());
-           res.json(myextcall());
+           res.json(myfunction());
             break;
         case "showrecommendation":
             res.json(recommendTV());
@@ -89,6 +89,61 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             res.json(recommendTV());
     }
 });
+
+function myfunction() 
+ {
+	console.log("inside fn call");
+	var reqData = { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } };
+	var Client = require('node-rest-client').Client;
+	var client = new Client();
+	var args = {
+		"headers": headersInfo,
+		"data": JSON.stringify(reqData)
+	};
+	console.log("before call");
+	var req = client.post("https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args, function (data, response) {
+		try {	
+			console.log("inside success");
+			var parsedData = "";
+			if (null != data) {
+				parsedData = JSON.parse(data);
+				var inputsJSON = parsedData[0];
+				headersInfo = response.headers;
+
+				if (null != fnCallback && typeof fnCallback == "function") {
+					console.log(inputsJSON);
+				}
+			}
+			else {
+				var err = {
+					"description" : "Response data is empty!",
+					"data" : data
+				};
+				if (null != fnCallback && typeof fnCallback == "function") {
+					console.log(err, null);
+				}
+			}
+		}
+        catch (ex) {
+			var err = {
+				"description" : "Exception occurred:" + ex,
+				"data" : data
+			};
+			if (null != fnCallback && typeof fnCallback == "function") {
+				console.log(err, null);
+			}
+		}
+	});
+	req.on("error", function (errInfo) {
+		var err = {
+			"description" : "Exception occurred:" + errInfo.message,
+			"data" : ""
+		};
+		if (null != fnCallback && typeof fnCallback == "function") {
+			console.log(err, null);
+		}
+	});
+};
 
 
 function myextcall()
