@@ -143,6 +143,41 @@ function myfunction()
 };
 
 
+function recommendTVNew(callback) { 
+       	console.log('inside external call ');
+
+     
+     //http://vzbotapi.azurewebsites.net/api/values  https://vznode1.herokuapp.com/api/webhook/
+     //https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
+     //{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}
+     //https://www98.verizon.com/Ondemand/VzWhatsHot.ashx
+     //https://myvzbot.herokuapp.com/api/vzwhatshot
+     // 
+   request.post( 
+         'http://10.77.31.207/foryourhome/vzrepair/flowengine/restapi.ashx', 
+         "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"Trending\"}}",
+         function (error, response, body) { console.log('inside external call');
+             if (!error && response.statusCode == 200) { 
+             	console.log('inside external call success');
+             	console.log(body);
+                 callback(body); 
+             } 
+             else 	console.log('error: ' + error + 'response:' + response.statusCode + 'body:' + body);
+         } 
+     ); 
+     
+       } 
+function recommendTVNew1(apiresp) { 
+ 	   var jsonresp = JSON.parse(apiresp);
+     return ({ 
+	         speech: "Here are some recommendations for tonight", 
+         displayText: "TV recommendations", 
+         data:  jsonresp, 
+         source: "Zero Service - app_zero.js" 
+     }); 
+ } 
+
+
 
 /* 
   function recommendTVNew(callback) {
@@ -364,38 +399,6 @@ function MoreOptions()
 }
   
 
-function recommendTVNew(callback) { 
-       	console.log('inside external call ');
-
-     
-     //http://vzbotapi.azurewebsites.net/api/values  https://vznode1.herokuapp.com/api/webhook/
-     //https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
-     //{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}
-     //https://www98.verizon.com/Ondemand/VzWhatsHot.ashx
-   request( 
-         'https://myvzbot.herokuapp.com/api/vzwhatshot', 
-         function (error, response, body) { console.log('inside external call');
-             if (!error && response.statusCode == 200) { 
-             	console.log('inside external call success');
-             	console.log(body);
-                 callback(body); 
-             } 
-             else 	console.log('error: ' + error + 'response:' + response.statusCode + 'body:' + body);
-         } 
-     ); 
-     
-       } 
-       
-       
- function recommendTVNew1(apiresp) { 
- 	   var jsonresp = JSON.parse(apiresp);
-     return ({ 
-	         speech: "Here are some recommendations for tonight", 
-         displayText: "TV recommendations", 
-         data:  jsonresp, 
-         source: "Zero Service - app_zero.js" 
-     }); 
- } 
 
 
 
