@@ -96,6 +96,7 @@ function myextcall()
 console.log("Inside myextcall");
 var headersInfo = { "Content-Type": "application/json" };
 var lookupQuestion = function (responseText, prevRequest, fnCallback) {
+	console.log("inside fn call");
 	var reqData = { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } };
 	if (null != prevRequest && null != prevRequest["Request"]) {
 		reqData = prevRequest;
