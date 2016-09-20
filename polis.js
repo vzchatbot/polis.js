@@ -62,7 +62,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             break;
         case "Billing":
            // res.json(billInquiry());
-           res.json(myfunction(str));
+           res.json(myfunction());
             break;
         case "showrecommendation":
             res.json(recommendTV());
@@ -90,7 +90,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
     }
 });
 
-function myfunction(fnCallback) 
+function myfunction() 
  {
 	console.log("inside fn call");
 	var reqData = { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } };
@@ -110,18 +110,14 @@ function myfunction(fnCallback)
 				var inputsJSON = parsedData[0];
 				headersInfo = response.headers;
 
-				if (null != fnCallback && typeof fnCallback == "function") {
-					console.log(inputsJSON);
-				}
+			
 			}
 			else {
 				var err = {
 					"description" : "Response data is empty!",
 					"data" : data
 				};
-				if (null != fnCallback && typeof fnCallback == "function") {
-					console.log(err, null);
-				}
+			
 			}
 		}
         catch (ex) {
@@ -129,9 +125,7 @@ function myfunction(fnCallback)
 				"description" : "Exception occurred:" + ex,
 				"data" : data
 			};
-			if (null != fnCallback && typeof fnCallback == "function") {
-				console.log(err, null);
-			}
+		
 		}
 	});
 	req.on("error", function (errInfo) {
