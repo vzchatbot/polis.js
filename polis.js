@@ -385,9 +385,42 @@ function MoreOptions()
 function record(apireq)
 {
 	
-var channel = apireq.body.result.parameters.Channel;
+var channel = apireq.body.result.parameters.Channel.toUpperCase() ;
+var program = apireq.body.result.parameters.Programs.toUpperCase();
+if (program == "FRIENDS")
+{
+return ({
+        speech: " I see the below schedules for " + program +". Tap on which time you like to record",
+        displayText: "Subscribe",
+        data: {
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text":  " I see the below schedules for " + program +". Tap on which time you like to record",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Channel 5 HD - 12:30 EST ",
+                                "payload": "Channel 5 HD - 12:30 EST"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Channel 15 SD - 10:30 EST ",
+                                "payload": "Channel 15 SD - 10:30 EST"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        source: "Zero Service - app_zero.js"
+    });		
+	
+}
 
-if (channel == 'HBO')
+else if (channel == 'HBO')
 {
 return ({
         speech: " Sorry you are not subscribed to " + channel +". Would you like to subscribe " + channel + "?",
