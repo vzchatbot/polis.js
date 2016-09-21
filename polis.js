@@ -387,7 +387,9 @@ function record(apireq)
 	
 var channel = apireq.body.result.parameters.Channel.toUpperCase() ;
 var program = apireq.body.result.parameters.Programs.toUpperCase();
-if (program == "FRIENDS")
+var time = apireq.body.result.parameters.timeofpgm;
+
+if (program == "FRIENDS" && time == null)
 {
 return ({
         speech: " I see the below schedules for " + program +". Tap on which time you like to record",
