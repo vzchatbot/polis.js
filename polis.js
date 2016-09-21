@@ -133,7 +133,7 @@ function recommendTVNew(callback) {
      //https://myvzbot.herokuapp.com/api/vzwhatshot
      // "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"Trending\"}}",
    request( 
-         'https://www98.verizon.com/Ondemand/VzWhatsHot.ashx', 
+         'https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx', 
           function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
              	console.log('inside external call success');
