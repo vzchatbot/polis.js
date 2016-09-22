@@ -166,7 +166,7 @@ function recommendTVNew(callback) {
 	};
 
     request.post(
-        'https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx' (https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx%27) , args,
+        'https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx' ,args,
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 callback(body);
