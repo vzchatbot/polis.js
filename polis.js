@@ -82,7 +82,7 @@ function recommendTVNew(callback) {
 		}
 	};
 
-    request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
+    request.post("https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
                
@@ -94,35 +94,7 @@ function recommendTVNew(callback) {
         }
     );
 
-       	
-       
-/*
-	var reqData = { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } };
-	var args = {
-		"headers": headersInfo,
-		"data": JSON.stringify(reqData)
-	};
-     
-     //http://vzbotapi.azurewebsites.net/api/values  https://vznode1.herokuapp.com/api/webhook/
-     //https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
-     //{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}
-     //https://www98.verizon.com/Ondemand/VzWhatsHot.ashx
-     //https://myvzbot.herokuapp.com/api/vzwhatshot
-     //https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx
-     // "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"Trending\"}}",
-   request.post( 
-         "https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", 
-         "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"Trending\"}}",
-          function (error, response, body) { console.log('inside external call');
-             if (!error && response.statusCode == 200) { 
-             	console.log('inside external call success');
-             	console.log(body);
-                 callback(body); 
-             } 
-             else 	console.log('error: ' + error + ' body: ' + body);
-         } 
-     ); */
-     
+
   } 
   
 function recommendTVNew1(apiresp) { 
