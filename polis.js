@@ -125,6 +125,11 @@ function myfunction()
 function recommendTVNew(callback) { 
        	console.log('inside external call ');
 
+	var reqData = { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } };
+	var args = {
+		"headers": headersInfo,
+		"data": JSON.stringify(reqData)
+	};
      
      //http://vzbotapi.azurewebsites.net/api/values  https://vznode1.herokuapp.com/api/webhook/
      //https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
@@ -134,8 +139,7 @@ function recommendTVNew(callback) {
      //https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx
      // "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"Trending\"}}",
    request.post( 
-         "http://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", 
-          "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"Trending\"}}",
+         "http://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
           function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
              	console.log('inside external call success');
