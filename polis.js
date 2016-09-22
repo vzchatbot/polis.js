@@ -125,6 +125,17 @@ function myfunction()
 function recommendTVNew(callback) { 
        	console.log('inside external call ');
        	
+   /*    	
+       	var myJSONObject = { ... };
+			request({
+			    url: "http://josiahchoi.com/myjson",
+			    method: "POST",
+			    json: true,   // <--Very important!!!
+			    body: myJSONObject
+			}, function (error, response, body){
+			    console.log(response);
+			});
+			       	*/
       /* 	const options = {  
 		  method: 'POST',
 		  uri: 'http://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx',
@@ -144,7 +155,7 @@ function recommendTVNew(callback) {
        	
        	
        	
-       	
+       
 
 	var reqData = { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } };
 	var args = {
@@ -160,7 +171,7 @@ function recommendTVNew(callback) {
      //https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx
      // "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"Trending\"}}",
    request.post( 
-         "http://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
+         "https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
           function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
              	console.log('inside external call success');
