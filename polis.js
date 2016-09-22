@@ -125,7 +125,7 @@ function myfunction()
 function recommendTVNew(callback) { 
        	console.log('inside external call ');
        	
-       	const options = {  
+      /* 	const options = {  
 		  method: 'POST',
 		  uri: 'http://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx',
 		  body: { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } },
@@ -140,13 +140,13 @@ function recommendTVNew(callback) {
 		  })
 		  .catch(function (err) {
 		    	console.log('error: ' + error + ' body: ' + body);
-		  })
+		  })*/
        	
        	
        	
        	
 
-/*	var reqData = { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } };
+	var reqData = { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } };
 	var args = {
 		"headers": headersInfo,
 		"data": JSON.stringify(reqData)
@@ -169,7 +169,7 @@ function recommendTVNew(callback) {
              } 
              else 	console.log('error: ' + error + ' body: ' + body);
          } 
-     ); */
+     ); 
      
        } 
 function recommendTVNew1(apiresp) { 
