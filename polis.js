@@ -138,69 +138,10 @@ function recommendTVStg(callback) {
     );
  } 
 
-/* 
-  function recommendTVNew(callback) {
-//https://www98.verizon.com/Ondemand/api/utilWebAPI/GetWhatsHot
-//    var req = client.post(" http://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"1\"}}", function (data, response) {
-   console.log("suresh method recommendTVNew");
-   var req = client.post("https://myvzbot.herokuapp.com/api/vzwhatshot", args, function (data, response) {
-	    console.log("data"+ data);
-	var parsedData = "";        
-        parsedData = JSON.parse(data);
-	var inputsJSON = parsedData[0];
-				
-        
-        
-      
-         console.log("inputsJSON"+ inputsJSON);
-        callback(inputsJSON);
 
-    });
-}
-
-function recommendTVNew1(apiresp) {
-    var objToJson = {};
-    objToJson = apiresp;
-   console.log("objToJson"+ objToJson);
-   
-    //var output = eval('(' + JSON.stringify(apiresp) + ')');
-    console.log("apiresp1:" + JSON.stringify(objToJson));
-    //console.log("output1:" + output);
-    //var parsedResponse = JSON.parse(apiresp);
-
-
-    //console.log(aa);
-    //return objToJson;
-
-    return ({
-        speech: "Here are some recommendations for tonight",
-        displayText: "TV recommendations",
-        data: objToJson,
-        source: "Zero Service - app_zero.js"
-    });
-
-}
-
-*/
 function welcomeInit()
 {
   
-  /*
-  
-  curl -X POST -H "Content-Type: application/json" -d '{
-  "setting_type":"call_to_actions",
-  "thread_state":"new_thread",
-  "call_to_actions":[
-    {
-      "message":{
-        "text":"Hey! Looking for something to watch? Let Verizon tell you what's on tonight! Click Get Started to find personazlied recommendations for you. When you tap Get Started, Verizon will see your public information "
-       }
-     }
-   ]
- }' "https://graph.facebook.com/v2.6/apiaivzentpage/thread_settings?access_token=EAAZArBv48H88BAFGDLy0vltTEuqYDupSvx6ADaEZCeLq6GsiSe4vKmubESXMF3pRyme7dvb7jgTZA4dzbn1DpZAfGLyBr9geSqGKsiqr84xZBOr8blJnZCs6RnAz7tELkYzb1CK3vqOIPMpX7IPMDDB9dcmILSfLFStsSl7HKZBNRAIsoRDlGDb"
-  
-  */
-    
     return (
       { speech: " Hey Tabi, Welcome to Verizon!",
           displayText: " Hey Tabi, Welcome to Verizon!",
