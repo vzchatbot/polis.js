@@ -95,13 +95,13 @@ function recommendTVNew(callback) {
   
 function recommendTVNew1(apiresp) { 
 		console.log("recommendTVNew1:" + apiresp);
- 	   var jsonresp = JSON.parse(apiresp);
- 	   		console.log("jsonresp:" + jsonresp);
+ 	  /* var jsonresp = JSON.parse(apiresp);
+ 	   		console.log("jsonresp:" + jsonresp);*/
      return ({ 
 	         speech: "Here are some recommendations for tonight", 
          displayText: "TV recommendations", 
-         data:  jsonresp, 
-         source: "Zero Service - app_zero.js" 
+         data:  apiresp, 
+         source: "Verizon - app_zero.js" 
      }); 
  } 
 
