@@ -59,100 +59,17 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             res.json(upgradeDVR(req));
             break;
         case "externalcall":
-            recommendTVNew(function (str) { 
-                console.log("inside showrecommendation "); 
-                res.json(recommendTVNew1(str)); 
-            }); 
+            recommendTVNew(function (str) {res.json(recommendTVNew1(str));  }); 
             break;
         default:
             res.json(recommendTV());
     }
 });
 
-function myfunction() 
- {
-	console.log("inside fn call");
-	var reqData = { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } };
-	var Client = require('node-rest-client').Client;
-	var client = new Client();
-	var args = {
-		"headers": headersInfo,
-		"data": JSON.stringify(reqData)
-	};
-	console.log("before call");
-	var req = client.post("https://vznode1.herokuapp.com/api/webhook/", args, function (data, response) {
-		try {	
-			console.log("inside success");
-			var parsedData = "";
-			if (null != data) {
-				console.log("data" + data);
-				parsedData = JSON.parse(data);
-				console.log("parsedData" +parsedData);
-				var inputsJSON = parsedData[0];
-				console.log("inputsJSON" +inputsJSON);
-				headersInfo = response.headers;
-
-			
-			}
-			else {
-				var err = {
-					"description" : "Response data is empty!",
-					"data" : data
-				};
-			
-			}
-		}
-        catch (ex) {
-			var err = {
-				"description" : "Exception occurred:" + ex,
-				"data" : data
-			};
-		
-		}
-	});
-	req.on("error", function (errInfo) {
-		var err = {
-			"description" : "Exception occurred:" + errInfo.message,
-			"data" : ""
-		};
-		if (null != fnCallback && typeof fnCallback == "function") {
-			console.log(err, null);
-		}
-	});
-};
-
 
 function recommendTVNew(callback) { 
        	console.log('inside external call ');
-       	
-   /*    	
-       	var myJSONObject = { ... };
-			request({
-			    url: "http://josiahchoi.com/myjson",
-			    method: "POST",
-			    json: true,   // <--Very important!!!
-			    body: myJSONObject
-			}, function (error, response, body){
-			    console.log(response);
-			});
-			       	*/
-      /* 	const options = {  
-		  method: 'POST',
-		  uri: 'http://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx',
-		  body: { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } },
-		  json: true 
-		    // JSON stringifies the body automatically
-		}
-
-		request(options)  
-		  .then(function (response) {
-		   	console.log('inside external call success');
-             	console.log(body);
-		  })
-		  .catch(function (err) {
-		    	console.log('error: ' + error + ' body: ' + body);
-		  })*/
-       	
+      	
        var headersInfo = { "Content-Type": "application/json" };
 
 	var args = {
@@ -165,17 +82,18 @@ function recommendTVNew(callback) {
 		}
 	};
 
-    request.post(
-        'https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx' ,args,
+    request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
-                
+               
                  console.log("body " + body);
                 callback(body);
             }
+            else
+            	console.log('error: ' + error + ' body: ' + body);
         }
     );
-}
+
        	
        
 /*
@@ -205,7 +123,8 @@ function recommendTVNew(callback) {
          } 
      ); */
      
-       } 
+  } 
+  
 function recommendTVNew1(apiresp) { 
  	   var jsonresp = JSON.parse(apiresp);
      return ({ 
@@ -912,6 +831,59 @@ function chatInitiate() {
         source: "Zero Service - app_zero.js"
     });
 }
+
+function myfunction() 
+ {
+	console.log("inside fn call");
+	var reqData = { "Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml", "Request": { "ThisValue": "1" } };
+	var Client = require('node-rest-client').Client;
+	var client = new Client();
+	var args = {
+		"headers": headersInfo,
+		"data": JSON.stringify(reqData)
+	};
+	console.log("before call");
+	var req = client.post("https://vznode1.herokuapp.com/api/webhook/", args, function (data, response) {
+		try {	
+			console.log("inside success");
+			var parsedData = "";
+			if (null != data) {
+				console.log("data" + data);
+				parsedData = JSON.parse(data);
+				console.log("parsedData" +parsedData);
+				var inputsJSON = parsedData[0];
+				console.log("inputsJSON" +inputsJSON);
+				headersInfo = response.headers;
+
+			
+			}
+			else {
+				var err = {
+					"description" : "Response data is empty!",
+					"data" : data
+				};
+			
+			}
+		}
+        catch (ex) {
+			var err = {
+				"description" : "Exception occurred:" + ex,
+				"data" : data
+			};
+		
+		}
+	});
+	req.on("error", function (errInfo) {
+		var err = {
+			"description" : "Exception occurred:" + errInfo.message,
+			"data" : ""
+		};
+		if (null != fnCallback && typeof fnCallback == "function") {
+			console.log(err, null);
+		}
+	});
+};
+
 function billInquiry() {
     return ({
         speech: "Let me get an expert to help you.  Please click on the link below.",
