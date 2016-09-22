@@ -69,9 +69,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
 function recommendTVNew(callback) { 
        	console.log('inside external call ');
-      	
-       var headersInfo = { "Content-Type": "application/json" };
-
+        var headersInfo = { "Content-Type": "application/json" };
 	var args = {
 		"headers": headersInfo,
 		"json": {
@@ -82,10 +80,10 @@ function recommendTVNew(callback) {
 		}
 	};
 
-    request.post("https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
+    request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
-               
+             
                  console.log("body " + body);
                 callback(body);
             }
@@ -93,9 +91,7 @@ function recommendTVNew(callback) {
             	console.log('error: ' + error + ' body: ' + body);
         }
     );
-
-
-  } 
+ } 
   
 function recommendTVNew1(apiresp) { 
 		console.log("recommendTVNew1:" + apiresp);
