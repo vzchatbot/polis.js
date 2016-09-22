@@ -138,8 +138,8 @@ function recommendTVNew(callback) {
      //https://myvzbot.herokuapp.com/api/vzwhatshot
      //https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx
      // "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"Trending\"}}",
-   request.post( 
-         "http://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
+   request( 
+         "http://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", 
           function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
              	console.log('inside external call success');
