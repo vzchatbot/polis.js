@@ -153,27 +153,27 @@ function recommendTVNew(callback) {
 		    	console.log('error: ' + error + ' body: ' + body);
 		  })*/
        	
-       	request({
-		url: 'https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx' ,
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'				
-			},
-			json: {
-				Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
-				Request: {
-					ThisValue: 'Trending'
-				}
-			}
+       var headersInfo = { "Content-Type": "application/json" };
 
-		}, function (error, response, body) {
-			if (error) {
-				console.log(error);
-			} else {
-				console.log(response.statusCode, body);
-				     callback(body); 
+	var args = {
+		"headers": headersInfo,
+		"json": {
+			Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
+			Request: {
+				ThisValue: 'Trending'
 			}
-			}); 
+		}
+	};
+
+    request.post(
+        'https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx' (https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx%27) , args,
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                callback(body);
+            }
+        }
+    );
+}
        	
        
 /*
