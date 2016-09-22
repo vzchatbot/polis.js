@@ -171,7 +171,8 @@ function recommendTVNew(callback) {
      //https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx
      // "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"Trending\"}}",
    request.post( 
-         "https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
+         "https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", 
+         "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"Trending\"}}",
           function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
              	console.log('inside external call success');
