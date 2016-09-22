@@ -58,6 +58,9 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
         case "upgradeDVR":
             res.json(upgradeDVR(req));
             break;
+         case "stgexternalcall":
+            recommendTVStg(function (str) {res.json(recommendTVNew1(str));  }); 
+            break;
         case "externalcall":
             recommendTVNew(function (str) {res.json(recommendTVNew1(str));  }); 
             break;
@@ -65,6 +68,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             res.json(recommendTV());
     }
 });
+
 
 
 function recommendTVNew(callback) { 
@@ -107,6 +111,32 @@ function recommendTVNew1(apiresp) {
 
 } 
 
+
+function recommendTVStg(callback) { 
+       	console.log('inside external call ');
+        var headersInfo = { "Content-Type": "application/json" };
+	var args = {
+		"headers": headersInfo,
+		"json": {
+			Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
+			Request: {
+				ThisValue: 'Trending'
+			}
+		}
+	};
+
+    request.post("https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+             
+                 console.log("body " + body);
+                callback(body);
+            }
+            else
+            	console.log('error: ' + error + ' body: ' + body);
+        }
+    );
+ } 
 
 /* 
   function recommendTVNew(callback) {
