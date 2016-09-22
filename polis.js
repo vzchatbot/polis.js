@@ -131,9 +131,11 @@ function recommendTVNew(callback) {
      //{"Flow": "TroubleShooting Flows\\Test\\APIChatBot.xml","Request":{"ThisValue":"Trending"}}
      //https://www98.verizon.com/Ondemand/VzWhatsHot.ashx
      //https://myvzbot.herokuapp.com/api/vzwhatshot
+     //https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx
      // "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"Trending\"}}",
-   request( 
-         'https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx', 
+   request.post( 
+         "http://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", 
+          "{\"Flow\": \"TroubleShooting Flows\\Test\\APIChatBot.xml\",\"Request\":{\"ThisValue\":\"Trending\"}}",
           function (error, response, body) { console.log('inside external call');
              if (!error && response.statusCode == 200) { 
              	console.log('inside external call success');
