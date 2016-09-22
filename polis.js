@@ -132,7 +132,7 @@ function recommendTVNew(callback) {
 		  json: true 
 		    // JSON stringifies the body automatically
 		}
-​
+
 		request(options)  
 		  .then(function (response) {
 		   	console.log('inside external call success');
