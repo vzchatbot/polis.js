@@ -80,7 +80,7 @@ function recommendTVNew(callback) {
 		}
 	};
 
-    request.post("https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
+    request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
              
@@ -93,18 +93,19 @@ function recommendTVNew(callback) {
     );
  } 
   
-function recommendTVNew1(apiresp) { 
-		console.log("recommendTVNew1:" + apiresp);
- 	  /* var jsonresp = JSON.parse(apiresp);
- 	   		console.log("jsonresp:" + jsonresp);*/
-     return ({ 
-	         speech: "Here are some recommendations for tonight", 
-         displayText: "TV recommendations", 
-         data:  apiresp, 
-         source: "Verizon - app_zero.js" 
-     }); 
- } 
+function recommendTVNew1(apiresp) {
+    var objToJson = {};
+    objToJson = apiresp;
+	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
+	console.log("subflow :" + subflow)
+    return ({
+        speech: "Here are some recommendations for tonight",
+        displayText: "TV recommendations",
+        data: subflow,
+        source: "Zero Service - app_zero.js"
+    });
 
+} 
 
 
 /* 
