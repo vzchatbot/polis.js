@@ -141,9 +141,25 @@ function recommendTVStg(callback) {
 
 function welcomeInit()
 {
-  
+  var username="";
+
+FB.api(
+  '/me',
+  'GET',
+  {"fields":"id,name"},
+  function(response) {
+      // Insert your code here
+username=name;
+
+  }
+);
+
+
+
+
+
     return (
-      { speech: " Hey Tabi, Welcome to Verizon!",
+      { speech: " Hey "+ username +"Welcome to Verizon!",
           displayText: " Hey Tabi, Welcome to Verizon!",
         data: {
 		"facebook": [
