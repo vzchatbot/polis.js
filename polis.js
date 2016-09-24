@@ -31,8 +31,10 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
              res.json(chatInitiate());
             break;
         case "getStarted":
-            res.json(welcomeMsg());
-            break;
+           // res.json(welcomeMsg());
+
+         res.json(welcomeInit());
+        break;
     	case "LinkOptions":
              res.json(LinkOptions());
             break;
