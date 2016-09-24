@@ -144,7 +144,7 @@ function recommendTVStg(callback) {
 function welcomeInit()
 {
   var username="";
-
+/*
 FB.api(
   '/me',
   'GET',
@@ -155,7 +155,7 @@ username=name;
 
   }
 );
-
+*/
 
 
 
