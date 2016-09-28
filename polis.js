@@ -463,7 +463,7 @@ return ({
 }
 else	
 {	
-var respstr ='Your recording for ' + apireq.body.result.parameters.Programs +' scheduled at '+ apireq.body.result.parameters.timepfpgm + ' on ' + apireq.body.result.parameters.SelectedSTB + ' STB';
+var respstr ='Your recording for ' + apireq.body.result.parameters.Programs +' scheduled at '+ apireq.body.result.parameters.timeofpgm + ' on ' + apireq.body.result.parameters.SelectedSTB + ' STB';
  return ({
         speech: respstr + "  Would you like to see some other TV Recommendations for tonight?",
         displayText: "TV Recommendations",
