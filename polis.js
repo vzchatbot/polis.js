@@ -8,6 +8,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var PORT = process.env.PORT || 9000;
 
+const FB_PAGE_ACCESS_TOKEN = "EAAZArBv48H88BAFGDLy0vltTEuqYDupSvx6ADaEZCeLq6GsiSe4vKmubESXMF3pRyme7dvb7jgTZA4dzbn1DpZAfGLyBr9geSqGKsiqr84xZBOr8blJnZCs6RnAz7tELkYzb1CK3vqOIPMpX7IPMDDB9dcmILSfLFStsSl7HKZBNRAIsoRDlGDb";
+
 var router = express.Router(); 
 
 var headersInfo = { "Content-Type": "application/json" };
@@ -42,8 +44,8 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
              res.json(MoreOptions());
             break;
         case "Billing":
-            res.json(billInquiry());
-           //res.json(myfunction());
+           // res.json(billInquiry());
+           res.json(sendFBMessage(myfun));
             break;
         case "showrecommendation":
             res.json(recommendTV());
@@ -70,6 +72,26 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             res.json(recommendTV());
     }
 });
+
+function sendFBMessage(callback) {
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token: FB_PAGE_ACCESS_TOKEN},
+        method: 'POST',
+        json: {  "setting_type":"greeting",  "greeting":{    "text":" Hey! Looking for something to watch? Let Verizon tell you what's on 			tonight! Click Get Started to find personalized recommendations for you.  When you tap Get Started, Verizon will 			see your public information "  }}
+   	      }, (error, response, body) => {
+        if (error) {
+            console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        }
+
+        if (callback) {
+            callback();
+        }
+    });
+}
+
 
 
 
