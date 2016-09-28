@@ -400,7 +400,7 @@ return ({
 else if (SelectedSTB == "" || SelectedSTB == undefined)
 {
 return ({
-        speech: "Select one of the STB from the below List, which you like to record",
+        speech: "Select one of the STB from the below list, on which you like to record",
         displayText: "Subscribe",
         data: {
             "facebook": {
@@ -408,7 +408,7 @@ return ({
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text":  "Select one of the STB from the below List, which you like to record",
+                        "text":  "Select one of the STB from the below list, on which you like to record",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -463,7 +463,7 @@ return ({
 }
 else	
 {	
-var respstr ='Your recording for ' + apireq.body.result.parameters.Programs +' scheduled at '+ apireq.body.result.parameters.timeofpgm + ' on ' + apireq.body.result.parameters.SelectedSTB + ' STB';
+var respstr ='Your recording for "' + apireq.body.result.parameters.Programs +'" has been scheduled at '+ apireq.body.result.parameters.timeofpgm + ' on ' + apireq.body.result.parameters.SelectedSTB + ' STB.';
  return ({
         speech: respstr + "  Would you like to see some other TV Recommendations for tonight?",
         displayText: "TV Recommendations",
@@ -488,8 +488,8 @@ var respstr ='Your recording for ' + apireq.body.result.parameters.Programs +' s
                             },
                             {
                                 "type": "postback",
-                                "title": "No, Let me tell",
-                                "payload": "No"
+                                "title": "More Options",
+                                "payload": "More Options"
                             }
                         ]
                     }
