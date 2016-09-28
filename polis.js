@@ -396,7 +396,7 @@ return ({
     });	
 	
 }
-else if (SelectedSTB == '')
+else if (SelectedSTB == "")
 {
 return ({
         speech: "Select one of the STB from the below List, which you like to record",
