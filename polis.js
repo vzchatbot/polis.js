@@ -74,7 +74,26 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 });
 
 function sendFBMessage(callback) {
-    request({
+ 	console.log('welcome screenl ');
+        var headersInfo = { "Content-Type": "application/json" };
+	var args = {
+		"headers": headersInfo,
+		"json":  {"setting_type":"greeting",  "greeting":{"text":" Hey! Looking for something to watch? Let Verizon tell you what's on tonight! Click Get Started to find personalized recommendations for you.  When you tap Get Started, Verizon will see your public information "}}
+	};
+
+    request.post("https://graph.facebook.com/v2.6/me/messages?access_token="+FB_PAGE_ACCESS_TOKEN, args,
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+             
+                 console.log("body " + body);
+                callback(body);
+            }
+            else
+            	console.log('error: ' + error + ' body: ' + body);
+        }
+    );
+	
+	/* request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token: FB_PAGE_ACCESS_TOKEN},
         method: 'POST',
@@ -89,7 +108,7 @@ function sendFBMessage(callback) {
         if (callback) {
             callback();
         }
-    });
+    });*/
 }
 
 
