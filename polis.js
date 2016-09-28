@@ -317,7 +317,7 @@ function welcomeMsg()
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": "Hey Tabi, welcome to Verizon! Want to know what’s on tonight?  I can answer almost anything, so try me! Also, if you want personalized alerts through Messenger link me to your Verizon account! ",
+                        "text": "Hey {{user_first_name}}, welcome to Verizon! Want to know what’s on tonight?  I can answer almost anything, so try me! Also, if you want personalized alerts through Messenger link me to your Verizon account! ",
                         "buttons": [
                             {
                                 "type": "postback",
