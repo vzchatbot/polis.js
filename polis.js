@@ -45,7 +45,9 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             break;
         case "Billing":
            // res.json(billInquiry());
-           res.json(sendFBMessage(myfun));
+          // res.json(sendFBMessage());
+		     sendFBMessage(function (str) {res.json(recommendTVNew1(str));  }); 
+            break;
             break;
         case "showrecommendation":
             res.json(recommendTV());
