@@ -78,8 +78,8 @@ function sendFBMessage(callback) {
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token: FB_PAGE_ACCESS_TOKEN},
         method: 'POST',
-        json: {  "setting_type":"greeting",  "greeting":{    "text":" Hey! Looking for something to watch? Let Verizon tell you what's on 			tonight! Click Get Started to find personalized recommendations for you.  When you tap Get Started, Verizon will 			see your public information "  }}
-   	      }, (error, response, body) => {
+        json: {"setting_type":"greeting",  "greeting":{"text":" Hey! Looking for something to watch? Let Verizon tell you what's on tonight! Click Get Started to find personalized recommendations for you.  When you tap Get Started, Verizon will see your public information "}}
+    }, (error, response, body) => {
         if (error) {
             console.log('Error sending message: ', error);
         } else if (response.body.error) {
