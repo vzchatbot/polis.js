@@ -328,6 +328,8 @@ function record(apireq)
 var channel = apireq.body.result.parameters.Channel.toUpperCase() ;
 var program = apireq.body.result.parameters.Programs.toUpperCase();
 var time = apireq.body.result.parameters.timeofpgm;
+var SelectedSTB = apireq.body.result.parameters.SelectedSTB;
+	
 
 if (time == "")
 {
@@ -394,6 +396,38 @@ return ({
     });	
 	
 }
+else if (SelectedSTB == '')
+{
+return ({
+        speech: "Select one of the STB from the below List, which you like to record",
+        displayText: "Subscribe",
+        data: {
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text":  "Select one of the STB from the below List, which you like to record",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Living Room",
+                                "payload": "Living Room"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Bed Room",
+                                "payload": "Bed Room"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        source: "Zero Service - app_zero.js"
+    });		
+	
+}	
 else if (channel == 'CBS')
 {
 return ({
@@ -428,7 +462,7 @@ return ({
 }
 else	
 {	
-var respstr ='Your recording for ' + apireq.body.result.parameters.Programs +' scheduled at '+ apireq.body.result.parameters.timepfpgm ;
+var respstr ='Your recording for ' + apireq.body.result.parameters.Programs +' scheduled at '+ apireq.body.result.parameters.timepfpgm + ' on ' + apireq.body.result.parameters.SelectedSTB + ' STB';
  return ({
         speech: respstr + "  Would you like to see some other TV Recommendations for tonight?",
         displayText: "TV Recommendations",
