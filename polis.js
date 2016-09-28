@@ -329,7 +329,8 @@ var channel = apireq.body.result.parameters.Channel.toUpperCase() ;
 var program = apireq.body.result.parameters.Programs.toUpperCase();
 var time = apireq.body.result.parameters.timeofpgm;
 var SelectedSTB = apireq.body.result.parameters.SelectedSTB;
-	
+	console.log("SelectedSTB  :  "+  SelectedSTB);
+		    
 
 if (time == "")
 {
