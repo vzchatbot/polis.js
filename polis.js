@@ -74,7 +74,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
              res.json(channelsearch(req));
             break; 
 	case "programSearch":
-             res.json(channelsearch(req));
+             res.json(programSearch(req));
             break;  
 		    
         default:
