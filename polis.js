@@ -407,12 +407,12 @@ return ({
                             {
                                 "type": "postback",
                                 "title": "Channel 5 HD - 12:30 EST ",
-                                "payload": "Channel 5 HD - 12:30 EST"
+                                "payload": "12:30"
                             },
                             {
                                 "type": "postback",
                                 "title": "Channel 15 SD - 10:30 EST ",
-                                "payload": "Channel 15 SD - 10:30 EST"
+                                "payload": "10:30"
                             }
                         ]
                     }
