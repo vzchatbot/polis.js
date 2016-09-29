@@ -72,6 +72,9 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             break;
 	case "channelsearch":
              res.json(channelsearch(req));
+            break; 
+	case "programSearch":
+             res.json(channelsearch(req));
             break;  
 		    
         default:
@@ -95,6 +98,38 @@ var channel = apireq.body.result.parameters.Channel.toUpperCase() ;
 
 } 
 
+function programSearch(apireq) {
+    
+return ({
+        speech: " I see the below schedules for " + program +". Tap on which time you like to record",
+        displayText: "Subscribe",
+        data: {
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text":  " I see the below schedules for " + program +". Tap on which time you like to record",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "HBO HD Channel 5  - 12:30 EST ",
+                                "payload": "HBO HD Channel 5  - 12:30 EST ",
+                            },
+                            {
+                                "type": "postback",
+                                "title": "HBO SD Channel 15  - 10:30 EST ",
+                                "payload": "HBO SD Channel 15  - 10:30 EST ",
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        source: "Zero Service - app_zero.js"
+    });		
+
+} 
 
 
 function recommendTVNew(callback) { 
