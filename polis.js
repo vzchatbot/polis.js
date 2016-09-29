@@ -70,49 +70,30 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
         case "externalcall":
             recommendTVNew(function (str) {res.json(recommendTVNew1(str));  }); 
             break;
+	case "channelsearch":
+             res.json(channelsearch(req));
+            break;  
+		    
         default:
             res.json(recommendTV());
     }
 });
 
-function sendFBMessage(callback) {
- 	console.log('welcome screenl ');
-        var headersInfo = { "Content-Type": "application/json" };
-	var args = {
-		"headers": headersInfo,
-		"json":  {"setting_type":"greeting",  "greeting":{"text":" Hey! Looking for something to watch? Let Verizon tell you what's on tonight! Click Get Started to find personalized recommendations for you.  When you tap Get Started, Verizon will see your public information "}}
-	};
 
-    request.post("https://graph.facebook.com/v2.6/me/messages?access_token="+FB_PAGE_ACCESS_TOKEN, args,
-        function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-             
-                 console.log("body " + body);
-                callback(body);
-            }
-            else
-            	console.log('error: ' + error + ' body: ' + body);
-        }
-    );
+
+
+function channelsearch(apiresp) {
+   
+var chnNo= Math.random() * (500 - 1) + 1;
+var channel = apireq.body.result.parameters.Channel.toUpperCase() ;
 	
-	/* request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token: FB_PAGE_ACCESS_TOKEN},
-        method: 'POST',
-        json: {"setting_type":"greeting",  "greeting":{"text":" Hey! Looking for something to watch? Let Verizon tell you what's on tonight! Click Get Started to find personalized recommendations for you.  When you tap Get Started, Verizon will see your public information "}}
-    }, (error, response, body)  {
-        if (error) {
-            console.log('Error sending message: ', error);
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error);
-        }
+   return ({
+        speech: "You can watch " + channel + "  on Channel Number : "+ chnNo ,
+        displayText: "You can watch " + channel + "  on Channel Number : "+ chnNo ,
+        source: "Verizon.js"
+    });
 
-        if (callback) {
-            callback();
-        }
-    });*/
-}
-
+} 
 
 
 
