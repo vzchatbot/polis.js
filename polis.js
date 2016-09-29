@@ -406,13 +406,13 @@ return ({
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "Channel 5 HD - 12:30 EST ",
-                                "payload": "12:30"
+                                "title": "12:30",
+                                "payload": "Channel 5 HD - 12:30 EST"
                             },
                             {
                                 "type": "postback",
-                                "title": "Channel 15 SD - 10:30 EST ",
-                                "payload": "10:30"
+                                "title": "10:30",
+                                "payload": "Channel 15 SD - 10:30 EST"
                             }
                         ]
                     }
