@@ -99,7 +99,7 @@ var channel = apireq.body.result.parameters.Channel.toUpperCase() ;
 } 
 
 function programSearch(apireq) {
-    
+   var program = apireq.body.result.parameters.Programs.toUpperCase(); 
 return ({
         speech: " I see the below schedules for " + program +". Tap on which time you like to record",
         displayText: "Subscribe",
