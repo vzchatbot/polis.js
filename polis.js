@@ -82,7 +82,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
 
 
-function channelsearch(apiresp) {
+function channelsearch(apireq) {
    
 var chnNo= Math.random() * (500 - 1) + 1;
 var channel = apireq.body.result.parameters.Channel.toUpperCase() ;
