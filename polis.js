@@ -85,7 +85,7 @@ function firstMsg() {
 	 {
         speech: "First Message",
         displayText: "First Message",
-	"data": {"facebook": { "text":  " First Message" }}
+	data: {"facebook": { "text":  " First Message" }},
         source: "Verizon.js"
     	}  );
 } 
@@ -93,9 +93,9 @@ function firstMsg() {
 function secondMsg() {
    return (
 	 {
-        speech: "First Message",
-        displayText: "First Message",
-	"data": {"facebook": { "text":  " First Message" }}
+        speech: "Second Message",
+        displayText: "Second Message",
+	data: {"facebook": { "text":  " Second Message" }},
         source: "Verizon.js"
     	}  );
 } 
