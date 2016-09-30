@@ -180,8 +180,9 @@ function recommendTVNew(callback) {
 			}
 		}
 	};
-
-    request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
+//https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx 
+	//https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
+    request.post("https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx", args,
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
              
