@@ -85,7 +85,24 @@ function firstMsg() {
 	 {
         speech: "First Message",
         displayText: "First Message",
-	data: {"facebook": { "text":  " First Message" }},
+	data: {
+			"facebook": [
+			{
+			"text": "Here is a video to watch:"
+			},
+			{
+			"sender_action": "typing_on"
+			},
+			{
+			"attachment": {
+			"type": "video",
+			"payload": {
+			"url": "http://path.to/video.mp4"
+			}
+			}
+			}
+			]
+			},
         source: "Verizon.js"
     	}  );
 } 
