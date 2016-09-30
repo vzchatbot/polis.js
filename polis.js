@@ -167,7 +167,7 @@ function recommendTVNew(callback) {
 		"json": {
 			Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
 			Request: {
-				ThisValue: 'Trending'
+				ThisValue: 'Trending1'
 			}
 		}
 	};
