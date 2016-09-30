@@ -96,7 +96,7 @@ var channel = apireq.body.result.parameters.Channel.toUpperCase() ;
         speech: "You can watch " + channel + "  on Channel Number : "+ chnNo ,
         displayText: "You can watch " + channel + "  on Channel Number : "+ chnNo ,
         source: "Verizon.js"
-    }
+    },
 	   {
         speech: "Second Message You can watch " + channel + "  on Channel Number : "+ chnNo ,
         displayText: "Second Message You can watch " + channel + "  on Channel Number : "+ chnNo ,
