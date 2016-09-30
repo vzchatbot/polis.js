@@ -95,15 +95,8 @@ var channel = apireq.body.result.parameters.Channel.toUpperCase() ;
 	   {
         speech: "You can watch " + channel + "  on Channel Number : "+ chnNo ,
         displayText: "You can watch " + channel + "  on Channel Number : "+ chnNo ,
-	data: {           "facebook": {
-                		"attachment": {
-                    		"type": "template",
-                    		"payload": {
-                        	    "text":  " I see the below schedules for " + program +". Tap on which time you like to record",
-                        }
-                }
-            }
-        },
+	"data": {"facebook": { "text":  " First Messge",}},
+	"data": {"facebook": { "text":  " Second Messge",}},		   
         source: "Verizon.js"
     	}
 	 /*  {
