@@ -44,10 +44,8 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
              res.json(MoreOptions());
             break;
         case "Billing":
-           // res.json(billInquiry());
-          // res.json(sendFBMessage());
-		     sendFBMessage(function (str) {res.json(recommendTVNew1(str));  }); 
-            break;
+           res.json(firstMsg());
+           res.json(secondMsg());
             break;
         case "showrecommendation":
             res.json(recommendTV());
@@ -82,7 +80,25 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
     }
 });
 
+function firstMsg() {
+   return (
+	 {
+        speech: "First Message",
+        displayText: "First Message",
+	"data": {"facebook": { "text":  " First Message" }}
+        source: "Verizon.js"
+    	}  );
+} 
 
+function secondMsg() {
+   return (
+	 {
+        speech: "First Message",
+        displayText: "First Message",
+	"data": {"facebook": { "text":  " First Message" }}
+        source: "Verizon.js"
+    	}  );
+} 
 
 
 function channelsearch(apireq) {
