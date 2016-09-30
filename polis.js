@@ -45,7 +45,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             break;
         case "Billing":
            res.json(firstMsg());
-           res.json(secondMsg());
+          
             break;
         case "showrecommendation":
             res.json(recommendTV());
