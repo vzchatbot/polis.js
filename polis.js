@@ -106,7 +106,7 @@ function secondMsg() {
 	 {
         speech: "Second Message",
         displayText: "Second Message",
-	data: { "facebook": { "attachment": { "type": "template", "payload": { "template_type": "button", "text": "Select one of the STB from the below list, on which you like to record", "buttons": { "type": "postback", "payload": "0000060661164198", "title": "Living Room" } } } } },
+	data: { "facebook": { "attachment": { "type": "template", "payload": { "template_type": "button", "text": "Select one of the STB from the below list, on which you like to record", "buttons":[ { "type": "postback", "payload": "0000060661164198", "title": "Living Room" } ]} } } },
         source: "Verizon.js"
     	}  );
 } 
