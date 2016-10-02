@@ -238,8 +238,8 @@ function STBList(callback) {
 function STBListCallBack(apiresp) {
     var objToJson = {};
     objToJson = apiresp;
-	//var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
-	var subflow = objToJson;
+	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
+	
 	console.log("subflow :" + subflow)
     return ({
         speech: "Here are some recommendations for tonight",
@@ -568,8 +568,8 @@ return ({
 }
 else if (SelectedSTB == "" || SelectedSTB == undefined)
 {
-	return (showSTB());
-	
+	STBList(function (str) {res.json(STBListCallBack(str));  }); 
+/*	
 return ({
         speech: "Select one of the STB from the below list, on which you like to record",
         displayText: "Subscribe",
@@ -597,7 +597,7 @@ return ({
             }
         },
         source: "Zero Service - app_zero.js"
-    });		
+    });	*/	
 	
 }	
 else if (channel == 'CBS')
