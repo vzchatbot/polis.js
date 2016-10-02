@@ -242,10 +242,10 @@ function STBListCallBack(apiresp) {
 	
 	console.log("subflow :" + subflow)
     return ({
-        speech: "Here are some recommendations for tonight",
-        displayText: "TV recommendations",
+        speech: "Select one of the DVR from the below list, on which you like to record"",
+        displayText: "STB List",
         data: subflow,
-        source: "Zero Service - app_zero.js"
+        source: "Verizon.js"
     });
 
 } 
@@ -568,10 +568,10 @@ return ({
 }
 else if (SelectedSTB == "" || SelectedSTB == undefined)
 {
-	STBList(function (str) {res.json(STBListCallBack(str));  }); 
-/*	
+	//STBList(function (str) {res.json(STBListCallBack(str));  }); 
+
 return ({
-        speech: "Select one of the STB from the below list, on which you like to record",
+        speech: "Select one of the DVR from the below list, on which you like to record",
         displayText: "Subscribe",
         data: {
             "facebook": {
@@ -579,7 +579,7 @@ return ({
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text":  "Select one of the STB from the below list, on which you like to record",
+                        "text":  "Select one of the DVR from the below list, on which you like to record",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -597,7 +597,7 @@ return ({
             }
         },
         source: "Zero Service - app_zero.js"
-    });	*/	
+    });		
 	
 }	
 else if (channel == 'CBS')
