@@ -44,7 +44,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
              res.json(MoreOptions());
             break;
         case "Billing":
-           res.json(firstMsg());
+           STBList(function (str) {res.json(STBListCallBack(str));  }); 
           
             break;
         case "showrecommendation":
@@ -210,6 +210,49 @@ function recommendTVNew1(apiresp) {
 
 } 
 
+function STBList(callback) { 
+       	console.log('inside external call ');
+        var headersInfo = { "Content-Type": "application/json" };
+	var args = {
+		"headers": headersInfo,
+		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
+			 Request: {ThisValue: 'STBList',"Userid":"LT6STH4"} 
+			}
+		
+	};
+//https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx 
+	//https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
+    request.post("https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx", args,
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+             
+                 console.log("body " + body);
+                callback(body);
+            }
+            else
+            	console.log('error: ' + error + ' body: ' + body);
+        }
+    );
+ } 
+  
+function STBListCallBack(apiresp) {
+    var objToJson = {};
+    objToJson = apiresp;
+	//var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
+	var subflow = objToJson;
+	console.log("subflow :" + subflow)
+    return ({
+        speech: "Here are some recommendations for tonight",
+        displayText: "TV recommendations",
+        data: subflow,
+        source: "Zero Service - app_zero.js"
+    });
+
+} 
+
+
+
+
 
 function recommendTVStg(callback) { 
        	console.log('inside external call ');
@@ -225,6 +268,35 @@ function recommendTVStg(callback) {
 	};
 
     request.post("https://www98.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+             
+                 console.log("body " + body);
+                callback(body);
+            }
+            else
+            	console.log('error: ' + error + ' body: ' + body);
+        }
+    );
+ } 
+
+function testcall()
+{
+var jsonreq={Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',Request: {ThisValue: 'STBList',"Userid":"LT6STH4"} };
+
+}
+
+
+function UFDCaller(callback,jsonreq) { 
+       	console.log('inside external call ');
+        var headersInfo = { "Content-Type": "application/json" };
+	var args = {
+		"headers": headersInfo,
+		"json": jsonreq;
+		}
+	};
+
+    request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
              
@@ -496,6 +568,8 @@ return ({
 }
 else if (SelectedSTB == "" || SelectedSTB == undefined)
 {
+	return (showSTB());
+	
 return ({
         speech: "Select one of the STB from the below list, on which you like to record",
         displayText: "Subscribe",
