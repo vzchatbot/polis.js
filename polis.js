@@ -572,6 +572,8 @@ else if (SelectedSTB == "" || SelectedSTB == undefined)
 {
 	//STBList(function (str) {res.json(STBListCallBack(str));  }); 
 
+return secondMsg()
+/*
 return ({
         speech: "Select one of the DVR from the below list, on which you like to record",
         displayText: "Subscribe",
@@ -599,7 +601,7 @@ return ({
             }
         },
         source: "Zero Service - app_zero.js"
-    });		
+    });		*/
 	
 }	
 else if (channel == 'CBS')
