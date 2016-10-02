@@ -242,7 +242,7 @@ function STBListCallBack(apiresp) {
 	
 	console.log("subflow :" + subflow)
     return ({
-        speech: "Select one of the DVR from the below list, on which you like to record"",
+        speech: "Select one of the DVR from the below list, on which you like to record",
         displayText: "STB List",
         data: subflow,
         source: "Verizon.js"
