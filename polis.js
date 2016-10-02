@@ -216,7 +216,7 @@ function STBList(callback) {
 	var args = {
 		"headers": headersInfo,
 		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
-			 Request: {ThisValue: 'STBList',"Userid":"LT6STH4"} 
+			 Request: {ThisValue: 'STBList',Userid:'LT6STH4'} 
 			}
 		
 	};
@@ -279,7 +279,7 @@ function recommendTVStg(callback) {
         }
     );
  } 
-
+/*
 function testcall()
 {
 var jsonreq={Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',Request: {ThisValue: 'STBList',"Userid":"LT6STH4"} };
@@ -309,7 +309,7 @@ function UFDCaller(callback,jsonreq) {
     );
  } 
 
-
+*/
 function welcomeInit()
 {
   var username="";
