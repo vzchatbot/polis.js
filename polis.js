@@ -222,7 +222,7 @@ function STBList(callback) {
 	};
 //https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx 
 	//https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
-    request.post("https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx", args,
+    request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
              
