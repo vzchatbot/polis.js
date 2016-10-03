@@ -51,7 +51,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
              res.json(MoreOptions());
             break;
         case "Billing":
-           STBList(function (str) {res.json(STBListCallBack(str));  },req); 
+           STBList(req,function (str) {res.json(STBListCallBack(str));  }); 
           
             break;
         case "showrecommendation":
@@ -228,10 +228,10 @@ function recommendTVNew1(apiresp) {
 
 } 
 
-function STBList(callback,apireq) { 
+function STBList(apireq,callback) { 
        	console.log('inside external call '+ apireq);
-	var struserid = apireq.body.contexts.parameters.Userid; 
-	
+	var struserid = apireq.body.contexts[0].parameters.Userid; 
+		console.log('struserid '+ struserid);
         var headersInfo = { "Content-Type": "application/json" };
 	var args = {
 		"headers": headersInfo,
