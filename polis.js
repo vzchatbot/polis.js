@@ -216,8 +216,8 @@ function recommendTVNew(callback) {
 function recommendTVNew1(apiresp) {
     var objToJson = {};
     objToJson = apiresp;
-	//var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
-	var subflow = objToJson;
+	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
+	//var subflow = objToJson;
 	console.log("subflow :" + subflow)
     return ({
         speech: "Here are some recommendations for tonight",
