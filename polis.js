@@ -270,7 +270,7 @@ function STBListCallBack(apiresp) {
 } 
 
 
-function ChnlSearch(apireq,callback) { 
+function ChnlSearch(callback) { 
    
 	
 	  console.log("strChannelName " + strChannelName);
@@ -302,7 +302,7 @@ function ChnlSearchCallback(apiresp) {
     objToJson = apiresp;
 	var chposition = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
 	
-	console.log("subflow :" + subflow)
+	console.log("chposition :" + chposition)
     return ({
         speech: "You can watch " + strChannelName + " at " + chposition + "position" ,
         displayText: "You can watch " + strChannelName + " at " + chposition + "position" ,
