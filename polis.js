@@ -27,7 +27,8 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
   var action = req.body.result.action;
   var mysource = req.body.result.source;
-  var strChannelName ="";
+  var strChannelName = req.body.result.parameters.Channel.toUpperCase() ;
+  
 	
     switch (action) {
         case "welcome":
@@ -75,7 +76,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             recommendTVNew(function (str) {res.json(recommendTVNew1(str));  }); 
             break;
 	case "channelsearch":
-	    strChannelName = req.body.result.parameters.Channel.toUpperCase() ;
+	   
             ChnlSearch(function (str) {res.json(ChnlSearchCallback(str));  }); 
             break; 
 	case "programSearch":
