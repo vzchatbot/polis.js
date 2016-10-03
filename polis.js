@@ -80,7 +80,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             ChnlSearch(req,function (str) {res.json(ChnlSearchCallback(str));  }); 
             break; 
 	case "programSearch":
-             res.json(programSearch(req));
+              PgmSearch(req,function (str) {res.json(PgmSearchCallback(str));  }); 
             break;  
 		    
         default:
@@ -308,6 +308,48 @@ function ChnlSearchCallback(apiresp) {
         speech: "You can watch it at " + chposition + "position" ,
         displayText: "You can watch it at " + chposition + "position" ,
        // data: subflow,
+        source: "Verizon.js"
+    });
+
+} 
+
+function PgmSearch(apireq,callback) { 
+      var strProgram =  apireq.body.result.parameters.Programs.toUpperCase();
+	
+	  console.log("strChannelName " + strChannelName);
+        var headersInfo = { "Content-Type": "application/json" };
+	var args = {
+		"headers": headersInfo,
+		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
+			 Request: {ThisValue: 'ProgramSearch',BotstrTitleValue:strProgram} 
+			}
+		
+	};
+  console.log("json " + String(args));
+	
+    request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+             
+                 console.log("body " + body);
+                callback(body);
+            }
+            else
+            	console.log('error: ' + error + ' body: ' + body);
+        }
+    );
+ } 
+  
+function PgmSearchCallback(apiresp) {
+    var objToJson = {};
+    objToJson = apiresp;
+	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
+	
+	
+    return ({
+        speech: "Here is the program details you are looking for" ,
+        displayText: "Here is the program details you are looking for" ,
+        data: subflow,
         source: "Verizon.js"
     });
 
