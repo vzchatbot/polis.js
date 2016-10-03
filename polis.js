@@ -113,7 +113,7 @@ function firstMsg() {
 
 function secondMsg() {
   
-	var stblst= {"facebook":{"attachment":{"type":"template","payload":{"template_type":"button","text":"Select one of the STB from the below list, on which you like to record","buttons":[{"type":"postback","payload":"0000075999169227","title":"0000075999169227"},{"dummy":"dummy"}]}}}};
+	var stblst= {"facebook":{"attachment":{"type":"template","payload":{"template_type":"button","text":"Select one of the STB from the below list, on which you like to record","buttons":[{"type":"postback","payload":"0000075999169227","title":"0000075999169227"},{"type":"","payload":"","title":""}]}}}};
 //{ "facebook": { "attachment": { "type": "template", "payload": { "template_type": "button", "text": "Select one of the STB from the below list, on which you like to record", "buttons":[ { "type": "postback", "payload": "0000060661164198", "title": "Living Room" } ]} } } }	
 	return (
 	 {
