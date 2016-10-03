@@ -75,7 +75,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             recommendTVNew(function (str) {res.json(recommendTVNew1(str));  }); 
             break;
 	case "channelsearch":
-	    strChannelName = apireq.body.result.parameters.Channel.toUpperCase() ;
+	    strChannelName = req.body.result.parameters.Channel.toUpperCase() ;
             ChnlSearch(function (str) {res.json(ChnlSearchCallback(str));  }); 
             break; 
 	case "programSearch":
