@@ -42,6 +42,9 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
     	case "LinkOptions":
              res.json(LinkOptions());
             break;
+	case "Buy":
+             res.json(firstMsg());
+            break;
         case "MoreOptions":
              res.json(MoreOptions());
             break;
@@ -83,6 +86,13 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 });
 
 function firstMsg() {
+	
+	return{
+		 speech: "Your Purchase is done",
+        	displayText: "Your Purchase is done",
+	};
+	
+	/*
    return (
 	 {
         speech: "First Message",
@@ -98,7 +108,7 @@ function firstMsg() {
 			]
 			},
         source: "Verizon.js"
-    	}  );
+    	}  );*/
 } 
 
 function secondMsg() {
