@@ -46,7 +46,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
              res.json(MoreOptions());
             break;
         case "Billing":
-           STBList(function (str) {res.json(STBListCallBack(str));  }); 
+           STBList(function (str) {res.json(STBListCallBack(str));  },req); 
           
             break;
         case "showrecommendation":
@@ -212,13 +212,15 @@ function recommendTVNew1(apiresp) {
 
 } 
 
-function STBList(callback) { 
+function STBList(callback,apireq) { 
        	console.log('inside external call ');
+	var struserid = apireq.body.contexts.parameters.Userid; 
+	
         var headersInfo = { "Content-Type": "application/json" };
 	var args = {
 		"headers": headersInfo,
 		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
-			 Request: {ThisValue: 'STBList',Userid:'demoacct102'} 
+			 Request: {ThisValue: 'STBList',Userid:struserid} 
 			}
 		
 	};
