@@ -316,7 +316,7 @@ function ChnlSearchCallback(apiresp) {
 function PgmSearch(apireq,callback) { 
       var strProgram =  apireq.body.result.parameters.Programs.toUpperCase();
 	
-	  console.log("strChannelName " + strChannelName);
+	
         var headersInfo = { "Content-Type": "application/json" };
 	var args = {
 		"headers": headersInfo,
