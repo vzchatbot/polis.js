@@ -27,7 +27,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
   var action = req.body.result.action;
   var mysource = req.body.result.source;
-
+  var strChannelName ="";
 	
     switch (action) {
         case "welcome":
@@ -75,7 +75,8 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             recommendTVNew(function (str) {res.json(recommendTVNew1(str));  }); 
             break;
 	case "channelsearch":
-            ChnlSearch(req,function (str) {res.json(ChnlSearchCallback(str));  }); 
+	    strChannelName = apireq.body.result.parameters.Channel.toUpperCase() ;
+            ChnlSearch(function (str) {res.json(ChnlSearchCallback(str));  }); 
             break; 
 	case "programSearch":
              res.json(programSearch(req));
@@ -270,7 +271,9 @@ function STBListCallBack(apiresp) {
 
 
 function ChnlSearch(apireq,callback) { 
-    var   strChannelName = apireq.body.result.parameters.Channel; 
+   
+	
+	  console.log("strChannelName " + strChannelName);
         var headersInfo = { "Content-Type": "application/json" };
 	var args = {
 		"headers": headersInfo,
