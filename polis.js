@@ -194,13 +194,13 @@ function recommendTVNew(callback) {
 		"json": {
 			Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
 			Request: {
-				ThisValue: 'Trending1'
+				ThisValue: 'TrendingNow'
 			}
 		}
 	};
 //https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx 
 	//https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx
-    request.post("https://www.verizon.com/fiostv/myservices/admin/testwhatshot.ashx", args,
+    request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
              
