@@ -110,7 +110,7 @@ function secondMsg(apireq) {
   	console.log('inside secondMsg call ');
 	//var stblst= {"facebook":{"attachment":{"type":"template","payload":{"template_type":"button","text":"Select one of the STB from the below list, on which you like to record","buttons":[{"type":"postback","payload":"0000075999169227","title":"0000075999169227"}]}}}};
 //{ "facebook": { "attachment": { "type": "template", "payload": { "template_type": "button", "text": "Select one of the STB from the below list, on which you like to record", "buttons":[ { "type": "postback", "payload": "0000060661164198", "title": "Living Room" } ]} } } }	
-	var stblst={"facebook":{"attachment":{"type":"template","payload":{"template_type":"button","text":"Here is the program details you are looking for","buttons":[{"type":"postback","title":"2016 Ryder Cup","payload":"1"},{"type":"postback","title":"Live From Ryder Cup","payload":"1"},{"type":"postback","title":"Live From the Ryder","payload":"1"},{"type":"postback","title":"2016 Ryder Cup","payload":"1"},{"type":"postback","title":"2016 Ryder Cup","payload":"1"}]}}}};
+	var stblst={"facebook":{"attachment":{"type":"template","payload":{"template_type":"button","text":"Here is the program details you are looking for","buttons":[{"type":"postback","title":"2016 Ryder Cup","payload":"1"},{"type":"postback","title":"Live From Ryder Cup","payload":"1"},{"type":"postback","title":"Live From the Ryder","payload":"1"}]}}}};
 	 //  stblst=   STBList(apireq,function (str) {STBListCallBack(str);  }); 
 	return (
 	 {
