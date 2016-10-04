@@ -38,27 +38,15 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             break;
         case "getStarted":
            res.json(welcomeMsg());
-
-         //json(welcomeInit());
         break;
     	case "LinkOptions":
              res.json(LinkOptions());
-            break;
-	case "Buy":
-             res.json(firstMsg());
             break;
         case "MoreOptions":
              res.json(MoreOptions());
             break;
         case "Billing":
            STBList(req,function (str) {res.json(STBListCallBack(str));  }); 
-          
-            break;
-        case "showrecommendation":
-            res.json(recommendTV());
-            break;
-        case "Recommendation":
-            res.json(recommendTV());
             break;
         case "record":
             res.json(record(req));
@@ -72,17 +60,15 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
          case "stgexternalcall":
             recommendTVStg(function (str) {res.json(recommendTVNew1(str));  }); 
             break;
-        case "externalcall":
+        case "recommendation":
             recommendTVNew(function (str) {res.json(recommendTVNew1(str));  }); 
             break;
 	case "channelsearch":
-	   
             ChnlSearch(req,function (str) {res.json(ChnlSearchCallback(str));  }); 
             break; 
 	case "programSearch":
               PgmSearch(req,function (str) {res.json(PgmSearchCallback(str));  }); 
             break;  
-		    
         default:
             res.json(recommendTV());
     }
