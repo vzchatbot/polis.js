@@ -664,9 +664,9 @@ return ({
 }
 else if (SelectedSTB == "" || SelectedSTB == undefined)
 {
-	//STBList(function (str) {res.json(STBListCallBack(str));  }); 
+ STBList(req,function (str) {res.json(STBListCallBack(str));  }); 
 
-return secondMsg()
+//return secondMsg()
 /*
 return ({
         speech: "Select one of the DVR from the below list, on which you like to record",
