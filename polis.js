@@ -310,13 +310,21 @@ function ChnlSearchCallback(apiresp) {
 
 function PgmSearch(apireq,callback) { 
       var strProgram =  apireq.body.result.parameters.Programs.toUpperCase();
+	 var strGenre =  apireq.body.result.parameters.Genre.toUpperCase();
+	 var strdate =  apireq.body.result.parameters.date;
+	
 	 console.log("strProgram " + strProgram);
 	
         var headersInfo = { "Content-Type": "application/json" };
 	var args = {
 		"headers": headersInfo,
 		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
-			 Request: {ThisValue: 'ProgramSearch',BotstrTitleValue:strProgram} 
+			 Request: {
+				   ThisValue: 'ProgramSearch',
+				   BotstrTitleValue:strProgram,
+				   BotstrGenreRootId : strGenre,
+				   BotdtAirStartDateTime : strdate
+				  } 
 			}
 		
 	};
