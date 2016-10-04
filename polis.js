@@ -319,16 +319,11 @@ function PgmSearch(apireq,callback) {
 	var args = {
 		"headers": headersInfo,
 		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
-			 Request: {
-				   ThisValue: 'ProgramSearch',
-				   BotstrTitleValue:strProgram,
-				   BotstrGenreRootId : strGenre,
-				   BotdtAirStartDateTime : strdate
-				  } 
+			 Request: {ThisValue: 'ProgramSearch', BotstrTitleValue:strProgram, BotstrGenreRootId : strGenre, BotdtAirStartDateTime : strdate} 
 			}
-		
-	};
+		};
 
+	 console.log("args " + args);
 	
     request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
         function (error, response, body) {
