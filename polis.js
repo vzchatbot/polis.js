@@ -309,7 +309,7 @@ function ChnlSearchCallback(apiresp) {
 
 function PgmSearch(apireq,callback) { 
       var strProgram =  apireq.body.result.parameters.Programs.toUpperCase();
-	
+	 console.log("strProgram " + strProgram);
 	
         var headersInfo = { "Content-Type": "application/json" };
 	var args = {
@@ -319,7 +319,7 @@ function PgmSearch(apireq,callback) {
 			}
 		
 	};
-  console.log("json " + String(args));
+
 	
     request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
         function (error, response, body) {
