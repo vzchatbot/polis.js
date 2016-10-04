@@ -664,7 +664,7 @@ return ({
 }
 else if (SelectedSTB == "" || SelectedSTB == undefined)
 {
- STBList(apireq,function (str) {res.json(STBListCallBack(str));  }); 
+ STBList(apireq,function (str) {STBListCallBack(str);  }); 
 
 //return secondMsg()
 /*
