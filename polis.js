@@ -69,6 +69,9 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 	case "channelsearch":
             ChnlSearch(req,function (str) {res.json(ChnlSearchCallback(str));  }); 
             break; 
+	case "programSearchdummy":
+	    res.json(programSearch(req));
+            break;
 	case "programSearch":
               PgmSearch(req,function (str) {res.json(PgmSearchCallback(str));  }); 
             break;  
