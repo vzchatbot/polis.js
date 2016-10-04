@@ -216,7 +216,7 @@ function recommendTVNew1(apiresp) {
 
 function STBList(apireq,callback) { 
        	console.log('inside external call '+ apireq);
-	var struserid = apireq.body.contexts[0].parameters.Userid; 
+	var struserid = apireq.body.contexts[1].parameters.Userid; 
 		console.log('struserid '+ struserid);
         var headersInfo = { "Content-Type": "application/json" };
 	var args = {
