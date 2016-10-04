@@ -313,7 +313,7 @@ function PgmSearch(apireq,callback) {
 	 var strGenre =  apireq.body.result.parameters.Genre;
 	 var strdate =  apireq.body.result.parameters.date;
 	
-	 console.log("strProgram " + strProgram);
+	 console.log("strProgram " + strProgram + "strGenre " + strGenre + "strdate " +strdate);
 	
         var headersInfo = { "Content-Type": "application/json" };
 	if (strGenre == '' || strGenre == undefined)
