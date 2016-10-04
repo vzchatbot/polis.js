@@ -60,8 +60,11 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
          case "stgexternalcall":
             recommendTVStg(function (str) {res.json(recommendTVNew1(str));  }); 
             break;
+	case "Trending":
+            recommendTVNew('Trending',function (str) {res.json(recommendTVNew1(str));  }); 
+            break;
         case "recommendation":
-            recommendTVNew(function (str) {res.json(recommendTVNew1(str));  }); 
+            recommendTVNew('whatshot',function (str) {res.json(recommendTVNew1(str));  }); 
             break;
 	case "channelsearch":
             ChnlSearch(req,function (str) {res.json(ChnlSearchCallback(str));  }); 
@@ -174,7 +177,7 @@ return ({
 } 
 
 
-function recommendTVNew(callback) { 
+function recommendTVNew(pgmtype,callback) { 
        	console.log('inside external call ');
         var headersInfo = { "Content-Type": "application/json" };
 	var args = {
@@ -182,7 +185,7 @@ function recommendTVNew(callback) {
 		"json": {
 			Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
 			Request: {
-				ThisValue: 'WhatsHot', BotstrVCN:'3452'
+				ThisValue: pgmtype, BotstrVCN:'3452'
 			}
 		}
 	};
