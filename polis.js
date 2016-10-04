@@ -110,8 +110,8 @@ function secondMsg() {
   
 	//var stblst= {"facebook":{"attachment":{"type":"template","payload":{"template_type":"button","text":"Select one of the STB from the below list, on which you like to record","buttons":[{"type":"postback","payload":"0000075999169227","title":"0000075999169227"}]}}}};
 //{ "facebook": { "attachment": { "type": "template", "payload": { "template_type": "button", "text": "Select one of the STB from the below list, on which you like to record", "buttons":[ { "type": "postback", "payload": "0000060661164198", "title": "Living Room" } ]} } } }	
-	var stblst={"facebook":{"attachment":{"type":"template","payload":{"template_type":"button","text":"Here is the program details you are looking for","buttons":[{"type":"postback","title":"593 - 2016 Ryder Cup -  Golf Channel High Definition - Oct  3 2016  1:00AM - Sports &amp; Fitness","payload":"1"},{"type":"postback","title":"593 - Live From the Ryder Cup -  Golf Channel High Definition - Oct  3 2016  7:00AM - Sports &amp; Fitness","payload":"1"},{"type":"postback","title":"593 - Live From the Ryder Cup -  Golf Channel High Definition - Oct  3 2016  1:00PM - Sports &amp; Fitness","payload":"1"},{"type":"postback","title":"593 - 2016 Ryder Cup -  Golf Channel High Definition - Oct  3 2016  4:00PM - Sports &amp; Fitness","payload":"1"},{"type":"postback","title":"593 - 2016 Ryder Cup -  Golf Channel High Definition - Oct  4 2016 12:00AM - Sports &amp; Fitness","payload":"1"}]}}}};
-	
+//	var stblst={"facebook":{"attachment":{"type":"template","payload":{"template_type":"button","text":"Here is the program details you are looking for","buttons":[{"type":"postback","title":"593 - 2016 Ryder Cup -  Golf Channel High Definition - Oct  3 2016  1:00AM - Sports &amp; Fitness","payload":"1"},{"type":"postback","title":"593 - Live From the Ryder Cup -  Golf Channel High Definition - Oct  3 2016  7:00AM - Sports &amp; Fitness","payload":"1"},{"type":"postback","title":"593 - Live From the Ryder Cup -  Golf Channel High Definition - Oct  3 2016  1:00PM - Sports &amp; Fitness","payload":"1"},{"type":"postback","title":"593 - 2016 Ryder Cup -  Golf Channel High Definition - Oct  3 2016  4:00PM - Sports &amp; Fitness","payload":"1"},{"type":"postback","title":"593 - 2016 Ryder Cup -  Golf Channel High Definition - Oct  4 2016 12:00AM - Sports &amp; Fitness","payload":"1"}]}}}};
+	   stblst=   STBList(req,function (str) {STBListCallBack(str);  }); 
 	return (
 	 {
         speech: "Second Message",
@@ -225,6 +225,7 @@ function recommendTVNew1(apiresp) {
 function STBList(apireq,callback) { 
        	console.log('inside external call '+ apireq.body.contexts);
 	var struserid = apireq.body.result.contexts[0]["parameters"]["Userid"]; 
+	struserid='demoacct102';
 		console.log('struserid '+ struserid);
         var headersInfo = { "Content-Type": "application/json" };
 	var args = {
