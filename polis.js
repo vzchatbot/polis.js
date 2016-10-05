@@ -522,12 +522,12 @@ return (
                             {
                                 "type": "postback",
                                 "title": "12:30",
-                                "payload": "Channel 5 HD - 12:30 EST"
+                                "payload": "12:30"
                             },
                             {
                                 "type": "postback",
                                 "title": "10:30",
-                                "payload": "Channel 15 SD - 10:30 EST"
+                                "payload": "12:30"
                             }
                         ]
                     }
