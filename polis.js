@@ -157,10 +157,12 @@ function STBList(apireq,callback) {
 		if (apireq.body.result.contexts[i].name == "sessionuserid") {
 
 			var struserid = apireq.body.result.contexts[i].parameters.Userid;
-			console.log("userid " + ": " + struserid);
+			console.log("original userid " + ": " + struserid);
 		}
 	} 
-	//struserid='demoacct102';
+	
+	if (struserid='' || struserid = undefined) struserid='demoacct102'; //hardcoding if its empty
+	
 		console.log('struserid '+ struserid);
         var headersInfo = { "Content-Type": "application/json" };
 	var args = {
