@@ -573,10 +573,10 @@ return ({
 }
 else if (SelectedSTB == "" || SelectedSTB == undefined)
 {
- STBList(apireq,function (str) {STBListCallBack(str);  }); 
+ //STBList(apireq,function (str) {STBListCallBack(str);  }); 
 
 //return secondMsg()
-/*
+
 return ({
         speech: "Select one of the DVR from the below list, on which you like to record",
         displayText: "Subscribe",
@@ -604,7 +604,7 @@ return ({
             }
         },
         source: "Zero Service - app_zero.js"
-    });	*/	
+    });		
 	
 }	
 else if (channel == 'CBS')
