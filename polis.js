@@ -152,7 +152,14 @@ function recommendTVNew1(apiresp) {
 
 function STBList(apireq,callback) { 
        	console.log('inside external call '+ apireq.body.contexts);
-	var struserid = apireq.body.result.contexts[0]["parameters"]["Userid"]; 
+	var struserid = ''; 
+	for (var i = 0, len = apireq.body.result.contexts.length; i < len; i++) {
+		if (apireq.body.result.contexts[i].name == "sessionuserid") {
+
+			var struserid = apireq.body.result.contexts[i].parameters.Userid;
+			console.log("userid " + ": " + struserid);
+		}
+	} 
 	struserid='demoacct102';
 		console.log('struserid '+ struserid);
         var headersInfo = { "Content-Type": "application/json" };
