@@ -160,7 +160,7 @@ function STBList(apireq,callback) {
 			console.log("userid " + ": " + struserid);
 		}
 	} 
-	struserid='demoacct102';
+	//struserid='demoacct102';
 		console.log('struserid '+ struserid);
         var headersInfo = { "Content-Type": "application/json" };
 	var args = {
