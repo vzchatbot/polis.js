@@ -49,6 +49,9 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
            STBList(req,function (str) {res.json(STBListCallBack(str));  }); 
             break;
         case "record":
+           res.json(record(req));
+            break;
+	 case "stblist":
            recordnew(req,function (subflow){res.json(subflow);});
             break;
         case "upsell":
