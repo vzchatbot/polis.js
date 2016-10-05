@@ -156,12 +156,12 @@ function STBList(apireq,callback) {
 	for (var i = 0, len = apireq.body.result.contexts.length; i < len; i++) {
 		if (apireq.body.result.contexts[i].name == "sessionuserid") {
 
-			var struserid = apireq.body.result.contexts[i].parameters.Userid;
+			 struserid = apireq.body.result.contexts[i].parameters.Userid;
 			console.log("original userid " + ": " + struserid);
 		}
 	} 
 	
-	if (struserid == "" || struserid = undefined) struserid='demoacct102'; //hardcoding if its empty
+	if (struserid == '' || struserid == undefined) struserid='demoacct102'; //hardcoding if its empty
 	
 		console.log('struserid '+ struserid);
         var headersInfo = { "Content-Type": "application/json" };
