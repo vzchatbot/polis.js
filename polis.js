@@ -590,12 +590,12 @@ return ({
                             {
                                 "type": "postback",
                                 "title": "Living Room",
-                                "payload": "Living Room"
+                                "payload": "0000060661164198"
                             },
                             {
                                 "type": "postback",
                                 "title": "Bed Room",
-                                "payload": "Bed Room"
+                                "payload": "0000060661164199"
                             }
                         ]
                     }
