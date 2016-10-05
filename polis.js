@@ -87,23 +87,6 @@ function firstMsg() {
         	displayText: "Your Purchase is done",
 	};
 	
-	/*
-   return (
-	 {
-        speech: "First Message",
-        displayText: "First Message",
-	data: {
-			"facebook": [
-			{
-			"text": "Here is a video to watch:"
-			},
-			{
-			"text": "Second Here is a video to watch:"
-			}
-			]
-			},
-        source: "Verizon.js"
-    	}  );*/
 } 
 
 function secondMsg(apireq) {
@@ -351,57 +334,11 @@ function recommendTVStg(callback) {
         }
     );
  } 
-/*
-function testcall()
-{
-var jsonreq={Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',Request: {ThisValue: 'STBList',"Userid":"LT6STH4"} };
 
-}
-
-
-function UFDCaller(callback,jsonreq) { 
-       	console.log('inside external call ');
-        var headersInfo = { "Content-Type": "application/json" };
-	var args = {
-		"headers": headersInfo,
-		"json": jsonreq;
-		}
-	};
-
-    request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
-        function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-             
-                 console.log("body " + body);
-                callback(body);
-            }
-            else
-            	console.log('error: ' + error + ' body: ' + body);
-        }
-    );
- } 
-
-*/
 function welcomeInit()
 {
   var username="";
-/*
-FB.api(
-  '/me',
-  'GET',
-  {"fields":"id,name"},
-  function(response) {
-      // Insert your code here
-username=name;
-
-  }
-);
-*/
-
-
-
-
-    return (
+  return (
       { speech: " Hey "+ username +"Welcome to Verizon!",
           displayText: " Hey Tabi, Welcome to Verizon!",
         data: {
@@ -556,13 +493,6 @@ function MoreOptions()
       );	
 	
 }
-  
-
-
-
-
-
-
 function record(apireq)
 {
 	
@@ -575,7 +505,10 @@ var SelectedSTB = apireq.body.result.parameters.SelectedSTB;
 
 if (time == "")
 {
-return ({
+return (
+	
+	
+	{
         speech: " I see the below schedules for " + program +". Tap on which time you like to record",
         displayText: "Subscribe",
         data: {
@@ -640,10 +573,10 @@ return ({
 }
 else if (SelectedSTB == "" || SelectedSTB == undefined)
 {
- //STBList(apireq,function (str) {STBListCallBack(str);  }); 
+ STBList(apireq,function (str) {STBListCallBack(str);  }); 
 
 //return secondMsg()
-
+/*
 return ({
         speech: "Select one of the DVR from the below list, on which you like to record",
         displayText: "Subscribe",
@@ -671,7 +604,7 @@ return ({
             }
         },
         source: "Zero Service - app_zero.js"
-    });		
+    });	*/	
 	
 }	
 else if (channel == 'CBS')
