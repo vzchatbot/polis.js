@@ -122,64 +122,6 @@ function secondMsg(apireq) {
 } 
 
 
-function channelsearch(apireq) {
-    
-var chnNo= Math.floor(Math.random() * (500 - 1) + 1);
-var channel = apireq.body.result.parameters.Channel.toUpperCase() ;
-	
-   return (
-	   
-	   {
-        speech: "You can watch " + channel + "  on Channel Number : "+ chnNo ,
-        displayText: "You can watch " + channel + "  on Channel Number : "+ chnNo ,
-        source: "Verizon.js"
-    	}
-	 /*  {
-        speech: "Second Message You can watch " + channel + "  on Channel Number : "+ chnNo ,
-        displayText: "Second Message You can watch " + channel + "  on Channel Number : "+ chnNo ,
-        source: "Verizon.js"
-    }*/
-	  
-	  
-	  
-	  );
-
-} 
-
-function programSearch(apireq) {
-   var program = apireq.body.result.parameters.Programs.toUpperCase(); 
-return ({
-        speech: " I see the below schedules for " + program +". Tap on which time you like to record",
-        displayText: "Subscribe",
-        data: {
-            "facebook": {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "button",
-                        "text":  " I see the below schedules for " + program +". Tap on which time you like to record",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "HBO HD Channel 5  - 12:30 EST ",
-                                "payload": "HBO HD Channel 5  - 12:30 EST ",
-                            },
-                            {
-                                "type": "postback",
-                                "title": "HBO SD Channel 15  - 10:30 EST ",
-                                "payload": "HBO SD Channel 15  - 10:30 EST ",
-                            }
-                        ]
-                    }
-                }
-            }
-        },
-        source: "Zero Service - app_zero.js"
-    });		
-
-} 
-
-
 function recommendTVNew(pgmtype,callback) { 
        	console.log('inside external call ');
         var headersInfo = { "Content-Type": "application/json" };
@@ -309,13 +251,29 @@ function ChnlSearchCallback(apiresp) {
 } 
 
 function PgmSearch(apireq,callback) { 
-      var strProgram =  apireq.body.result.parameters.Programs;
+         var strProgram =  apireq.body.result.parameters.Programs;
 	 var strGenre =  apireq.body.result.parameters.Genre;
 	 var strdate =  apireq.body.result.parameters.date;
+	 var strChannelName =  apireq.body.result.parameters.Channel;
 	
 	 console.log("strProgram " + strProgram + "strGenre " + strGenre + "strdate " +strdate);
 	
         var headersInfo = { "Content-Type": "application/json" };
+	
+	var args = {
+		"headers": headersInfo,
+		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
+			 Request: {ThisValue: 'ProgramSearch', 
+				   BotstrTitleValue:strProgram, 
+				   BotdtAirStartDateTime : strdate,
+				   BotstrGenreRootId : strGenre,
+				   BotstrStationCallSign:strChannelName
+				  } 
+			}
+		};
+	
+	
+	/*
 	if (strGenre == '' || strGenre == undefined)
 	{
 		var args = {
@@ -334,7 +292,9 @@ function PgmSearch(apireq,callback) {
 			}
 		};
 	
-	}
+	}*/
+	
+	
 	 console.log("args " + args);
 	
     request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
@@ -1111,6 +1071,64 @@ function chatInitiate() {
         source: "Zero Service - app_zero.js"
     });
 }
+
+function channelsearch(apireq) {
+    
+var chnNo= Math.floor(Math.random() * (500 - 1) + 1);
+var channel = apireq.body.result.parameters.Channel.toUpperCase() ;
+	
+   return (
+	   
+	   {
+        speech: "You can watch " + channel + "  on Channel Number : "+ chnNo ,
+        displayText: "You can watch " + channel + "  on Channel Number : "+ chnNo ,
+        source: "Verizon.js"
+    	}
+	 /*  {
+        speech: "Second Message You can watch " + channel + "  on Channel Number : "+ chnNo ,
+        displayText: "Second Message You can watch " + channel + "  on Channel Number : "+ chnNo ,
+        source: "Verizon.js"
+    }*/
+	  
+	  
+	  
+	  );
+
+} 
+
+function programSearch(apireq) {
+   var program = apireq.body.result.parameters.Programs.toUpperCase(); 
+return ({
+        speech: " I see the below schedules for " + program +". Tap on which time you like to record",
+        displayText: "Subscribe",
+        data: {
+            "facebook": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text":  " I see the below schedules for " + program +". Tap on which time you like to record",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "HBO HD Channel 5  - 12:30 EST ",
+                                "payload": "HBO HD Channel 5  - 12:30 EST ",
+                            },
+                            {
+                                "type": "postback",
+                                "title": "HBO SD Channel 15  - 10:30 EST ",
+                                "payload": "HBO SD Channel 15  - 10:30 EST ",
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        source: "Zero Service - app_zero.js"
+    });		
+
+} 
+
 
 function myfunction() 
  {
