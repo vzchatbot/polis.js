@@ -270,7 +270,7 @@ function PgmSearch(apireq,callback) {
 	var args = {
 		"headers": headersInfo,
 		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
-			 Request: {ThisValue: 'ProgramSearch', 
+			 Request: {ThisValue: 'AdvProgramSearch', 
 				   BotstrTitleValue:strProgram, 
 				   BotdtAirStartDateTime : strdate,
 				   BotstrGenreRootId : strGenre,
