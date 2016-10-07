@@ -77,7 +77,45 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             break;
 	case "programSearch":
               PgmSearch(req,function (str) {res.json(PgmSearchCallback(str));  }); 
-            break;  
+            break; 
+	case "recordnew":
+              	var channel = req.body.result.parameters.Channel.toUpperCase();
+		var program = req.body.result.parameters.Programs.toUpperCase();
+		var time = req.body.result.parameters.timeofpgm;
+		var dateofrecord = req.body.result.parameters.date;
+		var SelectedSTB = req.body.result.parameters.SelectedSTB;
+		console.log("SelectedSTB : " + SelectedSTB + " channel : " + channel + " dateofrecord :" + dateofrecord + " time :" + time);
+		if (time == "") {PgmSearch(req, function (str) { res.json(PgmSearchCallback(str)); });}
+		else if (SelectedSTB == "" || SelectedSTB == undefined) {getstblist(req, function (subflow) { res.json(subflow); });}
+		else {
+				var respstr = 'Your recording for "' + req.body.result.parameters.Programs + '" has been scheduled at ' + req.body.result.parameters.timeofpgm + ' on ' + req.body.result.parameters.SelectedSTB + ' STB.';
+				res.json({
+				speech: respstr + " Would you like to see some other TV Recommendations for tonight?",
+				displayText: "TV Recommendations",
+				data: {
+					"facebook": {
+					"attachment": {
+					"type": "template",
+					"payload": {
+					"template_type": "button",
+					"text": respstr + " Would you like to see some other TV Recommendations for tonight?",
+					"buttons": [
+					{
+					"type": "postback",
+					"title": "Show Recommendations",
+					"payload": "Show Recommendations"
+					},
+					{
+					"type": "postback",
+					"title": "More Options",
+					"payload": "More Options"
+					}]}}}
+				},
+				source: "Verizon.js"
+				});
+		}  
+  
+            break; 
         default:
             res.json(recommendTV());
     }
