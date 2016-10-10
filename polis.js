@@ -206,7 +206,7 @@ function secondMsg(apireq) {
 
 //var stblst={"facebook":{ "text":"Pick a color:", "quick_replies":[ { "content_type":"text", "title":"Red", "payload":"red" }, { "content_type":"text", "title":"Green", "payload":"green" } ] }};
  
-var stblst={"facebook":{ "text":"Pick a color:", "quick_replies":[ { "content_type":"text", "title":"Red", "payload":"red", "image_url":"http://petersfantastichats.com/img/red.png" }, { "content_type":"text", "title":"Green", "payload":"green", "image_url":"http://petersfantastichats.com/img/green.png" }, { "content_type":"text", "title":"Blue", "payload":"blue", "image_url":"http://petersfantastichats.com/img/green.png" }, { "content_type":"text", "title":"yellow", "payload":"yellow", "image_url":"http://petersfantastichats.com/img/green.png" }, { "content_type":"text", "title":"i m trying how big the text can go", "payload":"green", "image_url":"http://petersfantastichats.com/img/green.png" }] }};
+var stblst={"facebook":{ "text":"Pick a color:", "quick_replies":[ { "content_type":"text", "title":"Red", "payload":"red", "image_url":"http://petersfantastichats.com/img/red.png" }, { "content_type":"text", "title":"Green", "payload":"green", "image_url":"http://petersfantastichats.com/img/green.png" }, { "content_type":"text", "title":"Blue", "payload":"blue", "image_url":"http://petersfantastichats.com/img/green.png" }, { "content_type":"text", "title":"yellow", "payload":"yellow", "image_url":"http://petersfantastichats.com/img/green.png" }, { "content_type":"text", "title":"i m trying big text", "payload":"green", "image_url":"http://petersfantastichats.com/img/green.png" }] }};
 
 	return (
 	 {
