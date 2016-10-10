@@ -87,6 +87,70 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 		console.log("SelectedSTB : " + SelectedSTB + " channel : " + channel + " dateofrecord :" + dateofrecord + " time :" + time);
 		if (time == "") {PgmSearch(req, function (str) { res.json(PgmSearchCallback(str)); });}
 		else if (SelectedSTB == "" || SelectedSTB == undefined) {getstblist(req, function (subflow) { res.json(subflow); });}
+		else if (channel == 'HBO') //not subscribed case
+		{
+		res.json ({
+			speech: " Sorry you are not subscribed to " + channel +". Would you like to subscribe " + channel + "?",
+			displayText: "Subscribe",
+			data: {
+			    "facebook": {
+				"attachment": {
+				    "type": "template",
+				    "payload": {
+					"template_type": "button",
+					"text": " Sorry you are not subscribed to " + channel +". Would you like to subscribe " + channel + "?",
+					"buttons": [
+					    {
+						"type": "postback",
+						"title": "Subscribe",
+						"payload": "Subscribe"
+					    },
+					    {
+						"type": "postback",
+						"title": "No, I'll do it later ",
+						"payload": "No Subscribe"
+					    }
+					]
+				    }
+				}
+			    }
+			},
+			source: "Zero Service - app_zero.js"
+		    });	
+
+		}
+		else if (channel == 'CBS')  //DVR full case
+		{
+		res.json ({
+			speech: " Sorry your DVR storage is full.  Would you like to upgrade your DVR ?",
+			displayText: "Subscribe",
+			data: {
+			    "facebook": {
+				"attachment": {
+				    "type": "template",
+				    "payload": {
+                        "template_type": "button",
+                        "text": " Sorry your DVR storage is full.  Would you like to upgrade your DVR ?",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Upgrade my DVR",
+                                "payload": "Upgrade my DVR"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "No, I'll do it later ",
+                                "payload": "No Upgrade"
+                          	  }
+                      		  ]
+				 }
+				}
+			    }
+			},
+			source: "Zero Service - app_zero.js"
+		    });	
+
+		}
 		else {
 				var respstr = 'Your recording for "' + req.body.result.parameters.Programs + '" has been scheduled at ' + req.body.result.parameters.timeofpgm + ' on ' + req.body.result.parameters.SelectedSTB + ' STB.';
 				res.json({
