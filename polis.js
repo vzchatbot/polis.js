@@ -306,7 +306,7 @@ function STBListCallBack(apiresp) {
 
 
 
-var string substring = '"buttons":{';
+var substring = '"buttons":{';
 
 if (subflow(substring) !== -1)
 {
