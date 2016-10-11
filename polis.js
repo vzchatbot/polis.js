@@ -33,7 +33,8 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
     switch (action) {
         case "welcome":
             // res.json(chatInitiate());
- res.json(secondMsg(req));
+            // res.json(secondMsg(req));
+         res.json(welcomeInit());
 
             break;
         case "getStarted":
