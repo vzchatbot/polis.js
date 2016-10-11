@@ -306,24 +306,24 @@ function STBListCallBack(apiresp) {
 
 
 
+
+var tmpflow=JSON.stringify(subflow);
+
 var substring = '"buttons":{';
-
-if (subflow.indexOf(substring) !== -1)
+ if (tmpflow.indexOf(substring) !== -1)
 {
-subflow = subflow.replace('"buttons":{', ' "buttons":{['); 
+tmpflow = tmpflow.replace('"buttons":{', ' "buttons":{['); 
+tmpflow = tmpflow.replace('} }}', ' }] }}'); console.log ("inside replace"+tmpflow);
 
-subflow = subflow.replace('} }}', ' }] }}'); 
+} 
 
-console.log ("inside replace"+subflow);
-}
-
-
+JSON.parse(tmpflow);
 
 
     return ({
         speech: "Select one of the DVR from the below list, on which you like to record",
         displayText: "STB List",
-        data: subflow,
+        data: tmpflow,
         source: "Verizon.js"
     });
 
