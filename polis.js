@@ -308,7 +308,7 @@ function STBListCallBack(apiresp) {
 
 var substring = '"buttons":{';
 
-if (subflow(substring) !== -1)
+if (subflow.indexOf(substring) !== -1)
 {
 subflow = subflow.replace('"buttons":{', ' "buttons":{['); 
 
