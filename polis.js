@@ -211,7 +211,7 @@ var stblst={"facebook":{ "text":"Pick a color:", "quick_replies":[ { "content_ty
 
 	return (
 	 {
-        speech: "Second Message",
+        speech: "Second Message"+  {facebook.first_name} ,
         displayText: "Second Message",
 	data:stblst ,
         source: "Verizon.js"
