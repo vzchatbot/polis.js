@@ -303,6 +303,23 @@ function STBListCallBack(apiresp) {
 	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
 	
 	console.log("subflow :" + subflow)
+
+
+
+var string substring = '"buttons":{';
+
+if (subflow(substring) !== -1)
+{
+subflow = subflow.replace('"buttons":{', ' "buttons":{['); 
+
+subflow = subflow.replace('} }}', ' }] }}'); 
+
+console.log ("inside replace"+subflow);
+}
+
+
+
+
     return ({
         speech: "Select one of the DVR from the below list, on which you like to record",
         displayText: "STB List",
