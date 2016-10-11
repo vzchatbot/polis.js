@@ -305,7 +305,7 @@ function STBListCallBack(apiresp) {
 	console.log("subflow :" + subflow)
 
 
-
+/*
 
 var tmpflow=JSON.stringify(subflow);
 
@@ -318,12 +318,12 @@ tmpflow = tmpflow.replace('} }}', ' }] }}'); console.log ("inside replace"+tmpfl
 } 
 
 JSON.parse(tmpflow);
-
+*/
 
     return ({
         speech: "Select one of the DVR from the below list, on which you like to record",
         displayText: "STB List",
-        data: tmpflow,
+        data: subflow,
         source: "Verizon.js"
     });
 
