@@ -205,21 +205,22 @@ function CategoryList(apireq) {
 			categlist={"facebook":
 			{ "text":"Pick a category", 
 			 "quick_replies":[ 
-			    { "content_type":"text", "title":"Children & Family", "payload": "show Kids movies" }, 
-			    { "content_type":"text", "title":"Action & Adventure", "payload": "show Action movies" }, 
-			    { "content_type":"text", "title":"Documentary", "payload": "show Documentary movies" }, 
-			    { "content_type":"text", "title":"Mystery", "payload": "show Mystery movies" },
-			     { "content_type":"text", "title":"More Categories ", "payload": "show categories list pageno: 2" }
+			//    "content_type":"text", "title":"Red", "payload":"red"
+			    { "content_type":"text", "title":"Children & Family", "payload":"show Kids movies" }, 
+			    { "content_type":"text", "title":"Action & Adventure", "payload":"show Action movies" }, 
+			    { "content_type":"text", "title":"Documentary", "payload":"show Documentary movies" }, 
+			    { "content_type":"text", "title":"Mystery", "payload":"show Mystery movies" },
+			     { "content_type":"text", "title":"More Categories ", "payload":"show categories list pageno: 2" }
 			 ] }};
 		default :
 		categlist={"facebook":
 			{ "text":"I can also sort my recommendations for you by genre. Type or tap below", 
 			 "quick_replies":[ 
-			    { "content_type":"text", "title":"Comedy", "payload": "show Comedy movies" }, 
-			    { "content_type":"text", "title":"Drama", "payload": "show Drama movies" }, 
-			    { "content_type":"text", "title":"Sports", "payload": "show Sports movies" }, 
-			    { "content_type":"text", "title":"Sci-Fi & Fantasy", "payload": "show Sci-Fi movies" },
-			    { "content_type":"text", "title":"More Categories ", "payload": "show categories list pageno: 1" }
+			    { "content_type":"text", "title":"Comedy", "payload":"show Comedy movies" }, 
+			    { "content_type":"text", "title":"Drama", "payload":"show Drama movies" }, 
+			    { "content_type":"text", "title":"Sports", "payload":"show Sports movies" }, 
+			    { "content_type":"text", "title":"Sci-Fi & Fantasy", "payload":"show Sci-Fi movies" },
+			    { "content_type":"text", "title":"More Categories ", "payload":"show categories list pageno: 1" }
 			 ] }};
 	
 	}
