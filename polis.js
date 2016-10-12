@@ -215,7 +215,7 @@ function CategoryList(apireq) {
 			 ] }};
 			break;
 		default :
-		/*categlist={"facebook":
+		categlist={"facebook":
 			{ "text":"I can also sort my recommendations for you by genre. Type or tap below", 
 			 "quick_replies":[ 
 			    { "content_type": "text", "payload":"COMEDY", "title":"Comedy" }, 
@@ -224,31 +224,8 @@ function CategoryList(apireq) {
 			    { "content_type": "text", "payload":"show Sci-Fi movies" , "title":"Sci-Fi & Fantasy"},
 			    { "content_type": "text", "payload":"show categories list pageno: 1" , "title":"More Categories "}
 			 ] }};
-		}*/
-		categlist={
-				    "facebook": {
-				      "quick_replies": [
-					{
-					  "content_type": "text",
-					  "payload": "HUMID1",
-					  "title": "Humid"
-					},
-					{
-					  "content_type": "text",
-					  "payload": "DRY1",
-					  "title": "Dry"
-					},
-					{
-					  "content_type": "text",
-					  "payload": "NEITHER1",
-					  "title": "Neither"
-					}
-				      ],
-				      "text": "First, I want to get to know you! What's the weather like where you are from?"
-				    }
-		  }
-		break;
-	}
+			break;
+		}
 	
 	return{
 		 speech: "I can also sort my recommendations for you by genre. Type or tap below",
