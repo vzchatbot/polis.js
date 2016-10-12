@@ -218,10 +218,10 @@ function CategoryList(apireq) {
 		categlist={"facebook":
 			{ "text":"I can also sort my recommendations for you by genre. Type or tap below", 
 			 "quick_replies":[ 
-			    { "content_type": "text", "payload":"COMEDY", "title":"Comedy" }, 
-			    { "content_type": "text", "payload":"show Drama movies", "title":"Drama" }, 
-			    { "content_type": "text", "payload":"show_Sports_movies" , "title":"Sports"}, 
-			    { "content_type": "text", "payload":"show Sci-Fi movies" , "title":"Sci-Fi & Fantasy"},
+			    { "content_type": "text", "payload":"show Comedy movies", "title":"Show Comedy movies" }, 
+			    { "content_type": "text", "payload":"show Drama movies", "title":"Show Drama movies" }, 
+			    { "content_type": "text", "payload":"show Sports program" , "title":"Show Sports program"}, 
+			    { "content_type": "text", "payload":"show Sci-Fi movies" , "title":"Show Sci-Fi movies"},
 			    { "content_type": "text", "payload":"show categories list pageno: 1" , "title":"More Categories "}
 			 ] }};
 			break;
