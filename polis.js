@@ -35,8 +35,9 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             // res.json(chatInitiate());
              res.json(secondMsg(req));
        //  res.json(welcomeInit());
-
             break;
+        case "CategoryList":
+           res.json(CategoryList(req));
         case "getStarted":
            res.json(welcomeMsg());
         break;
@@ -188,6 +189,49 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             res.json(recommendTV());
     }
 });
+
+
+
+
+function CategoryList(apireq) {
+	
+	 	var pgNo = req.body.result.parameters.PageNo;
+	
+	var categlist={}
+	
+	switch(pgNo)
+	{
+		case '1':
+			categlist={"facebook":
+			{ "text":"Pick a category", 
+			 "quick_replies":[ 
+			    { "content_type":"text", "title":"Children & Family", "payload":"show Kids movies" }, 
+			    { "content_type":"text", "title":"Action & Adventure", "payload":"show Action movies" }, 
+			    { "content_type":"text", "title":"Documentary", "payload":"show Documentary movies" }, 
+			    { "content_type":"text", "title":"Mystery", "payload":"show Mystery movies" },
+			     { "content_type":"text", "title":"More Categories ", "payload":"show categories list pageno: 2" }
+			 ] }};
+		default :
+		categlist={"facebook":
+			{ "text":"I can also sort my recommendations for you by genre. Type or tap below", 
+			 "quick_replies":[ 
+			    { "content_type":"text", "title":"Comedy", "payload":"show Comedy movies" }, 
+			    { "content_type":"text", "title":"Drama", "payload":"show Drama movies" }, 
+			    { "content_type":"text", "title":"Sports", "payload":"show Sports movies" }, 
+			    { "content_type":"text", "title":"Sci-Fi & Fantasy", "payload":"show Sci-Fi movies" },
+			    { "content_type":"text", "title":"More Categories ", "payload":"show categories list pageno: 1" }
+			 ] }};
+	
+	}
+	
+	return{
+		 speech: "I can also sort my recommendations for you by genre. Type or tap below",
+        	displayText: "I can also sort my recommendations for you by genre. Type or tap below",
+		data:categlist ,
+        	source: "Verizon.js"
+	};
+	
+} 
 
 function firstMsg() {
 	
