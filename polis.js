@@ -214,7 +214,7 @@ function CategoryList(apireq) {
 			    { "content_type": "text", "title":"More Categories ", "payload":"show categories list pageno: 2" }
 			 ] }};
 		default :
-		categlist={"facebook":
+		/*categlist={"facebook":
 			{ "text":"I can also sort my recommendations for you by genre. Type or tap below", 
 			 "quick_replies":[ 
 			    { "content_type": "text", "payload":"COMEDY", "title":"Comedy" }, 
@@ -222,9 +222,26 @@ function CategoryList(apireq) {
 			    { "content_type": "text", "payload":"show_Sports_movies" , "title":"Sports"}, 
 			    { "content_type": "text", "payload":"show Sci-Fi movies" , "title":"Sci-Fi & Fantasy"},
 			    { "content_type": "text", "payload":"show categories list pageno: 1" , "title":"More Categories "}
-			 ] }};
-	
-	}
+			 ] }};*/
+			
+			categlist={
+			    "facebook": {
+				"attachment": {
+				    "type": "template",
+				    "payload": {
+					"template_type": "button",
+					"text": "Pick a category",
+				       "quick_replies":[ 
+							    { "content_type": "text", "payload":"COMEDY", "title":"Comedy" }, 
+							    { "content_type": "text", "payload":"show Drama movies", "title":"Drama" }, 
+							    { "content_type": "text", "payload":"show_Sports_movies" , "title":"Sports"}, 
+							    { "content_type": "text", "payload":"show Sci-Fi movies" , "title":"Sci-Fi & Fantasy"},
+							    { "content_type": "text", "payload":"show categories list pageno: 1" , "title":"More Categories "}
+							 ] 
+						    }
+						}
+						}};
+		}
 	
 	return{
 		 speech: "I can also sort my recommendations for you by genre. Type or tap below",
