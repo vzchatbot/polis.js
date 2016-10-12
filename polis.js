@@ -217,7 +217,7 @@ function CategoryList(apireq) {
 		categlist={"facebook":
 			{ "text":"I can also sort my recommendations for you by genre. Type or tap below", 
 			 "quick_replies":[ 
-			    { "content_type": "text", "payload":"show_Comedy_movies", "title":"Comedy" }, 
+			    { "content_type": "text", "payload":"SHOWCOMEDY", "title":"Comedy" }, 
 			    { "content_type": "text", "payload":"show Drama movies", "title":"Drama" }, 
 			    { "content_type": "text", "payload":"show_Sports_movies" , "title":"Sports"}, 
 			    { "content_type": "text", "payload":"show Sci-Fi movies" , "title":"Sci-Fi & Fantasy"},
