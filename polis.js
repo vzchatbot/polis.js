@@ -195,7 +195,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
 function CategoryList(apireq) {
 	
-	 	var pgNo = req.body.result.parameters.PageNo;
+	 	var pgNo = apireq.body.result.parameters.PageNo;
 	
 	var categlist={}
 	
