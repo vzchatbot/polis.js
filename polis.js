@@ -217,11 +217,11 @@ function CategoryList(apireq) {
 		categlist={"facebook":
 			{ "text":"I can also sort my recommendations for you by genre. Type or tap below", 
 			 "quick_replies":[ 
-			    { "content_type": "text", "title":"Comedy", "payload":"show Comedy movies" }, 
-			    { "content_type": "text", "title":"Drama", "payload":"show Drama movies" }, 
-			    { "content_type": "text", "title":"Sports", "payload":"show Sports movies" }, 
-			    { "content_type": "text", "title":"Sci-Fi & Fantasy", "payload":"show Sci-Fi movies" },
-			    { "content_type": "text", "title":"More Categories ", "payload":"show categories list pageno: 1" }
+			    { "content_type": "text", "payload":"show Comedy movies", "title":"Comedy" }, 
+			    { "content_type": "text", "payload":"show Drama movies", "title":"Drama" }, 
+			    { "content_type": "text", "payload":"show Sports movies" , "title":"Sports"}, 
+			    { "content_type": "text", "payload":"show Sci-Fi movies" , "title":"Sci-Fi & Fantasy"},
+			    { "content_type": "text", "payload":"show categories list pageno: 1" , "title":"More Categories "}
 			 ] }};
 	
 	}
