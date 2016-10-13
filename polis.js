@@ -215,7 +215,7 @@ function CategoryList(apireq) {
 			 ] }};
 			break;
 		default :
-		/*categlist={"facebook":
+		categlist={"facebook":
 			{ "text":"I can also sort my recommendations for you by genre. Type or tap below", 
 			 "quick_replies":[ 
 			    { "content_type": "text", "payload":"show Comedy movies", "title":"Show Comedy movies" }, 
@@ -223,9 +223,9 @@ function CategoryList(apireq) {
 			    { "content_type": "text", "payload":"show Sports program" , "title":"Show Sports program"}, 
 			    { "content_type": "text", "payload":"show Sci-Fi movies" , "title":"Show Sci-Fi movies"},
 			    { "content_type": "text", "payload":"show categories list pageno: 1" , "title":"More Categories "}
-			 ] }};*/
+			 ] }};
 			/*categlist={"facebook":{"attachment":{"type":"template","payload":{"template_type":"text","text":"I can also sort my recommendations for you by genre. Type or tap below","quick_replies":[{"content_type":"text","payload":"Comedy","title":"Show Comedy movies"},{"content_type":"text","payload":"show Drama movies","title":"Show Drama movies"},{"content_type":"text","payload":"show Sports program","title":"Show Sports program"},{"content_type":"text","payload":"show Sci-Fi movies","title":"Show Sci-Fi movies"},{"content_type":"text","payload":"show categories list pageno: 1","title":"More Categories "}]}}}};*/
-			categlist={"facebook":{"message":{"text":"I can also sort my recommendations for you by genre. Type or tap below","quick_replies":[{"content_type":"text","payload":"Comedy","title":"Show Comedy movies"},{"content_type":"text","payload":"show Drama movies","title":"Show Drama movies"},{"content_type":"text","payload":"show Sports program","title":"Show Sports program"},{"content_type":"text","payload":"show Sci-Fi movies","title":"Show Sci-Fi movies"},{"content_type":"text","payload":"show categories list pageno: 1","title":"More Categories "}]}}};
+			//categlist={"facebook":{"message":{"text":"I can also sort my recommendations for you by genre. Type or tap below","quick_replies":[{"content_type":"text","payload":"Comedy","title":"Show Comedy movies"},{"content_type":"text","payload":"show Drama movies","title":"Show Drama movies"},{"content_type":"text","payload":"show Sports program","title":"Show Sports program"},{"content_type":"text","payload":"show Sci-Fi movies","title":"Show Sci-Fi movies"},{"content_type":"text","payload":"show categories list pageno: 1","title":"More Categories "}]}}};
 			
 			break;
 		}
