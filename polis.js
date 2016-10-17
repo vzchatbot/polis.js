@@ -358,22 +358,6 @@ function STBListCallBack(apiresp) {
 	
 	console.log("subflow :" + subflow)
 
-
-/*
-
-var tmpflow=JSON.stringify(subflow);
-
-var substring = '"buttons":{';
- if (tmpflow.indexOf(substring) !== -1)
-{
-tmpflow = tmpflow.replace('"buttons":{', ' "buttons":{['); 
-tmpflow = tmpflow.replace('} }}', ' }] }}'); console.log ("inside replace"+tmpflow);
-
-} 
-
-JSON.parse(tmpflow);
-*/
-
     return ({
         speech: "Select one of the DVR from the below list, on which you like to record",
         displayText: "STB List",
@@ -438,6 +422,113 @@ function ChnlSearchCallback(apiresp) {
 
 } 
 
+function DVRRecord(apireq,callback) { 
+	
+	var strUserid = apireq.body.result.parameters.Userid;
+	
+         var strProgram =  apireq.body.result.parameters.Programs;
+	 var strChannelName =  apireq.body.result.parameters.Channel;
+	 var strGenre =  apireq.body.result.parameters.Genre;
+
+	var strFiosId = apireq.body.result.parameters.FiosId;
+	var strStationId ==apireq.body.result.parameters.StationId  ;
+	
+	var strAirDate ==apireq.body.result.parameters.date  ;
+	var strAirTime ==apireq.body.result.parameters.timeofpgm  ;
+	var strDuration ==apireq.body.result.parameters.Duration  ;
+	
+	var strRegionId =apireq.body.result.parameters.RegionId;
+	var strSTBModel ==apireq.body.result.parameters.STBModel  ;
+	var strSTBId ==apireq.body.result.parameters.SelectedSTB  ;
+	
+	var strVhoId ==apireq.body.result.parameters.VhoId  ;
+	var strProviderId ==apireq.body.result.parameters.ProviderId  ;
+	
+	
+	 console.log(" strUserid " + strUserid + "Recording strProgram " + strProgram + " strGenre " + strGenre + " strdate " +strAirDate + " strFiosId " +strFiosId + " strStationId " +strStationId  +" strAirDate " + strAirDate + " strAirTime " + strAirTime+ " strSTBId " +strSTBId + " strSTBModel " +strSTBModel+" strRegionId " +strRegionId+ " strDuration " +strDuration );
+	
+        var headersInfo = { "Content-Type": "application/json" };
+	
+	var args = {
+		"headers": headersInfo,
+		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
+			 Request: {ThisValue: 'DVRSchedule', 
+				   Userid : strUserid,
+				   BotStbId:strSTBId, 
+				   BotDeviceModel : strSTBModel,
+				   BotstrFIOSRegionID : strRegionId,
+				   BotstrFIOSServiceId : strFiosId,
+				   BotStationId : strStationId,
+				   BotAirDate : strAirDate,
+				   BotAirTime : strAirTime,
+				   BotDuration : strDuration,
+				   BotVhoId : strVhoId,
+				   BotProviderId : strProviderId
+				   
+				  } 
+			}
+		};
+	
+	 console.log("args " + args);
+	
+    request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+             
+                 console.log("body " + body);
+                callback(body);
+            }
+            else
+            	console.log('error: ' + error + ' body: ' + body);
+        }
+    );
+ } 
+  
+function DVRRecordCallback(apiresp) {
+    var objToJson = {};
+    objToJson = apiresp;
+	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
+if (subflow.facebook.result.msg]='success')
+{
+	var respstr = 'Your recording for "' + req.body.result.parameters.Programs +  '"  on ' + req.body.result.parameters.Channel  +' channel, has been scheduled at ' + req.body.result.parameters.timeofpgm + ' on ' + req.body.result.parameters.SelectedSTB + ' STB.';
+				res.json({
+				speech: respstr + " Would you like to see some other TV Recommendations for tonight?",
+				displayText: "TV Recommendations",
+				data: {
+					"facebook": {
+					"attachment": {
+					"type": "template",
+					"payload": {
+					"template_type": "button",
+					"text": respstr + " Would you like to see some other TV Recommendations for tonight?",
+					"buttons": [
+					{
+					"type": "postback",
+					"title": "Show Recommendations",
+					"payload": "Show Recommendations"
+					},
+					{
+					"type": "postback",
+					"title": "More Options",
+					"payload": "More Options"
+					}]}}}
+				},
+				source: "Verizon.js"
+				});
+}
+else
+{
+    return ({
+        speech: "There is a problem occured in Scheduling. " + subflow.facebook.result.msg ,
+        displayText: "There is a problem occured in Scheduling." ,
+     //   data: subflow,
+        source: "Verizon.js"
+    });
+
+} 
+
+
+
 function PgmSearch(apireq,callback) { 
          var strProgram =  apireq.body.result.parameters.Programs;
 	 var strGenre =  apireq.body.result.parameters.Genre;
@@ -459,29 +550,6 @@ function PgmSearch(apireq,callback) {
 				  } 
 			}
 		};
-	
-	
-	/*
-	if (strGenre == '' || strGenre == undefined)
-	{
-		var args = {
-		"headers": headersInfo,
-		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
-			 Request: {ThisValue: 'ProgramSearch', BotstrTitleValue:strProgram, BotdtAirStartDateTime : strdate} 
-			}
-		};
-	}
-	else
-	{
-		var args = {
-		"headers": headersInfo,
-		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
-			 Request: {ThisValue: 'ProgramSearch', BotstrGenreRootId : strGenre, BotdtAirStartDateTime : strdate} 
-			}
-		};
-	
-	}*/
-	
 	
 	 console.log("args " + args);
 	
