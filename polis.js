@@ -426,7 +426,9 @@ function ChnlSearchCallback(apiresp) {
 
 function DVRRecord(apireq,callback) { 
 	
-	var strUserid = apireq.body.result.parameters.Userid;
+	//var strUserid = apireq.body.result.parameters.Userid;
+	var strUserid = apireq.body.result.contexts['name'=='sessionuserid'].parameters.Userid;
+	console.log(apireq.body.result.contexts['name'=='sessionuserid'].parameters.Userid);
 	
          var strProgram =  apireq.body.result.parameters.Programs;
 	 var strChannelName =  apireq.body.result.parameters.Channel;
@@ -466,8 +468,7 @@ function DVRRecord(apireq,callback) {
 				   BotDuration : strDuration,
 				   BotVhoId : strVhoId,
 				   BotProviderId : strProviderId
-				   
-				  } 
+				   } 
 			}
 		};
 	
