@@ -431,18 +431,18 @@ function DVRRecord(apireq,callback) {
 	 var strGenre =  apireq.body.result.parameters.Genre;
 
 	var strFiosId = apireq.body.result.parameters.FiosId;
-	var strStationId ==apireq.body.result.parameters.StationId  ;
+	var strStationId =apireq.body.result.parameters.StationId  ;
 	
-	var strAirDate ==apireq.body.result.parameters.date  ;
-	var strAirTime ==apireq.body.result.parameters.timeofpgm  ;
-	var strDuration ==apireq.body.result.parameters.Duration  ;
+	var strAirDate =apireq.body.result.parameters.date  ;
+	var strAirTime =apireq.body.result.parameters.timeofpgm  ;
+	var strDuration =apireq.body.result.parameters.Duration  ;
 	
 	var strRegionId =apireq.body.result.parameters.RegionId;
-	var strSTBModel ==apireq.body.result.parameters.STBModel  ;
-	var strSTBId ==apireq.body.result.parameters.SelectedSTB  ;
+	var strSTBModel =apireq.body.result.parameters.STBModel  ;
+	var strSTBId =apireq.body.result.parameters.SelectedSTB  ;
 	
-	var strVhoId ==apireq.body.result.parameters.VhoId  ;
-	var strProviderId ==apireq.body.result.parameters.ProviderId  ;
+	var strVhoId =apireq.body.result.parameters.VhoId  ;
+	var strProviderId =apireq.body.result.parameters.ProviderId  ;
 	
 	
 	 console.log(" strUserid " + strUserid + "Recording strProgram " + strProgram + " strGenre " + strGenre + " strdate " +strAirDate + " strFiosId " +strFiosId + " strStationId " +strStationId  +" strAirDate " + strAirDate + " strAirTime " + strAirTime+ " strSTBId " +strSTBId + " strSTBModel " +strSTBModel+" strRegionId " +strRegionId+ " strDuration " +strDuration );
