@@ -614,7 +614,7 @@ function welcomeMsg()
 			   {
                                 "type": "postback",
                                 "title": "Maybe later",
-                                "payload": "Get Started"
+                                "payload": "Main Menu"
                             }
                         ]
                     }
