@@ -426,10 +426,16 @@ function ChnlSearchCallback(apiresp) {
 
 function DVRRecord(apireq,callback) { 
 	
-	//var strUserid = apireq.body.result.parameters.Userid;
-	var strUserid = apireq.body.result.contexts['name'=='sessionuserid'].parameters.Userid;
-	console.log(apireq.body.result.contexts['name'=='sessionuserid'].parameters.Userid);
+	var struserid = ''; 
+	for (var i = 0, len = apireq.body.result.contexts.length; i < len; i++) {
+		if (apireq.body.result.contexts[i].name == "sessionuserid") {
+
+			 struserid = apireq.body.result.contexts[i].parameters.Userid;
+			console.log("original userid " + ": " + struserid);
+		}
+	} 
 	
+		
          var strProgram =  apireq.body.result.parameters.Programs;
 	 var strChannelName =  apireq.body.result.parameters.Channel;
 	 var strGenre =  apireq.body.result.parameters.Genre;
