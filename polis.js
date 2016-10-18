@@ -202,7 +202,7 @@ function LinkOptionsNew(apireq)
 	
 	var strRegionId =  apireq.body.result.parameters.RegionId;
 
-	if (strRegionId !='')
+	if (strRegionId != undefined  && strRegionId !='')
 	{
 		return (
 			{
