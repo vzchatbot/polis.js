@@ -43,7 +43,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
            res.json(welcomeMsg());
         break;
     	case "LinkOptions":
-             res.json(LinkOptions());
+             res.json(LinkOptionsNew());
             break;
         case "MoreOptions":
              res.json(MoreOptions());
@@ -195,6 +195,77 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
 
 
+
+function LinkOptionsNew()
+{
+    console.log('Calling from  link options:') ;
+	
+	var strRegionId =  apireq.body.result.parameters.RegionId;
+
+	if (strRegionId !='')
+	{
+		return (
+			{
+			speech: "Are you looking for something to watch, or do you want to see more options? Type or tap below.",
+			displayText: "Link Account",
+			data: {
+				"facebook": {
+					"attachment": {
+						"type": "template",
+						"payload": {
+							"template_type": "button",
+							"text": "Are you looking for something to watch, or do you want to see more options? Type or tap below.",
+							"buttons": [
+								{
+									"type": "postback",
+									"title": "What's on tonight?",
+									"payload": "On Later"
+								},
+								{
+									"type": "postback",
+									"title": "More Options",
+									"payload": "More Options"
+								}
+							]
+						}
+					}
+				}
+			},
+			source: "Verizon.js"
+		  }
+		  );	
+	}
+	else
+	{
+	return (
+			{
+			speech: "Congrats, we got your details. Click Continue below.",
+			displayText: "Link Account",
+			data: {
+				"facebook": {
+					"attachment": {
+						"type": "template",
+						"payload": {
+							"template_type": "button",
+							"text": "Congrats, we got your details. Click Continue below.",
+							"buttons": [
+								{
+									"type": "postback",
+									"title": "Continue",
+									"payload": "Userid : demoacct102 Regionid : 92377"
+								}
+							]
+						}
+					}
+				}
+			},
+			source: "Verizon.js"
+		  }
+		  );	
+	
+	
+	}
+}
 
 function CategoryList(apireq) {
 	
