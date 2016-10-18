@@ -463,7 +463,7 @@ function DVRRecord(apireq,callback) {
 		"headers": headersInfo,
 		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
 			 Request: {ThisValue: 'DVRSchedule', 
-				   Userid : strUserid,
+				   Userid : struserid,
 				   BotStbId:strSTBId, 
 				   BotDeviceModel : strSTBModel,
 				   BotstrFIOSRegionID : strRegionId,
