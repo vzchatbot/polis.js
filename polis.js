@@ -218,7 +218,7 @@ function LinkOptionsNew(apireq)
 							"buttons": [
 								{
 									"type": "postback",
-									"title": "What's on tonight?",
+									"title": "What's hot on tonight?",
 									"payload": "On Later"
 								},
 								{
