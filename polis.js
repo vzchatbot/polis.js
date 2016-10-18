@@ -237,6 +237,8 @@ function LinkOptionsNew(apireq)
 	}
 	else
 	{
+		
+		
 	return (
 			{
 			speech: "Congrats, we got your details. Click Continue below.",
@@ -247,7 +249,7 @@ function LinkOptionsNew(apireq)
 						"type": "template",
 						"payload": {
 							"template_type": "button",
-							"text": "Congrats, we got your details. Click Continue below.",
+							"text": "Congrats, we got your details. Click Continue button.",
 							"buttons": [
 								{
 									"type": "postback",
@@ -570,9 +572,9 @@ function DVRRecordCallback(apiresp) {
 	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
 	console.log(JSON.stringify(subflow));
 	
-	if (subflow.facebook.result !=undefined )
+	if (subflow.facebook !=undefined )
 	{
-	 if(subflow.facebook.result =='success' )
+	 if(subflow.facebook =='success' )
 	 {
 		var respstr = 'Your recording for "' + req.body.result.parameters.Programs +  '"  on ' + req.body.result.parameters.Channel  +' channel, has been scheduled at ' + req.body.result.parameters.timeofpgm + ' on ' + req.body.result.parameters.SelectedSTB + ' STB.';
 				res.json({
