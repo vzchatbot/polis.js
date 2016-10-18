@@ -201,7 +201,7 @@ function LinkOptionsNew(apireq)
     console.log('Calling from  link options:') ;
 	
 	var strRegionId =  apireq.body.result.parameters.RegionId;
-
+    console.log('strRegionId:' + strRegionId) ;
 	if (strRegionId != undefined  && strRegionId !='')
 	{
 		return (
