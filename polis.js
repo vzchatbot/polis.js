@@ -426,12 +426,12 @@ function ChnlSearchCallback(apiresp) {
 
 function DVRRecord(apireq,callback) { 
 	
-	var struserid = ''; 
+	var strUserid = ''; 
 	for (var i = 0, len = apireq.body.result.contexts.length; i < len; i++) {
 		if (apireq.body.result.contexts[i].name == "sessionuserid") {
 
-			 struserid = apireq.body.result.contexts[i].parameters.Userid;
-			console.log("original userid " + ": " + struserid);
+			 strUserid = apireq.body.result.contexts[i].parameters.Userid;
+			console.log("original userid " + ": " + strUserid);
 		}
 	} 
 	
@@ -463,7 +463,7 @@ function DVRRecord(apireq,callback) {
 		"headers": headersInfo,
 		"json": {Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
 			 Request: {ThisValue: 'DVRSchedule', 
-				   Userid : struserid,
+				   Userid : strUserid,
 				   BotStbId:strSTBId, 
 				   BotDeviceModel : strSTBModel,
 				   BotstrFIOSRegionID : strRegionId,
