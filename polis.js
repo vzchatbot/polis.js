@@ -43,7 +43,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
            res.json(welcomeMsg());
         break;
     	case "LinkOptions":
-             res.json(LinkOptionsNew());
+             res.json(LinkOptionsNew(req));
             break;
         case "MoreOptions":
              res.json(MoreOptions());
@@ -196,7 +196,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
 
 
-function LinkOptionsNew()
+function LinkOptionsNew(apireq)
 {
     console.log('Calling from  link options:') ;
 	
