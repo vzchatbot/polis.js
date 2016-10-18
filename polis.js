@@ -111,7 +111,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 					    {
 						"type": "postback",
 						"title": "No, I'll do it later ",
-						"payload": "No Subscribe"
+						"payload": "Main Menu"
 					    }
 					]
 				    }
@@ -143,7 +143,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
                             {
                                 "type": "postback",
                                 "title": "No, I'll do it later ",
-                                "payload": "No Upgrade"
+                                "payload": "Main Menu"
                           	  }
                       		  ]
 				 }
