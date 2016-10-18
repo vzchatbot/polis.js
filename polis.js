@@ -494,13 +494,16 @@ function DVRRecord(apireq,callback) {
  } 
   
 function DVRRecordCallback(apiresp) {
-    var objToJson = {};
+     var objToJson = {};
     objToJson = apiresp;
 	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
 	console.log(JSON.stringify(subflow));
-	if (subflow.facebook.result.msg !=undefined && subflow.facebook.result.msg =='success' )
+	
+	if (subflow.facebook.result.msg !=undefined )
 	{
-	var respstr = 'Your recording for "' + req.body.result.parameters.Programs +  '"  on ' + req.body.result.parameters.Channel  +' channel, has been scheduled at ' + req.body.result.parameters.timeofpgm + ' on ' + req.body.result.parameters.SelectedSTB + ' STB.';
+	 if(subflow.facebook.result.msg =='success' )
+	 {
+		var respstr = 'Your recording for "' + req.body.result.parameters.Programs +  '"  on ' + req.body.result.parameters.Channel  +' channel, has been scheduled at ' + req.body.result.parameters.timeofpgm + ' on ' + req.body.result.parameters.SelectedSTB + ' STB.';
 				res.json({
 				speech: respstr + " Would you like to see some other TV Recommendations for tonight?",
 				displayText: "TV Recommendations",
@@ -525,17 +528,17 @@ function DVRRecordCallback(apiresp) {
 				},
 				source: "Verizon.js"
 				});
-}
-else
-{
-    return ({
-        speech: "There is a problem occured in Scheduling. " + subflow.facebook.errorPage.errormsg ,
-        displayText: "There is a problem occured in Scheduling. " + subflow.facebook.errorPage.errormsg,
-     //   data: subflow,
-        source: "Verizon.js"
-    });
-
-} 
+		}
+	}
+	else
+	{
+		    return ({
+			speech: "There is a problem occured in Scheduling. " + subflow.facebook.errorPage.errormsg ,
+			displayText: "There is a problem occured in Scheduling. " + subflow.facebook.errorPage.errormsg,
+		     //   data: subflow,
+			source: "Verizon.js"
+		    });
+	}
 }
 
 
