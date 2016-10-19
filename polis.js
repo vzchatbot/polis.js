@@ -556,7 +556,7 @@ function DVRRecord(apireq,callback) {
 			console.log("original userid " + ": " + strUserid);
 		}
 	} 
-	
+	if (strUserid == '' || strUserid == undefined) strUserid='lt6sth2'; //hardcoding if its empty
 		
          var strProgram =  apireq.body.result.parameters.Programs;
 	 var strChannelName =  apireq.body.result.parameters.Channel;
