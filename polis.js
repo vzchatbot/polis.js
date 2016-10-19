@@ -70,8 +70,8 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             recommendTVNew('Trending',function (str) {res.json(recommendTVNew1(str));  }); 
             break;
         case "recommendation":
-            //recommendTVNew('whatshot',function (str) {res.json(recommendTVNew1(str));  }); 
-	        res.json(recommendTV());
+            recommendTVNew('whatshot',function (str) {res.json(recommendTVNew1(str));  }); 
+	    //    res.json(recommendTV());
 		break;
 	case "channelsearch":
             ChnlSearch(req,function (str) {res.json(ChnlSearchCallback(str));  }); 
