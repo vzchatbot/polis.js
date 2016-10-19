@@ -581,7 +581,7 @@ function DVRRecordCallback(apiresp) {
 	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
 	console.log(JSON.stringify(subflow));
 	
-	if (subflow.facebook !=undefined )
+	if (subflow !=null )
 	{
 	
 		//var respstr = 'Your recording for "' + apiresp.body.result.parameters.Programs +  '"  on ' + apiresp.body.result.parameters.Channel  +' channel, has been scheduled at ' + apiresp.body.result.parameters.timeofpgm + ' on ' + apiresp.body.result.parameters.SelectedSTB + ' STB.';
