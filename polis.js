@@ -278,7 +278,7 @@ function LinkOptionsNew(apireq)
 				}
 			} 
 
-			if (struserid == '' || struserid == undefined) struserid='demoacct102'; //hardcoding if its empty	
+			if (struserid == '' || struserid == undefined) struserid='lt6sth2'; //hardcoding if its empty	
 		
 	return (
 			{
@@ -441,7 +441,7 @@ function STBList(apireq,callback) {
 		}
 	} 
 	
-	if (struserid == '' || struserid == undefined) struserid='demoacct102'; //hardcoding if its empty
+	if (struserid == '' || struserid == undefined) struserid='lt6sth2'; //hardcoding if its empty
 	
 		console.log('struserid '+ struserid);
         var headersInfo = { "Content-Type": "application/json" };
