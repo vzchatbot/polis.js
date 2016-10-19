@@ -157,9 +157,9 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 		else {
 				
 			console.log(" Channel: " + req.body.result.parameters.Channel +" Programs: " + req.body.result.parameters.Programs +" SelectedSTB: " + req.body.result.parameters.SelectedSTB +" Duration: " + req.body.result.parameters.Duration +" FiosId: " + req.body.result.parameters.FiosId +" RegionId: " + req.body.result.parameters.RegionId +" STBModel: " + req.body.result.parameters.STBModel +" StationId: " + req.body.result.parameters.StationId +" date: " + req.body.result.parameters.date +" timeofpgm: " + req.body.result.parameters.timeofpgm );
-			//DVRRecord(req, function (str) { res.json(DVRRecordCallback(str)); });
+			DVRRecord(req, function (str) { res.json(DVRRecordCallback(str)); });
 			
-			
+			/*
 			var respstr = 'Your recording for "' + req.body.result.parameters.Programs +  '"  on ' + req.body.result.parameters.Channel  +' channel, has been scheduled at ' + req.body.result.parameters.timeofpgm + ' on ' + req.body.result.parameters.SelectedSTB + ' STB.';
 				res.json({
 				speech: respstr + " Would you like to see some other TV Recommendations for tonight?",
@@ -184,7 +184,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 					}]}}}
 				},
 				source: "Verizon.js"
-				});
+				});*/
 		}  
   
             break; 
@@ -254,7 +254,7 @@ function LinkOptionsNew(apireq)
 								{
 									"type": "postback",
 									"title": "Continue",
-									"payload": "Userid : demoacct102 Regionid : 92377"
+									"payload": " Regionid : 92377"
 								}
 							]
 						}
