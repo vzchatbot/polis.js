@@ -255,7 +255,7 @@ function LinkOptionsNew(apireq)
 								{
 									"type": "postback",
 									"title": "Continue",
-									"payload": "Userid : demoacct102 Regionid : 92377"
+									"payload": "Regionid : 92377"
 								}
 							]
 						}
