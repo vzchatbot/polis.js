@@ -606,7 +606,65 @@ function DVRRecord(apireq,callback) {
         }
     );
  } 
-  
+
+function DVRRecordCallback(apiresp) {
+     var objToJson = {};
+    objToJson = apiresp;
+	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
+	console.log(JSON.stringify(subflow));
+	
+	if (subflow !=null )
+	{
+		if (subflow.facebook.result.msg =="success" )
+		{
+		//var respstr = 'Your recording for "' + apiresp.body.result.parameters.Programs +  '"  on ' + apiresp.body.result.parameters.Channel  +' channel, has been scheduled at ' + apiresp.body.result.parameters.timeofpgm + ' on ' + apiresp.body.result.parameters.SelectedSTB + ' STB.';
+		var respstr = 'Your recording is successful';		
+		return ({
+				speech: respstr + " Would you like to see some other TV Recommendations for tonight?",
+				displayText: "TV Recommendations",
+				data: {
+					"facebook": {
+					"attachment": {
+					"type": "template",
+					"payload": {
+					"template_type": "button",
+					"text": respstr + " Would you like to see some other TV Recommendations for tonight?",
+					"buttons": [
+					{
+					"type": "postback",
+					"title": "Show Recommendations",
+					"payload": "Show Recommendations"
+					},
+					{
+					"type": "postback",
+					"title": "More Options",
+					"payload": "More Options"
+					}]}}}
+				},
+				source: "Verizon.js"
+				});
+		}
+		else
+		{// + subflow.facebook.errorPage.errormsg
+		    return ({
+			speech: "Sorry!, There is a problem occured in Scheduling( "+ subflow.facebook.result.msg + " ). Try some other.",
+			displayText: "Sorry!, There is a problem occured in Scheduling( "+ subflow.facebook.result.msg + " ). Try some other.",
+		     //   data: subflow,
+			source: "Verizon.js"
+		    });
+		}
+	}
+	else
+	{
+		    return ({
+			speech: "Sorry!, There is a problem occured in Scheduling. Try some other.",
+			displayText: "Sorry!, There is a problem occured in Scheduling. Try some other.",
+		     //   data: subflow,
+			source: "Verizon.js"
+		    });
+	}
+}
+ /* 
 function DVRRecordCallback(apiresp) {
      var objToJson = {};
     objToJson = apiresp;
@@ -657,7 +715,7 @@ function DVRRecordCallback(apiresp) {
 	}
 }
 
-
+*/
 function PgmSearch(apireq,callback) { 
          var strProgram =  apireq.body.result.parameters.Programs;
 	 var strGenre =  apireq.body.result.parameters.Genre;
