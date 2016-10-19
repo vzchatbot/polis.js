@@ -63,15 +63,16 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
         case "upgradeDVR":
             res.json(upgradeDVR(req));
             break;
-         case "stgexternalcall":
-            recommendTVStg(function (str) {res.json(recommendTVNew1(str));  }); 
+         case "MainMenu":
+            res.json(MainMenu());
             break;
 	case "Trending":
             recommendTVNew('Trending',function (str) {res.json(recommendTVNew1(str));  }); 
             break;
         case "recommendation":
             recommendTVNew('whatshot',function (str) {res.json(recommendTVNew1(str));  }); 
-            break;
+	    //    res.json(recommendTV());
+		break;
 	case "channelsearch":
             ChnlSearch(req,function (str) {res.json(ChnlSearchCallback(str));  }); 
             break; 
@@ -158,7 +159,6 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 				
 			console.log(" Channel: " + req.body.result.parameters.Channel +" Programs: " + req.body.result.parameters.Programs +" SelectedSTB: " + req.body.result.parameters.SelectedSTB +" Duration: " + req.body.result.parameters.Duration +" FiosId: " + req.body.result.parameters.FiosId +" RegionId: " + req.body.result.parameters.RegionId +" STBModel: " + req.body.result.parameters.STBModel +" StationId: " + req.body.result.parameters.StationId +" date: " + req.body.result.parameters.date +" timeofpgm: " + req.body.result.parameters.timeofpgm );
 			DVRRecord(req, function (str) { res.json(DVRRecordCallback(str)); });
-			
 			/*
 			var respstr = 'Your recording for "' + req.body.result.parameters.Programs +  '"  on ' + req.body.result.parameters.Channel  +' channel, has been scheduled at ' + req.body.result.parameters.timeofpgm + ' on ' + req.body.result.parameters.SelectedSTB + ' STB.';
 				res.json({
@@ -193,7 +193,39 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
     }
 });
 
+function MainMenu()
+{
+return( {
+	speech: "Are you looking for something to watch, or do you want to see more options? Type or tap below.",
+	displayText: "Link Account",
+	data: {
+		"facebook": {
+			"attachment": {
+				"type": "template",
+				"payload": {
+					"template_type": "button",
+					"text": "Are you looking for something to watch, or do you want to see more options? Type or tap below.",
+					"buttons": [
+						{
+							"type": "postback",
+							"title": "What's on tonight?",
+							"payload": "On Later"
+						},
+						{
+							"type": "postback",
+							"title": "More Options",
+							"payload": "More Options"
+						}
+					]
+				}
+			}
+		}
+	},
+	source: "Verizon.js"
+       }
+	);	
 
+}
 
 
 function LinkOptionsNew(apireq)
@@ -218,7 +250,7 @@ function LinkOptionsNew(apireq)
 							"buttons": [
 								{
 									"type": "postback",
-									"title": "What's hot on tonight?",
+									"title": "What's on tonight?",
 									"payload": "On Later"
 								},
 								{
@@ -237,7 +269,16 @@ function LinkOptionsNew(apireq)
 	}
 	else
 	{
-		
+	var struserid = ''; 
+			for (var i = 0, len = apireq.body.result.contexts.length; i < len; i++) {
+				if (apireq.body.result.contexts[i].name == "sessionuserid") {
+
+					 struserid = apireq.body.result.contexts[i].parameters.Userid;
+					console.log("original userid " + ": " + struserid);
+				}
+			} 
+
+			if (struserid == '' || struserid == undefined) struserid='demoacct102'; //hardcoding if its empty	
 		
 	return (
 			{
@@ -254,7 +295,7 @@ function LinkOptionsNew(apireq)
 								{
 									"type": "postback",
 									"title": "Continue",
-									"payload": " Regionid : 92377"
+									"payload": "Userid : " + struserid + "  Regionid : 92377"
 								}
 							]
 						}
@@ -565,19 +606,20 @@ function DVRRecord(apireq,callback) {
         }
     );
  } 
-  
+
 function DVRRecordCallback(apiresp) {
      var objToJson = {};
     objToJson = apiresp;
 	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
 	console.log(JSON.stringify(subflow));
 	
-	if (subflow.facebook !=undefined )
+	if (subflow !=null )
 	{
-	 if(subflow.facebook =='success' )
-	 {
-		var respstr = 'Your recording for "' + req.body.result.parameters.Programs +  '"  on ' + req.body.result.parameters.Channel  +' channel, has been scheduled at ' + req.body.result.parameters.timeofpgm + ' on ' + req.body.result.parameters.SelectedSTB + ' STB.';
-				res.json({
+		if (subflow.facebook.result.msg =="success" )
+		{
+		//var respstr = 'Your recording for "' + apiresp.body.result.parameters.Programs +  '"  on ' + apiresp.body.result.parameters.Channel  +' channel, has been scheduled at ' + apiresp.body.result.parameters.timeofpgm + ' on ' + apiresp.body.result.parameters.SelectedSTB + ' STB.';
+		var respstr = 'Your recording is successful';		
+		return ({
 				speech: respstr + " Would you like to see some other TV Recommendations for tonight?",
 				displayText: "TV Recommendations",
 				data: {
@@ -602,18 +644,26 @@ function DVRRecordCallback(apiresp) {
 				source: "Verizon.js"
 				});
 		}
+		else
+		{// + subflow.facebook.errorPage.errormsg
+		    return ({
+			speech: "Sorry!, There is a problem occured in Scheduling( "+ subflow.facebook.result.msg + " ). Try some other.",
+			displayText: "Sorry!, There is a problem occured in Scheduling( "+ subflow.facebook.result.msg + " ). Try some other.",
+		     //   data: subflow,
+			source: "Verizon.js"
+		    });
+		}
 	}
 	else
 	{
 		    return ({
-			speech: "There is a problem occured in Scheduling. " + subflow.facebook.errorPage.errormsg ,
-			displayText: "There is a problem occured in Scheduling. " + subflow.facebook.errorPage.errormsg,
+			speech: "Sorry!, There is a problem occured in Scheduling. Try some other.",
+			displayText: "Sorry!, There is a problem occured in Scheduling. Try some other.",
 		     //   data: subflow,
 			source: "Verizon.js"
 		    });
 	}
 }
-
 
 function PgmSearch(apireq,callback) { 
          var strProgram =  apireq.body.result.parameters.Programs;
