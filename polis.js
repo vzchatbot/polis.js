@@ -612,10 +612,10 @@ function DVRRecordCallback(apiresp) {
 				});
 	}
 	else
-	{
+	{// + subflow.facebook.errorPage.errormsg
 		    return ({
-			speech: "There is a problem occured in Scheduling. " + subflow.facebook.errorPage.errormsg ,
-			displayText: "There is a problem occured in Scheduling. " + subflow.facebook.errorPage.errormsg,
+			speech: "Sorry!, There is a problem occured in Scheduling. Try some other.",
+			displayText: "Sorry!, There is a problem occured in Scheduling. Try some other.",
 		     //   data: subflow,
 			source: "Verizon.js"
 		    });
