@@ -615,6 +615,9 @@ function DVRRecordCallback(apiresp) {
 	
 	if (subflow !=null )
 	{
+		console.log("result of record " +subflow.facebook.result);
+		console.log("msg of record as node " +subflow.facebook.result.msg);
+		console.log("msg of record as attr " +subflow.facebook.result["msg"]);
 	
 		//var respstr = 'Your recording for "' + apiresp.body.result.parameters.Programs +  '"  on ' + apiresp.body.result.parameters.Channel  +' channel, has been scheduled at ' + apiresp.body.result.parameters.timeofpgm + ' on ' + apiresp.body.result.parameters.SelectedSTB + ' STB.';
 		var respstr = 'Your recording is successful.';		
