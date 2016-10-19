@@ -238,11 +238,7 @@ function LinkOptionsNew(apireq)
 	}
 	else
 	{
-		
-		
-	return (
-		
-		var struserid = ''; 
+	var struserid = ''; 
 			for (var i = 0, len = apireq.body.result.contexts.length; i < len; i++) {
 				if (apireq.body.result.contexts[i].name == "sessionuserid") {
 
@@ -251,9 +247,9 @@ function LinkOptionsNew(apireq)
 				}
 			} 
 
-			if (struserid == '' || struserid == undefined) struserid='demoacct102'; //hardcoding if its empty
+			if (struserid == '' || struserid == undefined) struserid='demoacct102'; //hardcoding if its empty	
 		
-		
+	return (
 			{
 			speech: "Congrats, we got your details. Click Continue below.",
 			displayText: "Link Account",
@@ -268,7 +264,7 @@ function LinkOptionsNew(apireq)
 								{
 									"type": "postback",
 									"title": "Continue",
-									"payload": "Userid : " + struserid + "Regionid : 92377"
+									"payload": "Userid : " + struserid + "  Regionid : 92377"
 								}
 							]
 						}
