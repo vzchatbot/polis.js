@@ -241,6 +241,19 @@ function LinkOptionsNew(apireq)
 		
 		
 	return (
+		
+		var struserid = ''; 
+			for (var i = 0, len = apireq.body.result.contexts.length; i < len; i++) {
+				if (apireq.body.result.contexts[i].name == "sessionuserid") {
+
+					 struserid = apireq.body.result.contexts[i].parameters.Userid;
+					console.log("original userid " + ": " + struserid);
+				}
+			} 
+
+			if (struserid == '' || struserid == undefined) struserid='demoacct102'; //hardcoding if its empty
+		
+		
 			{
 			speech: "Congrats, we got your details. Click Continue below.",
 			displayText: "Link Account",
@@ -255,7 +268,7 @@ function LinkOptionsNew(apireq)
 								{
 									"type": "postback",
 									"title": "Continue",
-									"payload": "Regionid : 92377"
+									"payload": "Userid : " + struserid + "Regionid : 92377"
 								}
 							]
 						}
