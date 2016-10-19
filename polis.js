@@ -63,8 +63,8 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
         case "upgradeDVR":
             res.json(upgradeDVR(req));
             break;
-         case "stgexternalcall":
-            recommendTVStg(function (str) {res.json(recommendTVNew1(str));  }); 
+         case "MainMenu":
+            res.json(MainMenu());
             break;
 	case "Trending":
             recommendTVNew('Trending',function (str) {res.json(recommendTVNew1(str));  }); 
@@ -193,7 +193,39 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
     }
 });
 
+function MainMenu()
+{
+return( {
+	speech: "Are you looking for something to watch, or do you want to see more options? Type or tap below.",
+	displayText: "Link Account",
+	data: {
+		"facebook": {
+			"attachment": {
+				"type": "template",
+				"payload": {
+					"template_type": "button",
+					"text": "Are you looking for something to watch, or do you want to see more options? Type or tap below.",
+					"buttons": [
+						{
+							"type": "postback",
+							"title": "What's on tonight?",
+							"payload": "On Later"
+						},
+						{
+							"type": "postback",
+							"title": "More Options",
+							"payload": "More Options"
+						}
+					]
+				}
+			}
+		}
+	},
+	source: "Verizon.js"
+       }
+	);	
 
+}
 
 
 function LinkOptionsNew(apireq)
