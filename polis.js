@@ -538,8 +538,8 @@ function ChnlSearchCallback(apiresp) {
 	
 	console.log("chposition :" + chposition)
     return ({
-        speech: "You can watch it at Channel position: " + chposition  ,
-        displayText: "You can watch it at Channel position: " + chposition  ,
+        speech: "You can watch it on channel # " + chposition  ,
+        displayText: "You can watch it on channel # " + chposition  ,
        // data: subflow,
         source: "Verizon.js"
     });
