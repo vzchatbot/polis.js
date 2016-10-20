@@ -618,28 +618,6 @@ function DVRRecord(apireq,callback) {
 function DVRRecordCallback(apiresp) {
      var objToJson = {};
     objToJson = apiresp;
-	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
-	console.log(JSON.stringify(subflow));
-	
-	if (subflow !=null )
-	{
-		if (subflow.facebook.result.msg =="success" )
-		{
-		//var respstr = 'Your recording for "' + apiresp.body.result.parameters.Programs +  '"  on ' + apiresp.body.result.parameters.Channel  +' channel, has been scheduled at ' + apiresp.body.result.parameters.timeofpgm + ' on ' + apiresp.body.result.parameters.SelectedSTB + ' STB.';
-		var respstr = 'Your recording has been scheduled.';		
-		return ({
-				speech: respstr + " Would you like to see some other TV Recommendations for tonight?",
-				displayText: "TV Recommendations",
-				data: {
-					"facebook": {
-					"attachment": {
-					"type": "template",
-					"payload": {
-					"template_type": "button",
-					"text": respstr + " Would you like to see some other TV Recommendations for tonight?",
-function DVRRecordCallback(apiresp) {
-     var objToJson = {};
-    objToJson = apiresp;
 try{
 	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
 	console.log(JSON.stringify(subflow));
@@ -695,9 +673,9 @@ try{
 		    });
 	}
 }
-catch () 
+catch (err) 
 {
-console.log( "Error occured in recording: " );
+console.log( "Error occured in recording: " + err);
 	return ({
 			speech: "Sorry!, There is a problem occured in Scheduling. Try some other.",
 			displayText: "Sorry!, There is a problem occured in Scheduling. Try some other.",
@@ -706,6 +684,7 @@ console.log( "Error occured in recording: " );
 		    });
 }
 }
+
  /* 
 function DVRRecordCallback(apiresp) {
      var objToJson = {};
