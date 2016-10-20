@@ -70,7 +70,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
             recommendTVNew('Trending',function (str) {res.json(recommendTVNew1(str));  }); 
             break;
         case "recommendation":
-           // recommendTVNew('whatshot',function (str) {res.json(recommendTVNew1(str));  }); 
+            //recommendTVNew('whatshot',function (str) {res.json(recommendTVNew1(str));  }); 
 	        res.json(demowhatshot());
 		break;
 	case "channelsearch":
@@ -227,7 +227,17 @@ return( {
 
 }
 
-
+function demowhatshot() {
+    return ({
+        speech: "Here are some recommendations for tonight",
+        displayText: "TV recommendations",
+        //data: {"facebook":{"attachment":{"type":"template","payload":{"template_type":"generic","elements":[{"title":"Shark Tank","subtitle":"CNBC : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/0f/07/0f07592094a2a596d2f6646271e9cb0311508415/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Shark Tank Channel: CNBC"}]},{"title":"Family Guy","subtitle":"WBIN : Interests,News","image_url":"http://image.vam.synacor.com.edgesuite.net/8d/53/8d532ad0e94c271f8fb153a86141de2c92ee15b0/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Family Guy Channel: WBIN"}]},{"title":"NCIS","subtitle":"USA : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/85/ed/85ed791472df3065ae5462d42560773a649fdfaf/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: NCIS Channel: USA"}]},{"title":"Green Lantern","subtitle":"FXX : Interests,News","image_url":"http://image.vam.synacor.com.edgesuite.net/6a/87/6a8776d95edd4ddb86e12671362126b2f5401191/w=101,h=151,crop=auto/?sig=8a134321fc88e64e1a2a3be6c08992edbcb3f2bc9037aa5e5ad8f25f06f6c7c4&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Green Lantern Channel: FXX"}]},{"title":"Lethal Weapon","subtitle":"FOX WFXT : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/00/5a/005af22b717b512b276e71d3d4b4af578a313662/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Lethal Weapon  Channel: FOX WFXT"}]}]}}}},
+       // data: {"facebook":{"attachment":{"type":"template","payload":{"template_type":"generic","elements":[{"title":"Family Guy","subtitle":"WBIN : Comedy","image_url":"http://image.vam.synacor.com.edgesuite.net/8d/53/8d532ad0e94c271f8fb153a86141de2c92ee15b0/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Family Guy Channel: WBIN"}]},{"title":"NCIS","subtitle":"USA : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/85/ed/85ed791472df3065ae5462d42560773a649fdfaf/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: NCIS Channel: USA"}]},{"title":"Green Lantern","subtitle":"FXX : Interests,News","image_url":"http://image.vam.synacor.com.edgesuite.net/6a/87/6a8776d95edd4ddb86e12671362126b2f5401191/w=101,h=151,crop=auto/?sig=8a134321fc88e64e1a2a3be6c08992edbcb3f2bc9037aa5e5ad8f25f06f6c7c4&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Green Lantern Channel: FXX"}]},{"title":"Shark Tank","subtitle":"CNBC : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/0f/07/0f07592094a2a596d2f6646271e9cb0311508415/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Shark Tank Channel: CNBC"}]},{"title":"Lethal Weapon","subtitle":"FOX WFXT : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/00/5a/005af22b717b512b276e71d3d4b4af578a313662/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Lethal Weapon  Channel: FOX WFXT"}]}]}}}},
+	//data : {"facebook":{"attachment":{"type":"template","payload":{"template_type":"generic","elements":[{"title":"Family Guy","subtitle":"WBIN : Comedy","image_url":"http://image.vam.synacor.com.edgesuite.net/8d/53/8d532ad0e94c271f8fb153a86141de2c92ee15b0/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Family Guy Channel: WBIN"}]},{"title":"NCIS","subtitle":"USA : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/85/ed/85ed791472df3065ae5462d42560773a649fdfaf/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: NCIS Channel: USA"}]},{"title":"Green Lantern","subtitle":"FXX : Interests,News","image_url":"http://image.vam.synacor.com.edgesuite.net/6a/87/6a8776d95edd4ddb86e12671362126b2f5401191/w=101,h=151,crop=auto/?sig=8a134321fc88e64e1a2a3be6c08992edbcb3f2bc9037aa5e5ad8f25f06f6c7c4&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Green Lantern Channel: FXX"}]},{"title":"Shark Tank","subtitle":"CNBC : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/0f/07/0f07592094a2a596d2f6646271e9cb0311508415/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Shark Tank Channel: CNBC"}]},{"title":"Notorious","subtitle":"ABC WCVB : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/ba/51/ba51ba91eafe2da2a01791589bca98c0044b6622/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Notorious Channel: ABC WCVB"}]},{"title":"Chicago Med","subtitle":"NBC WHDH : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/e1/93/e1933b6aee82a467980415c36dced6fddf64d80a/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Chicago Med Channel: NBC WHDH"}]},{"title":"Modern Family","subtitle":"CW WLVI : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/c1/58/c1586d0e69ca53c32ae64526da7793b8ec962678/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Modern Family Channel: CW WLVI"}]},{"title":"Lethal Weapon","subtitle":"FOX WFXT : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/00/5a/005af22b717b512b276e71d3d4b4af578a313662/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Lethal Weapon  Channel: FOX WFXT"}]}]}}}},
+	    data: {"facebook":{"attachment":{"type":"template","payload":{"template_type":"generic","elements":[{"title":"Family Guy","subtitle":"WBIN : Comedy","image_url":"http://image.vam.synacor.com.edgesuite.net/8d/53/8d532ad0e94c271f8fb153a86141de2c92ee15b0/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Family Guy Channel: WBIN"}]},{"title":"NCIS","subtitle":"USA : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/85/ed/85ed791472df3065ae5462d42560773a649fdfaf/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: NCIS Channel: USA"}]},{"title":"Shark Tank","subtitle":"CNBC : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/0f/07/0f07592094a2a596d2f6646271e9cb0311508415/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Shark Tank Channel: CNBC"}]},{"title":"Notorious","subtitle":"ABC WCVB : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/ba/51/ba51ba91eafe2da2a01791589bca98c0044b6622/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Notorious Channel: ABC WCVB"}]},{"title":"Chicago Med","subtitle":"NBC WHDH : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/e1/93/e1933b6aee82a467980415c36dced6fddf64d80a/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Chicago Med Channel: NBC WHDH"}]},{"title":"Modern Family","subtitle":"CW WLVI : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/c1/58/c1586d0e69ca53c32ae64526da7793b8ec962678/w=207,h=151,crop=auto/?sig=0cdc5e32bc854a2e2d767ab10d96385797b360a24c9f845ead33b1ea3d79aa01&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Modern Family Channel: CW WLVI"}]}]}}}},
+	source: "Zero Service - app_zero.js"
+    });
+}
 function LinkOptionsNew(apireq)
 {
     console.log('Calling from  link options:') ;
@@ -278,11 +288,11 @@ function LinkOptionsNew(apireq)
 				}
 			} 
 
-			if (struserid == '' || struserid == undefined) struserid='demoacct102'; //hardcoding if its empty	
+			if (struserid == '' || struserid == undefined) struserid='lt6sth2'; //hardcoding if its empty	
 		
 	return (
 			{
-			speech: "Congrats, we got your details. Click Continue below.",
+			speech: "Congrats, we got your details. Tap Continue to proceed.",
 			displayText: "Link Account",
 			data: {
 				"facebook": {
@@ -290,7 +300,7 @@ function LinkOptionsNew(apireq)
 						"type": "template",
 						"payload": {
 							"template_type": "button",
-							"text": "Congrats, we got your details. Click Continue button.",
+							"text": "Congrats, we got your details. Tap Continue to proceed.",
 							"buttons": [
 								{
 									"type": "postback",
@@ -441,7 +451,7 @@ function STBList(apireq,callback) {
 		}
 	} 
 	
-	if (struserid == '' || struserid == undefined) struserid='demoacct102'; //hardcoding if its empty
+	if (struserid == '' || struserid == undefined) struserid='lt6sth2'; //hardcoding if its empty
 	
 		console.log('struserid '+ struserid);
         var headersInfo = { "Content-Type": "application/json" };
@@ -475,8 +485,8 @@ function STBListCallBack(apiresp) {
 	console.log("subflow :" + subflow)
 
     return ({
-        speech: "Select one of the DVR from the below list, on which you like to record",
-        displayText: "STB List",
+        speech: "Which STB would you like to record on?",
+        displayText: "Which STB would you like to record on?",
         data: subflow,
         source: "Verizon.js"
     });
@@ -530,8 +540,8 @@ function ChnlSearchCallback(apiresp) {
 	
 	console.log("chposition :" + chposition)
     return ({
-        speech: "You can watch it at Channel position: " + chposition  ,
-        displayText: "You can watch it at Channel position: " + chposition  ,
+        speech: "You can watch it on channel # " + chposition  ,
+        displayText: "You can watch it on channel # " + chposition  ,
        // data: subflow,
         source: "Verizon.js"
     });
@@ -548,7 +558,7 @@ function DVRRecord(apireq,callback) {
 			console.log("original userid " + ": " + strUserid);
 		}
 	} 
-	
+	if (strUserid == '' || strUserid == undefined) strUserid='lt6sth2'; //hardcoding if its empty
 		
          var strProgram =  apireq.body.result.parameters.Programs;
 	 var strChannelName =  apireq.body.result.parameters.Channel;
@@ -580,7 +590,7 @@ function DVRRecord(apireq,callback) {
 				   Userid : strUserid,
 				   BotStbId:strSTBId, 
 				   BotDeviceModel : strSTBModel,
-				   BotstrFIOSRegionID : strRegionId,
+				   BotstrFIOSRegionID : '91629',
 				   BotstrFIOSServiceId : strFiosId,
 				   BotStationId : strStationId,
 				   BotAirDate : strAirDate,
@@ -610,6 +620,7 @@ function DVRRecord(apireq,callback) {
 function DVRRecordCallback(apiresp) {
      var objToJson = {};
     objToJson = apiresp;
+try{
 	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
 	console.log(JSON.stringify(subflow));
 	
@@ -618,7 +629,7 @@ function DVRRecordCallback(apiresp) {
 		if (subflow.facebook.result.msg =="success" )
 		{
 		//var respstr = 'Your recording for "' + apiresp.body.result.parameters.Programs +  '"  on ' + apiresp.body.result.parameters.Channel  +' channel, has been scheduled at ' + apiresp.body.result.parameters.timeofpgm + ' on ' + apiresp.body.result.parameters.SelectedSTB + ' STB.';
-		var respstr = 'Your recording is successful';		
+		var respstr = 'Your recording has been scheduled.';		
 		return ({
 				speech: respstr + " Would you like to see some other TV Recommendations for tonight?",
 				displayText: "TV Recommendations",
@@ -664,7 +675,70 @@ function DVRRecordCallback(apiresp) {
 		    });
 	}
 }
+catch (err) 
+{
+console.log( "Error occured in recording: " + err);
+	return ({
+			speech: "Sorry!, There is a problem occured in Scheduling. Try some other.",
+			displayText: "Sorry!, There is a problem occured in Scheduling. Try some other.",
+		     //   data: subflow,
+			source: "Verizon.js"
+		    });
+}
+}
 
+ /* 
+function DVRRecordCallback(apiresp) {
+     var objToJson = {};
+    objToJson = apiresp;
+	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
+	console.log(JSON.stringify(subflow));
+	
+	if (subflow !=null )
+	{
+		console.log("result of record " +subflow.facebook.result);
+		console.log("msg of record as node " +subflow.facebook.result.msg);
+		console.log("msg of record as attr " +subflow.facebook.result["msg"]);
+	
+		//var respstr = 'Your recording for "' + apiresp.body.result.parameters.Programs +  '"  on ' + apiresp.body.result.parameters.Channel  +' channel, has been scheduled at ' + apiresp.body.result.parameters.timeofpgm + ' on ' + apiresp.body.result.parameters.SelectedSTB + ' STB.';
+		var respstr = 'Your recording is successful.';		
+		return ({
+				speech: respstr + " Would you like to see some other TV Recommendations for tonight?",
+				displayText: "TV Recommendations",
+				data: {
+					"facebook": {
+					"attachment": {
+					"type": "template",
+					"payload": {
+					"template_type": "button",
+					"text": respstr + " Would you like to see some other TV Recommendations for tonight?",
+					"buttons": [
+					{
+					"type": "postback",
+					"title": "Show Recommendations",
+					"payload": "Show Recommendations"
+					},
+					{
+					"type": "postback",
+					"title": "More Options",
+					"payload": "More Options"
+					}]}}}
+				},
+				source: "Verizon.js"
+				});
+	}
+	else
+	{// + subflow.facebook.errorPage.errormsg
+		    return ({
+			speech: "Sorry!, There is a problem occured in Scheduling. Try some other.",
+			displayText: "Sorry!, There is a problem occured in Scheduling. Try some other.",
+		     //   data: subflow,
+			source: "Verizon.js"
+		    });
+	}
+}
+
+*/
 function PgmSearch(apireq,callback) { 
          var strProgram =  apireq.body.result.parameters.Programs;
 	 var strGenre =  apireq.body.result.parameters.Genre;
@@ -1463,16 +1537,6 @@ function welcomeInit()
         }
      );	
 }
-
-function demowhatshot() {
-    return ({
-        speech: "Here are some recommendations for tonight",
-        displayText: "TV recommendations",
-        data: {"facebook":{"attachment":{"type":"template","payload":{"template_type":"generic","elements":[{"title":"MLB Baseball","subtitle":"FS1 HD : Shows,Sports &amp; Fitness,Lifestyle,Sports","image_url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: MLB Baseball Channel: FS1 HD"}]},{"title":"Today","subtitle":"WNYT HD : Interests,News","image_url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Today Channel: WNYT HD"}]},{"title":"Chicago Fire","subtitle":"WNYT 13 : Action &amp; Adventure,Drama","image_url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Chicago Fire Channel: WNYT 13"}]},{"title":"Good Morning America","subtitle":"WTEN HD : Interests,News","image_url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Good Morning America Channel: WTEN HD"}]},{"title":"Lethal Weapon","subtitle":"FOX WXXA : Action &amp; Adventure,Drama","image_url":"http://image.vam.synacor.com.edgesuite.net/00/5a/005af22b717b512b276e71d3d4b4af578a313662/w=414,h=303,crop=auto/?sig=88c390c980d4fa53d37ef16fbdc53ec3dfbad7d9fa626949827b76ae37140ac3&app=powerplay","buttons":[{"type":"web_url","url":"http://www.verizon.com/msvsearch/whatshotimage/thumbnails/default.jpg","title":"Watch Video"},{"type":"postback","title":"RecordNow","payload":"Get Program info of Program: Lethal Weapon  Channel: FOX WXXA"}]}]}}}},
-        source: "Zero Service - app_zero.js"
-    });
-}
-
 
 function recommendTV() {
     return ({
