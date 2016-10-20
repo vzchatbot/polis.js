@@ -290,7 +290,7 @@ function LinkOptionsNew(apireq)
 		
 	return (
 			{
-			speech: "Congrats, we got your details. Click Continue below.",
+			speech: "Congrats, we got your details. Tap Continue to proceed.",
 			displayText: "Link Account",
 			data: {
 				"facebook": {
@@ -298,7 +298,7 @@ function LinkOptionsNew(apireq)
 						"type": "template",
 						"payload": {
 							"template_type": "button",
-							"text": "Congrats, we got your details. Click Continue button.",
+							"text": "Congrats, we got your details. Tap Continue to proceed.",
 							"buttons": [
 								{
 									"type": "postback",
@@ -483,8 +483,8 @@ function STBListCallBack(apiresp) {
 	console.log("subflow :" + subflow)
 
     return ({
-        speech: "Select one of the DVR from the below list, on which you like to record",
-        displayText: "STB List",
+        speech: "Which STB would you like to record on?,
+        displayText: "Which STB would you like to record on?",
         data: subflow,
         source: "Verizon.js"
     });
@@ -626,7 +626,7 @@ function DVRRecordCallback(apiresp) {
 		if (subflow.facebook.result.msg =="success" )
 		{
 		//var respstr = 'Your recording for "' + apiresp.body.result.parameters.Programs +  '"  on ' + apiresp.body.result.parameters.Channel  +' channel, has been scheduled at ' + apiresp.body.result.parameters.timeofpgm + ' on ' + apiresp.body.result.parameters.SelectedSTB + ' STB.';
-		var respstr = 'Your recording is successful';		
+		var respstr = 'Your recording has been scheduled';		
 		return ({
 				speech: respstr + " Would you like to see some other TV Recommendations for tonight?",
 				displayText: "TV Recommendations",
