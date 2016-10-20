@@ -483,7 +483,7 @@ function STBListCallBack(apiresp) {
 	console.log("subflow :" + subflow)
 
     return ({
-        speech: "Which STB would you like to record on?,
+        speech: "Which STB would you like to record on?",
         displayText: "Which STB would you like to record on?",
         data: subflow,
         source: "Verizon.js"
