@@ -588,7 +588,7 @@ function DVRRecord(apireq,callback) {
 				   Userid : strUserid,
 				   BotStbId:strSTBId, 
 				   BotDeviceModel : strSTBModel,
-				   BotstrFIOSRegionID : strRegionId,
+				   BotstrFIOSRegionID : '91629',
 				   BotstrFIOSServiceId : strFiosId,
 				   BotStationId : strStationId,
 				   BotAirDate : strAirDate,
