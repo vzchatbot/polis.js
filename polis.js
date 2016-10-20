@@ -626,7 +626,7 @@ function DVRRecordCallback(apiresp) {
 		if (subflow.facebook.result.msg =="success" )
 		{
 		//var respstr = 'Your recording for "' + apiresp.body.result.parameters.Programs +  '"  on ' + apiresp.body.result.parameters.Channel  +' channel, has been scheduled at ' + apiresp.body.result.parameters.timeofpgm + ' on ' + apiresp.body.result.parameters.SelectedSTB + ' STB.';
-		var respstr = 'Your recording has been scheduled';		
+		var respstr = 'Your recording has been scheduled.';		
 		return ({
 				speech: respstr + " Would you like to see some other TV Recommendations for tonight?",
 				displayText: "TV Recommendations",
