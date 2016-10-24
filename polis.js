@@ -31,13 +31,13 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
   res.json( {IntentName: strIndent ,	Status: "Finished",source: "Verizon.js" });
 	
 });
-
+/*
 function MainMenu()
 {
 return( {IntentName: ,	Status: "Finished",source: "Verizon.js" };
 	);	
 
-}
+}*/
 
 app.use('/api', router);
 app.listen(PORT, function () {
