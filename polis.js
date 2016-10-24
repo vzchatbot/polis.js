@@ -28,7 +28,7 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
  // var action = req.body.result.action;
   //var mysource = req.body.result.source;
   
-  res.json( {speech: "IntentFinished" ,	displayText: {Intentname: strIndent},source: "Verizon.js" });
+  res.json( {speech: "IntentFinished" ,	displayText:  strIndent ,source: "Verizon.js" });
 	
 });
 /*
