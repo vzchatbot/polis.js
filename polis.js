@@ -25,10 +25,10 @@ router.post('/webhook', function (req, res) {
 res.header("Access-Control-Allow-Origin", "*");
 res.header("Access-Control-Allow-Headers", "X-Requested-With");  
   var strIndent = req.body.result.metadata.intentName;
- // var action = req.body.result.action;
+  var straction = req.body.result.action;
   //var mysource = req.body.result.source;
   
-  res.json( {speech: "IntentFinished" ,	displayText:  strIndent ,source: "Verizon.js" });
+  res.json( {speech: "IntentFinished" ,	displayText:  strIndent ,source: straction });
 	
 });
 /*
