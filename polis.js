@@ -482,7 +482,7 @@ function STBListCallBack(apiresp) {
     objToJson = apiresp;
 	var subflow = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
 	
-	console.log("subflow :" + subflow)
+	console.log("stblist :" + JSON.stringify(subflow))
 
     return ({
         speech: "Which STB would you like to record on?",
