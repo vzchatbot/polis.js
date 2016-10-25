@@ -292,7 +292,7 @@ function LinkOptionsNew(apireq)
 			{
 			speech: "Welcome, Please link your Verizon Account.",
 			displayText: "Link Account",
-			data: {
+			/*data: {
 				"facebook": {
 					"attachment": {
 						"type": "template",
@@ -307,7 +307,29 @@ function LinkOptionsNew(apireq)
 						} 
 					} 
 				} 
-			}, 
+			}, */
+			data : {
+				"facebook": {
+					"attachment": {
+						"type": "template",
+						"payload": {
+							"template_type": "button",
+							"text": "Are you looking for something to watch, or do you want to see more options? Type or tap below.",
+							"buttons": [
+								{
+									"type": "account_link",
+									"url": "https://www98.verizon.com/foryourhome/myaccount/ngen/upr/bots/preauth.aspx"
+								},
+								{
+									"type": "postback",
+									"title": "More Options",
+									"payload": "More Options"
+								}
+							]
+						}
+					}
+				}
+			},
 			source: "Verizon.js"
 		  }
 			
