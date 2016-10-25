@@ -294,7 +294,7 @@ function LinkOptionsNew(apireq)
 					"attachment": {
 						"type": "template",
 						"payload": {
-							"template_type": "generic",
+							"template_type": "button",
 							"text": "Congrats, we got your details. Tap Continue to proceed.",
 							 "buttons": [{
 								    "type": "account_link",
