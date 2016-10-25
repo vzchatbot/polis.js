@@ -21,7 +21,7 @@ var args = {
 
 
 router.post('/webhook', function (req, res) {
-
+console.log("From my mytemphook call");
 res.header("Access-Control-Allow-Origin", "*");
 res.header("Access-Control-Allow-Headers", "X-Requested-With");  
 
