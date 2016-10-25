@@ -283,46 +283,11 @@ function LinkOptionsNew(apireq)
 	}
 	else
 	{
-	var struserid = ''; 
-			for (var i = 0, len = apireq.body.result.contexts.length; i < len; i++) {
-				if (apireq.body.result.contexts[i].name == "sessionuserid") {
-
-					 struserid = apireq.body.result.contexts[i].parameters.Userid;
-					console.log("original userid " + ": " + struserid);
-				}
-			} 
-
-			if (struserid == '' || struserid == undefined) struserid='lt6sth2'; //hardcoding if its empty	
-		
-	return (
-			{
-			speech: "Congrats, we got your details. Tap Continue to proceed.",
-			displayText: "Link Account",
-			data: {
-				"facebook": {
-					"attachment": {
-						"type": "template",
-						"payload": {
-							"template_type": "button",
-							"text": "Congrats, we got your details. Tap Continue to proceed.",
-							"buttons": [
-								{
-									"type": "postback",
-									"title": "Continue",
-									"payload": "Userid : " + struserid + "  Regionid : 92377"
-								}
-							]
-						}
-					}
-				}
-			},
-			source: "Verizon.js"
-		  }
-		  );
+	
 		
 		console.log("User Not linked, henced asked to link with FB");
 		
-		/*return 
+		return 
 		(
 			{
 			speech: "Welcome, Please link your Verizon Account.",
@@ -346,7 +311,7 @@ function LinkOptionsNew(apireq)
 			source: "Verizon.js"
 		  }
 			
-		);*/
+		);
 	}
 }
 
