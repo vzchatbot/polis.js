@@ -317,8 +317,9 @@ function LinkOptionsNew(apireq)
 							"text": "Are you looking for something to watch, or do you want to see more options? Type or tap below.",
 							"buttons": [
 								{
-									"type": "account_link",
-									"url": "https://www98.verizon.com/foryourhome/myaccount/ngen/upr/bots/preauth.aspx"
+									"type": "postback",
+									"title": "More Options2",
+									"payload": "More Options"	
 								},
 								{
 									"type": "postback",
