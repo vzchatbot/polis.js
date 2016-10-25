@@ -337,9 +337,8 @@ function LinkOptionsNew(apireq)
 							"buttons": [
 								{
 									"type": "account_link",
-									"url": "https://www98.verizon.com/foryourhome/myaccount/ngen/upr/bots/preauth.aspx",
-									"payload": "On Later"
-								}],
+									"url": "https://www98.verizon.com/foryourhome/myaccount/ngen/upr/bots/preauth.aspx"
+								}]
 						} //payload
 					} //attachement
 				} // FB
