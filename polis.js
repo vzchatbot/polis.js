@@ -283,14 +283,11 @@ function LinkOptionsNew(apireq)
 	}
 	else
 	{
-	
-		
 		console.log("User Not linked, henced asked to link with FB");
 		
-		return 
-		(
+		return (
 			{
-			speech: "User Not linked something to watch, or do you want to see more options? Type or tap below.",
+			speech: "Congrats, we got your details. Tap Continue to proceed.",
 			displayText: "Link Account",
 			data: {
 				"facebook": {
@@ -298,17 +295,12 @@ function LinkOptionsNew(apireq)
 						"type": "template",
 						"payload": {
 							"template_type": "button",
-							"text": "Are you looking for something to watch, or do you want to see more options? Type or tap below.",
+							"text": "Congrats, we got your details. Tap Continue to proceed.",
 							"buttons": [
 								{
 									"type": "postback",
-									"title": "What's on tonight?",
-									"payload": "On Later"
-								},
-								{
-									"type": "postback",
-									"title": "More Options",
-									"payload": "More Options"
+									"title": "Continue",
+									"payload": "Userid :  Regionid : 92377"
 								}
 							]
 						}
