@@ -257,17 +257,24 @@ function acclinking(apireq)
 		    displayText: "Link Account",
 		    data: {
 				"facebook": {
-					"attachment": {
-						"type": "template",
-						"payload": {
-							"template_type": "button",
-							"text": "Welcome! Link your Verizon Account.",
-							 "buttons": [{
-								    "type": "account_link",
-								    "url": "https://www98.verizon.com/foryourhome/myaccount/ngen/upr/bots/preauth.aspx"
-								  }]
-							}
-					}
+					  "attachment": {
+					    "type": "template",
+					    "payload": {
+					      
+					     "template_type": "generic",
+					      "elements": [{
+						
+					         "title": "Login to Verizon",
+						  "image_url": "https://www.verizon.com/cs/groups/public/documents/adacct/vzlogo_lg.png",
+						 
+					          "buttons": [{
+						      "type": "account_link",
+						      "url": "https://www98.verizon.com/foryourhome/myaccount/ngen/upr/bots/preauth.aspx"
+						    }]
+						
+		    				}]
+					    }
+					  }
 				}
 			},
 			source: "Verizon.js"
