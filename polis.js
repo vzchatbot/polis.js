@@ -35,6 +35,9 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 	console.log("Source " + mysource);
 	
     switch (action) {
+	case "SignIn":
+		res.json(acclinking(req));
+		break;
         case "welcome":
             // res.json(chatInitiate());
              res.json(secondMsg(req));
@@ -197,6 +200,8 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
     }
 });
 
+
+
 function MainMenu()
 {
 return( {
@@ -242,12 +247,40 @@ function demowhatshot() {
 	source: "Zero Service - app_zero.js"
     });
 }
+
+function acclinking(apireq)
+{
+	 console.log('Account Linking Button') ;
+	 return (
+	          {
+		    speech: "Welcome! Link your Verizon Account.",
+		    displayText: "Link Account",
+		    data: {
+				"facebook": {
+					"attachment": {
+						"type": "template",
+						"payload": {
+							"template_type": "button",
+							"text": "Welcome! Link your Verizon Account.",
+							 "buttons": [{
+								    "type": "account_link",
+								    "url": "https://www98.verizon.com/foryourhome/myaccount/ngen/upr/bots/preauth.aspx"
+								  }]
+							}
+					}
+				}
+			},
+			source: "Verizon.js"
+		  }
+	        );
+}
+
 function LinkOptionsNew(apireq)
 {
     console.log('Calling from  link options:') ;
 	
 	var strRegionId =  apireq.body.result.parameters.RegionId;
-    console.log('strRegionId:' + strRegionId) ;
+        console.log('strRegionId:' + strRegionId) ;
 	if (strRegionId != undefined  && strRegionId !='')
 	{
 		return (
@@ -283,11 +316,21 @@ function LinkOptionsNew(apireq)
 	}
 	else
 	{
-		console.log("User Not linked, henced asked to link with FB");
+		//console.log("User Not linked, henced asked to link with FB");
+		var struserid = ''; 
+			for (var i = 0, len = apireq.body.result.contexts.length; i < len; i++) {
+				if (apireq.body.result.contexts[i].name == "sessionuserid") {
+
+					 struserid = apireq.body.result.contexts[i].parameters.Userid;
+					console.log("original userid " + ": " + struserid);
+				}
+			} 
+
+			if (struserid == '' || struserid == undefined) struserid='lt6sth2'; //hardcoding if its empty	
 		
 		return (
 			{
-			speech: "Welcome! Link your Verizon Account.",
+			speech: "Congrats, we got your details. Tap Continue to proceed.",
 			displayText: "Link Account",
 			data: {
 				"facebook": {
@@ -295,19 +338,21 @@ function LinkOptionsNew(apireq)
 						"type": "template",
 						"payload": {
 							"template_type": "button",
-							"text": "Welcome! Link your Verizon Account.",
-							 "buttons": [{
-								    "type": "account_link",
-								    "url": "https://www98.verizon.com/foryourhome/myaccount/ngen/upr/bots/preauth.aspx"
-								  }]
-							}
+							"text": "Congrats, we got your details. Tap Continue to proceed.",
+							"buttons": [
+								{
+									"type": "postback",
+									"title": "Continue",
+									"payload": "Userid : " + struserid + "  Regionid : 92377"
+								}
+							]
+						}
 					}
 				}
 			},
 			source: "Verizon.js"
 		  }
 		  );
-		
 	}
 }
 
