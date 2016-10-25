@@ -283,7 +283,7 @@ function LinkOptionsNew(apireq)
 	}
 	else
 	{
-	/*var struserid = ''; 
+	var struserid = ''; 
 			for (var i = 0, len = apireq.body.result.contexts.length; i < len; i++) {
 				if (apireq.body.result.contexts[i].name == "sessionuserid") {
 
@@ -318,11 +318,11 @@ function LinkOptionsNew(apireq)
 			},
 			source: "Verizon.js"
 		  }
-		  );*/
+		  );
 		
 		console.log("User Not linked, henced asked to link with FB");
 		
-		return 
+		/*return 
 		(
 			{
 			speech: "Welcome, Please link your Verizon Account.",
@@ -346,7 +346,7 @@ function LinkOptionsNew(apireq)
 			source: "Verizon.js"
 		  }
 			
-		);
+		);*/
 	}
 }
 
