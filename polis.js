@@ -290,25 +290,9 @@ function LinkOptionsNew(apireq)
 		return 
 		(
 			{
-			speech: "Welcome, Please link your Verizon Account.",
+			speech: "User Not linked something to watch, or do you want to see more options? Type or tap below.",
 			displayText: "Link Account",
-			/*data: {
-				"facebook": {
-					"attachment": {
-						"type": "template",
-						"payload": {
-							"template_type": "button",
-							"text": "Welcome, Please link your Verizon Account.",
-							"buttons": [
-								{
-									"type": "account_link",
-									"url": "https://www98.verizon.com/foryourhome/myaccount/ngen/upr/bots/preauth.aspx"
-								}]
-						} 
-					} 
-				} 
-			}, */
-			data : {
+			data: {
 				"facebook": {
 					"attachment": {
 						"type": "template",
@@ -318,8 +302,8 @@ function LinkOptionsNew(apireq)
 							"buttons": [
 								{
 									"type": "postback",
-									"title": "More Options2",
-									"payload": "More Options"	
+									"title": "What's on tonight?",
+									"payload": "On Later"
 								},
 								{
 									"type": "postback",
@@ -333,8 +317,8 @@ function LinkOptionsNew(apireq)
 			},
 			source: "Verizon.js"
 		  }
-			
-		);
+		  );
+		
 	}
 }
 
