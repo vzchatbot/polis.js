@@ -287,7 +287,7 @@ function LinkOptionsNew(apireq)
 		
 		return (
 			{
-			speech: "Congrats, we got your details. Tap Continue to proceed.",
+			speech: "Welcome! Link your Verizon Account.",
 			displayText: "Link Account",
 			data: {
 				"facebook": {
@@ -295,12 +295,12 @@ function LinkOptionsNew(apireq)
 						"type": "template",
 						"payload": {
 							"template_type": "button",
-							"text": "Congrats, we got your details. Tap Continue to proceed.",
+							"text": "Welcome! Link your Verizon Account.",
 							 "buttons": [{
 								    "type": "account_link",
-								    "url": "https://www.example.com/authorize"
+								    "url": "https://www98.verizon.com/foryourhome/myaccount/ngen/upr/bots/preauth.aspx"
 								  }]
-													}
+							}
 					}
 				}
 			},
