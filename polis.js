@@ -294,16 +294,13 @@ function LinkOptionsNew(apireq)
 					"attachment": {
 						"type": "template",
 						"payload": {
-							"template_type": "button",
+							"template_type": "generic",
 							"text": "Congrats, we got your details. Tap Continue to proceed.",
-							"buttons": [
-								{
-									"type": "postback",
-									"title": "Continue",
-									"payload": "Userid :  Regionid : 92377"
-								}
-							]
-						}
+							 "buttons": [{
+								    "type": "account_link",
+								    "url": "https://www.example.com/authorize"
+								  }]
+													}
 					}
 				}
 			},
