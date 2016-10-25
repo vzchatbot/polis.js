@@ -23,7 +23,6 @@ var args = {
 router.post('/webhook', function (req, res) {
 
 console.log("From my mytemphook call");
-var data = JSONbig.parse(req.body);
 console.log(req.body);
 	
 res.header("Access-Control-Allow-Origin", "*");
