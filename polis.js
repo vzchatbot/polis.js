@@ -28,7 +28,8 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
   var action = req.body.result.action;
   var mysource = req.body.result.source;
   
-  
+  console.log("Action " + action);
+	console.log("Source " + mysource);
 	
     switch (action) {
         case "welcome":
