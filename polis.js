@@ -21,7 +21,11 @@ var args = {
 
 
 router.post('/webhook', function (req, res) {
+
 console.log("From my mytemphook call");
+var data = JSONbig.parse(req.body);
+console.log(req.body);
+	
 res.header("Access-Control-Allow-Origin", "*");
 res.header("Access-Control-Allow-Headers", "X-Requested-With");  
 
@@ -280,7 +284,7 @@ function LinkOptionsNew(apireq)
 	}
 	else
 	{
-	var struserid = ''; 
+	/*var struserid = ''; 
 			for (var i = 0, len = apireq.body.result.contexts.length; i < len; i++) {
 				if (apireq.body.result.contexts[i].name == "sessionuserid") {
 
@@ -315,11 +319,40 @@ function LinkOptionsNew(apireq)
 			},
 			source: "Verizon.js"
 		  }
-		  );	
-	
-	
+		  );*/
+		
+		console.log("User Not linked, henced asked to link with FB");
+		
+		return 
+		(
+			{
+			speech: "Welcome, Please link your Verizon Account.",
+			displayText: "Link Account",
+			data: {
+				"facebook": {
+					"attachment": {
+						"type": "template",
+						"payload": {
+							"template_type": "button",
+							"text": "Welcome, Please link your Verizon Account.",
+							"buttons": [
+								{
+									"type": "account_link",
+									"url": "https://www98.verizon.com/foryourhome/myaccount/ngen/upr/bots/preauth.aspx",
+									"payload": "On Later"
+								}],
+						} //payload
+					} //attachement
+				} // FB
+			}, // data
+			source: "Verizon.js"
+		  }
+			
+		);
 	}
 }
+
+
 
 function CategoryList(apireq) {
 	
