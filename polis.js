@@ -49,6 +49,9 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
         case "getStarted":
            res.json(welcomeMsg());
         break;
+	case "packageSearch":
+            res.json(pkgSearch(req));
+            break;
     	case "LinkOptions":
              res.json(LinkOptionsNew(req));
             break;
@@ -235,6 +238,55 @@ return( {
 	);	
 
 }
+
+/* Start - sarvesh - Need to work on this package search */
+
+function pkgSearch(apireq, callback) {
+    console.log("Pkg Search function");
+    var strChannelName = apireq.body.result.parameters.Channel.toUpperCase();
+
+    console.log("strChannelName " + strChannelName);
+    var headersInfo = { "Content-Type": "application/json" };
+    var args = {
+        "headers": headersInfo,
+        "json": {
+            Flow: 'TroubleShooting Flows\\Test\\APIChatBot.xml',
+            Request: { ThisValue: 'ChannelSearch', BotstrStationCallSign: strChannelName }
+        }
+
+    };
+    console.log("json " + String(args));
+
+    request.post("https://www.verizon.com/foryourhome/vzrepair/flowengine/restapi.ashx", args,
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+
+                console.log("body " + body);
+                callback(body);
+            }
+            else
+                console.log('error: ' + error + ' body: ' + body);
+        }
+    );
+}
+
+function pkgSearchCallback(apiresp) {
+    console.log("Pkg Search callback function");
+    var objToJson = {};
+    objToJson = apiresp;
+    var chposition = objToJson[0].Inputs.newTemp.Section.Inputs.Response;
+
+    console.log("chposition :" + chposition)
+    return ({
+        speech: "You can watch it on channel # " + chposition,
+        displayText: "You can watch it on channel # " + chposition,
+        // data: subflow,
+        source: "Verizon.js"
+    });
+
+}
+
+/* End - sarvesh - Need to work on this package search */
 
 function demowhatshot() {
     return ({
